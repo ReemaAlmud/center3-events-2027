@@ -1,0 +1,1206 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<style>[hidden]{display:none!important}body{margin:0}img{max-width:100%}</style>
+</head>
+<body>
+<title>center3 Events 2027</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&display=swap">
+<style>
+/* Layout: hero → KPI strip → top 10 + scoring → month calendar → clashes → sticky filters → tier-grouped event cards */
+:root{
+  --bg:#ffffff; --bg-soft:#f7f6f9; --surface:#ffffff; --line:#e7e4ec; --line-strong:#d6d1de;
+  --fg:#1b1726; --muted:#6b6578; --faint:#9a94a6;
+  --accent:#ff2e63; --accent-soft:#fff0f4; --accent-line:#ffc2d2;
+  --brand:#4b1b8f; --brand-soft:#f3eefc; --brand-line:#d9cbf3;
+  --rec:#2563eb; --rec-soft:#eef3ff; --rec-line:#bcd0fb;
+  --mon:#6b7280; --mon-soft:#f2f2f4; --mon-line:#d4d4da;
+  --ok:#0e9f6e; --ok-soft:#e8f8f1; --ok-line:#a8e5cc;
+  --warn:#c26a00; --warn-soft:#fff6e6; --warn-line:#f6d39a;
+  --shadow:0 1px 2px rgba(27,23,38,.04),0 8px 24px rgba(27,23,38,.05);
+  --display:"Outfit",ui-sans-serif,system-ui,sans-serif;
+  color-scheme:light;
+  --body:"DM Sans",ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);font-family:var(--body);font-size:15px;line-height:1.55;-webkit-font-smoothing:antialiased}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--bg)}
+.wrap{max-width:1600px;margin:0 auto;padding-left:max(clamp(16px,4vw,72px),env(safe-area-inset-left,0px));padding-right:max(clamp(16px,4vw,72px),env(safe-area-inset-right,0px))}
+html{scroll-behavior:smooth}
+section[id],main[id]{scroll-margin-top:72px}
+main#events,main#watchlist{scroll-margin-top:136px}
+.site-nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:8;background:var(--bg);border-bottom:1px solid var(--line)}
+.nav-in{display:flex;align-items:center;justify-content:space-between;gap:16px;height:64px}
+.site-nav .logo{text-decoration:none}
+.nav-links{display:flex;align-items:center;gap:4px;overflow-x:auto}
+.nav-links a{text-decoration:none;color:var(--muted);font-weight:600;font-size:14px;padding:8px 12px;border-radius:8px;white-space:nowrap}
+.nav-links a:hover{color:var(--fg);background:var(--bg-soft)}
+.nav-links a.nav-cta{background:var(--accent);color:#fff}
+.nav-links a.nav-cta:hover{background:var(--accent);opacity:.9}
+@media (max-width:640px){.nav-links a:not(.nav-cta){display:none}}
+h1,h2,h3,h4{font-family:var(--display);text-wrap:balance;margin:0;letter-spacing:-.01em}
+button{font:inherit;color:inherit;cursor:pointer}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:6px}
+.dot{width:9px;height:9px;border-radius:50%;flex:none;background:currentColor;display:inline-block}
+.t-must{color:var(--accent)} .t-rec{color:var(--rec)} .t-mon{color:var(--mon)}
+
+/* Hero */
+.hero{position:relative;z-index:1}
+.fx{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden;--mx:75vw;--my:30vh}
+.fx .dots{position:absolute;inset:0;background-image:radial-gradient(circle,#c9b6ee 1.6px,transparent 1.8px);background-size:26px 26px;-webkit-mask-image:radial-gradient(560px 420px at var(--mx) var(--my),#000 0%,rgba(0,0,0,.3) 45%,transparent 75%);mask-image:radial-gradient(560px 420px at var(--mx) var(--my),#000 0%,rgba(0,0,0,.3) 45%,transparent 75%)}
+.fx .glow{position:absolute;width:560px;height:560px;left:calc(var(--mx) - 280px);top:calc(var(--my) - 280px);border-radius:50%;background:radial-gradient(circle,rgba(255,46,99,.10),rgba(75,27,143,.06) 45%,transparent 70%);transition:left .25s ease-out,top .25s ease-out}
+.blob{position:absolute;border-radius:50%;filter:blur(70px);opacity:.35;animation:float 20s ease-in-out infinite alternate}
+.blob.b1{width:380px;height:380px;background:#ffd6e1;top:-80px;right:6%}
+.blob.b2{width:320px;height:320px;background:#e6dcf7;top:45%;left:-80px;animation-duration:24s}
+.blob.b3{width:300px;height:300px;background:#ffe3ea;bottom:-100px;right:28%;animation-duration:28s}
+section,main,footer,.kpis{position:relative;z-index:1}
+@keyframes float{0%{transform:translate(0,0) scale(1)}50%{transform:translate(-40px,30px) scale(1.08)}100%{transform:translate(30px,-20px) scale(.95)}}
+@media (prefers-reduced-motion:reduce){.blob{animation:none}.fx .glow{transition:none}}
+.hero .wrap{padding-block:44px 44px}
+.logo{display:inline-flex;align-items:center;gap:9px;font-family:var(--display);font-weight:600;font-size:24px;color:var(--brand);letter-spacing:-.03em}
+.logo svg{width:28px;height:28px}
+.hero h1{font-size:clamp(34px,5.4vw,72px);line-height:1.03;font-weight:800;margin-top:8px;max-width:20ch}
+.hero h1 em{font-style:normal;color:var(--accent)}
+.lede{color:var(--muted);font-size:clamp(16px,1.6vw,19px);max-width:none;margin:18px 0 0}
+.hero-grid{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:32px;align-items:start}
+.hero h1{color:var(--brand)}
+.h1y{display:block}
+.legend{display:flex;flex-direction:column;align-items:stretch;gap:10px;margin-top:14px;min-width:230px}
+.legend .chip .cn{margin-left:auto;font-size:12px;font-weight:700;color:var(--muted);background:var(--bg-soft);border-radius:99px;padding:1px 8px;font-variant-numeric:tabular-nums}
+.legend .chip .arr{color:var(--accent);font-weight:700;transition:transform .15s}
+.legend .chip:hover .arr{transform:translateX(3px)}
+.legend .chip:hover{border-color:var(--accent);background:var(--accent-soft)}
+.legend a.chip{text-decoration:none;color:var(--fg)}
+.legend .chip:nth-child(5){animation-delay:.48s}.legend .chip:nth-child(6){animation-delay:.6s}
+.prep-chip{border-color:var(--warn-line)!important;background:var(--warn-soft)!important}
+.ov-ic{position:relative;width:16px;height:10px;flex:none}
+.ov-ic i{position:absolute;top:0;width:10px;height:10px;border-radius:50%;border:2px solid var(--warn)}
+.ov-ic i:first-child{left:0}.ov-ic i:last-child{left:6px;border-color:var(--accent)}
+.legend .chip{justify-content:flex-start;padding:11px 16px;box-shadow:var(--shadow);animation:drop .7s cubic-bezier(.2,.9,.3,1.15) both}
+.legend .chip:nth-child(2){animation-delay:.12s}.legend .chip:nth-child(3){animation-delay:.24s}.legend .chip:nth-child(4){animation-delay:.36s}
+@keyframes drop{from{transform:translateY(-70px);opacity:0}to{transform:none;opacity:1}}
+@media (max-width:860px){.hero-grid{grid-template-columns:1fr;gap:20px}.legend{flex-direction:row;flex-wrap:wrap;min-width:0;margin-top:0}}
+@media (prefers-reduced-motion:reduce){.legend .chip{animation:none}}
+.chip{display:inline-flex;align-items:center;gap:8px;padding:8px 14px;border-radius:8px;border:1px solid var(--line);font-weight:600;font-size:14px;background:var(--surface)}
+.chip b{color:var(--fg);font-weight:600}
+.updated{margin-top:18px;color:var(--faint);font-size:13px}
+
+/* KPIs */
+.kpis{border-block:1px solid var(--line);background:rgba(255,255,255,.55)}
+.kpis .wrap{display:grid;grid-template-columns:repeat(6,1fr);padding-block:24px}
+.kpi{all:unset;box-sizing:border-box;cursor:pointer;text-align:center;padding:10px 8px;border-radius:10px;transition:background .15s}
+.kpi:hover{background:var(--accent-soft)}
+.kpi:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
+.kpi small::after{content:" →";color:var(--accent)}
+button.chip{cursor:pointer;color:var(--fg)}
+button.chip:hover{border-color:var(--accent)}
+.kpi + .kpi{border-left:1px solid var(--line);border-radius:0}
+.kpi b{display:block;font-family:var(--display);font-size:40px;line-height:1;font-weight:800;color:var(--accent);font-variant-numeric:tabular-nums}
+.kpi span{display:block;margin-top:9px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;font-size:12px}
+.kpi small{display:block;color:var(--muted);font-size:12.5px;margin-top:2px}
+
+/* Section heads */
+.sec{padding-block:48px 8px}
+.sec-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:12px 24px;margin-bottom:22px}
+.sec-head h2{font-size:clamp(26px,3.3vw,36px);font-weight:800}
+.sec-head h2 em{font-style:normal;color:var(--accent)}
+.sec-head p{color:var(--muted);margin:6px 0 0;max-width:70ch}
+
+/* Top 10 + method */
+.two{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr);gap:24px;align-items:start}
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:12px;box-shadow:var(--shadow);min-width:0}
+.top{list-style:none;margin:0;padding:6px 0}
+.top li + li{border-top:1px solid var(--line)}
+.top button{all:unset;box-sizing:border-box;cursor:pointer;display:grid;grid-template-columns:34px minmax(0,1fr) 150px;gap:14px;align-items:center;width:100%;padding:12px 18px}
+.top button:hover{background:var(--bg-soft)}
+.top button:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
+.rank{font-family:var(--display);font-weight:800;font-size:22px;color:var(--faint);font-variant-numeric:tabular-nums}
+.top .nm{font-weight:700;font-size:15px;line-height:1.3}
+.top .sub{color:var(--muted);font-size:13px}
+.sbar{display:flex;align-items:center;gap:10px}
+.sbar .strack{flex:1;height:8px;border-radius:99px;background:var(--line);overflow:hidden}
+.sbar .fill{display:block;height:100%;border-radius:99px;background:currentColor}
+.sbar.t-must .fill{background:linear-gradient(90deg,#ff2e63,#ff6f93)}
+.sbar.t-rec .fill{background:linear-gradient(90deg,#2563eb,#5b8cf2)}
+.sbar.t-mon .fill{background:linear-gradient(90deg,#6b7280,#9ca3af)}
+.sbar b{font-family:var(--display);font-size:18px;font-variant-numeric:tabular-nums;color:var(--brand);min-width:28px;text-align:right}
+.method{padding:20px 22px;display:flex;flex-direction:column;gap:14px}
+.method h3{font-size:18px}
+.tiers{display:flex;flex-direction:column;gap:8px;border-top:1px solid var(--line);padding-top:14px;font-size:14px}
+.tiers div{display:flex;align-items:center;gap:8px}
+.note{color:var(--muted);font-size:13px}
+
+/* Calendar */
+.cal{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:12px}
+.mon{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:12px;display:flex;flex-direction:column;gap:8px;min-width:0}
+.mon-h{display:flex;justify-content:space-between;align-items:center;gap:6px}
+.mon-h b{font-family:var(--display);font-weight:800;font-size:15px;letter-spacing:.06em;text-transform:uppercase}
+.mon-h span{font-size:12px;color:var(--muted);font-variant-numeric:tabular-nums}
+.clash-flag{font-size:11px;font-weight:700;color:var(--warn);background:var(--warn-soft);border:1px solid var(--warn-line);border-radius:5px;padding:1px 6px}
+.ev-pill{all:unset;box-sizing:border-box;cursor:pointer;display:flex;gap:7px;align-items:flex-start;font-size:12.5px;line-height:1.3;padding:6px 8px;border-radius:7px;border:1px solid var(--line);background:var(--bg-soft);color:var(--fg)}
+.ev-pill:hover{border-color:currentColor}
+.ev-pill:focus-visible{outline:2px solid var(--accent);outline-offset:1px}
+.ev-pill .dot{margin-top:4px;width:8px;height:8px}
+.ev-pill.est{border-style:dashed}
+.ev-pill small{display:block;color:var(--muted);font-size:11px}
+.ev-pill .txt{color:var(--fg);min-width:0}
+
+/* Clashes */
+.clashes{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.clash{background:var(--surface);border:1px solid var(--line);border-left:4px solid var(--warn);border-radius:10px;padding:16px 18px;display:flex;flex-direction:column;gap:10px;min-width:0}
+.clash h4{font-size:17px;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.clash ul{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:6px;font-size:14px}
+.clash li{display:flex;gap:8px;align-items:baseline}
+.ov-ev{all:unset;box-sizing:border-box;cursor:pointer;display:flex;gap:8px;align-items:baseline;width:100%;padding:5px 8px;margin:0 -8px;border-radius:8px}
+.ov-ev:hover{background:var(--bg-soft)}
+.ov-ev:focus-visible{outline:2px solid var(--accent)}
+.ov-ev .go{margin-left:auto;color:var(--accent);font-weight:700}
+.clash li .when{color:var(--muted);font-variant-numeric:tabular-nums;white-space:nowrap}
+.clash .advice{font-size:13.5px;color:var(--muted);background:var(--bg-soft);border-radius:8px;padding:8px 10px}
+.sev{font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:2px 8px;border-radius:5px;border:1px solid}
+.sev.hard{color:var(--accent);background:var(--accent-soft);border-color:var(--accent-line)}
+.sev.soft{color:var(--warn);background:var(--warn-soft);border-color:var(--warn-line)}
+
+/* Hero timeline */
+.htl{margin-top:30px;background:var(--surface);border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow);padding:20px 20px 18px}
+.htl-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:6px 16px}
+.htl-head h2{font-size:20px;font-weight:800}
+.htl-head h2 em{font-style:normal;color:var(--accent)}
+.htl-head p{margin:0;color:var(--muted);font-size:13px}
+.htl-scroll{overflow-x:auto;margin-top:18px;padding-bottom:4px}
+.htl-grid{position:relative;display:grid;grid-template-columns:repeat(12,minmax(70px,1fr));min-width:840px}
+.htl-grid::before{content:"";position:absolute;left:calc(100%/24);right:calc(100%/24);top:43px;height:2px;background:var(--brand-line)}
+.htl-col{display:flex;flex-direction:column;align-items:center;gap:10px;min-width:0}
+.htl-m{font-weight:700;font-size:12px;letter-spacing:.12em;color:var(--muted);height:16px}
+.htl-node{position:relative;z-index:1;width:34px;height:34px;border-radius:50%;display:grid;place-items:center;font-family:var(--display);font-weight:800;font-size:15px;background:var(--brand);color:#fff;box-shadow:0 0 0 4px var(--surface);font-variant-numeric:tabular-nums}
+.htl-col.zero .htl-node{background:var(--surface);color:var(--faint);border:2px solid var(--line-strong)}
+.htl-col.sel .htl-m{color:var(--brand)}
+.htl-col.sel .htl-node{box-shadow:0 0 0 4px var(--surface),0 0 0 6px var(--brand-line)}
+.htl-nums{display:flex;flex-direction:column;align-items:center;gap:8px;margin-top:2px}
+.htl-num{width:26px;height:26px;border-radius:50%;border:2px solid var(--accent);background:var(--surface);color:var(--accent);padding:0;display:grid;place-items:center;font-weight:700;font-size:12px;font-variant-numeric:tabular-nums;transition:transform .15s,box-shadow .15s}
+.htl-num span{color:var(--accent)}
+.htl-num:hover{transform:scale(1.15)}
+.htl-num[aria-pressed="true"]{background:var(--accent)}
+.htl-num[aria-pressed="true"] span{color:#fff}
+.htl-key{display:flex;flex-wrap:wrap;gap:6px 16px;margin-top:14px;padding-top:12px;border-top:1px solid var(--line);font-size:12.5px;color:var(--muted)}
+.htl-key span{display:inline-flex;align-items:center;gap:6px}
+.htl-key i{width:11px;height:11px;border-radius:50%;background:currentColor;display:inline-block}
+.htl-key i.ev{background:var(--surface);box-shadow:inset 0 0 0 2px var(--accent)}
+.htl-key .node{width:14px;height:14px;background:var(--brand)}
+.htl-info{margin-top:14px;border-top:1px solid var(--line);padding-top:14px;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:10px 20px;align-items:start}
+.htl-info h3{font-size:20px;font-weight:700;line-height:1.25}
+.htl-info .sub{color:var(--muted);font-size:14px;margin-top:2px}
+.htl-info .facts{display:flex;flex-wrap:wrap;gap:6px 16px;color:var(--muted);font-size:14px;margin-top:10px}
+.htl-info .facts b{color:var(--fg);font-weight:600}
+.htl-info p{margin:10px 0 0;font-size:14.5px}
+.htl-side{display:flex;flex-direction:column;align-items:flex-end;gap:8px}
+.htl-score{font-family:var(--display);font-size:34px;font-weight:800;line-height:1;font-variant-numeric:tabular-nums}
+.htl-score small{font-size:14px;color:var(--muted);font-weight:600}
+.htl-open{border:1px solid var(--accent-line);background:var(--accent-soft);color:var(--accent);font-weight:700;padding:8px 14px;border-radius:9px;white-space:nowrap}
+.htl-close{border:1px solid var(--line-strong);background:var(--surface);color:var(--muted);font-weight:600;padding:6px 12px;border-radius:9px}
+@media (max-width:640px){.htl{padding:16px}.htl-info{grid-template-columns:1fr}.htl-side{flex-direction:row;flex-wrap:wrap;align-items:center}}
+
+.ov-sec{padding-block:56px 56px;border-block:1px solid var(--line)}
+.ov-sec .sec-head{margin-bottom:22px}
+
+.logos{padding-block:48px 28px;border-top:1px solid var(--line);overflow:hidden}
+.logos-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:6px 16px;margin-bottom:20px}
+.logos-head h2{font-size:clamp(22px,2.6vw,30px);font-weight:800}
+.logos-head h2 em{font-style:normal;color:var(--accent)}
+.logos-head p{margin:0;color:var(--muted);font-size:14px}
+.marquee{overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent)}
+.track{display:flex;gap:14px;width:max-content;animation:scrollx 90s linear infinite;padding-block:6px}
+.marquee:hover .track,.marquee:focus-within .track{animation-play-state:paused}
+@keyframes scrollx{to{transform:translateX(-50%)}}
+.logo-tile{all:unset;box-sizing:border-box;cursor:pointer;width:200px;height:92px;flex:none;display:flex;flex-direction:column;justify-content:center;gap:4px;padding:12px 16px;background:var(--surface);border:1px solid var(--line);border-radius:12px;box-shadow:var(--shadow);transition:border-color .15s,transform .15s}
+.logo-tile:hover{border-color:var(--brand-line);transform:translateY(-2px)}
+.logo-tile:focus-visible{outline:2px solid var(--accent)}
+.logo-tile b{font-family:var(--display);font-weight:800;font-size:16px;line-height:1.15;color:var(--brand);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.logo-tile span{font-size:11.5px;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+@media (prefers-reduced-motion:reduce){.track{animation:none;flex-wrap:wrap;width:auto;padding-inline:max(16px,4vw)}.marquee{-webkit-mask-image:none;mask-image:none}}
+
+/* Filter bar */
+.bar{position:sticky;top:calc(env(safe-area-inset-top,0px) + 64px);z-index:5;background:var(--bg);border-block:1px solid var(--line);margin-top:48px}
+.bar .wrap{padding-block:12px;display:flex;flex-direction:column;gap:10px}
+.row1{display:flex;flex-wrap:wrap;gap:10px 12px;align-items:center}
+.tabs{display:flex;gap:4px;background:var(--bg-soft);border:1px solid var(--line);padding:4px;border-radius:10px;overflow-x:auto;max-width:100%}
+.tab{border:0;background:none;padding:7px 12px;border-radius:7px;font-weight:700;color:var(--muted);white-space:nowrap}
+.tab[aria-pressed="true"]{background:var(--accent);color:#fff}
+.row1 > *{height:42px}
+.tabs{height:auto}
+.search{flex:1 1 180px;max-width:440px;min-width:150px;position:relative}
+.search input{width:100%;height:42px;font:inherit;padding:0 12px 0 38px;border:1px solid var(--line-strong);border-radius:10px;background:var(--surface);color:var(--fg)}
+.search input:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-soft)}
+.bar-right{display:flex;align-items:center;gap:8px;margin-left:auto}
+.bar-right > *{height:42px}
+.search input::-webkit-search-cancel-button{display:none}
+.q-clear{position:absolute;right:8px;top:50%;transform:translateY(-50%);width:26px;height:26px;border:0;border-radius:50%;background:var(--bg-soft);color:var(--muted);font-size:16px;line-height:1;padding:0}
+.q-clear:hover{background:var(--accent-soft);color:var(--accent)}
+.sugg{position:absolute;left:0;right:0;top:calc(100% + 6px);z-index:12;background:var(--surface);border:1px solid var(--line);border-radius:12px;box-shadow:0 16px 40px rgba(27,23,38,.14);max-height:min(460px,70vh);overflow-y:auto;padding:6px;height:auto}
+.sg-h{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--faint);padding:10px 10px 4px}
+.sg{display:flex;align-items:center;gap:10px;padding:8px 10px;border-radius:8px;cursor:pointer;font-size:14px}
+.sg[aria-selected="true"],.sg:hover{background:var(--brand-soft)}
+.sg .ic svg{width:15px;height:15px}
+.sg .ic{width:28px;height:28px;flex:none;border-radius:8px;display:grid;place-items:center;background:var(--bg-soft);color:var(--brand);font-size:13px;font-weight:700}
+.sg .tx{min-width:0;flex:1}
+.sg .tx b{display:block;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.sg .tx small{display:block;color:var(--muted);font-size:12px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.sg mark{background:var(--accent-soft);color:var(--accent);border-radius:3px;padding:0 1px}
+.sg .ct{font-size:12px;color:var(--muted);font-variant-numeric:tabular-nums}
+.sg-empty{padding:14px 10px;color:var(--muted);font-size:14px}
+.search svg{position:absolute;left:12px;top:50%;transform:translateY(-50%);width:16px;height:16px;color:var(--faint)}
+.sort{font:inherit;font-weight:600;padding:0 12px;border:1px solid var(--line-strong);border-radius:10px;background:var(--surface);color:var(--fg)}
+.count{display:inline-flex;align-items:center;gap:6px;font-weight:600;white-space:nowrap;padding:0 14px;border-radius:10px;background:var(--accent-soft);color:var(--fg)}
+.count b{color:var(--accent);font-variant-numeric:tabular-nums}
+.toggle-f{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--line-strong);background:var(--surface);padding:0 14px;border-radius:10px;font-weight:600}
+.toggle-f svg{width:16px;height:16px}
+@media (max-width:1340px){.tabs{flex:1 1 100%;min-width:0}.search{flex:1 1 260px;max-width:none}.bar-right{margin-left:0}}
+@media (max-width:860px){.search{flex:1 1 100%;max-width:none}.bar-right{margin-left:0}}
+.fgroups{display:flex;flex-direction:column;gap:8px}
+.fgroups[data-open="false"]{display:none}
+.toggle-f[aria-expanded="true"],.toggle-f.on{border-color:var(--accent);color:var(--accent)}
+.fg{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+.fg > span{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--faint);min-width:84px}
+.pill{border:1px solid var(--line-strong);background:var(--surface);padding:5px 12px;border-radius:7px;font-weight:600;font-size:13.5px;color:var(--muted)}
+.pill[aria-pressed="true"]{border-color:var(--accent);color:var(--accent);background:var(--accent-soft)}
+.reset{border:0;background:none;color:var(--accent);font-weight:700;font-size:13.5px;padding:5px 6px}
+
+/* Cards */
+main{background:transparent}
+main .wrap{padding-block:40px 56px;display:flex;flex-direction:column;gap:44px}
+.group-head{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;border-left:4px solid currentColor;padding-left:16px;margin-bottom:20px}
+.group-head h2{font-size:clamp(22px,2.8vw,30px);font-weight:800;color:var(--fg)}
+.group-head p{margin:4px 0 0;color:var(--muted)}
+.badge-count{flex:none;border:1px solid;font-weight:700;padding:6px 14px;border-radius:8px;white-space:nowrap}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px;align-items:start}
+.card{display:flex;flex-direction:column;color:var(--fg);background:var(--surface);border:1px solid var(--line);border-radius:12px;box-shadow:var(--shadow);overflow:hidden;scroll-margin-top:180px;transition:box-shadow .3s}
+.card.flash{box-shadow:0 0 0 3px var(--accent),var(--shadow)}
+.stripe{height:4px;background:linear-gradient(90deg,currentColor,color-mix(in srgb,currentColor 45%,transparent))}
+.cb{flex:1;padding:20px 22px 22px;display:flex;flex-direction:column;gap:13px;min-width:0}
+.cb > .more{margin-top:auto}
+.card:has(.details:not([hidden])){align-self:start}
+@media (min-width:861px){.card{min-height:var(--card-h,560px)}}
+.ctop{display:flex;flex-wrap:wrap;align-items:center;gap:8px}
+.tag{font-size:11.5px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;padding:4px 9px;border-radius:6px;border:1px solid}
+.tag.sp{color:var(--brand);background:var(--brand-soft);border-color:var(--brand-line)}
+.tag.new{color:var(--ok);background:var(--ok-soft);border-color:var(--ok-line)}
+.prep-list{display:flex;flex-direction:column;gap:10px}
+.prep-row{all:unset;box-sizing:border-box;cursor:pointer;display:grid;grid-template-columns:64px minmax(0,1fr) auto 18px;gap:16px;align-items:center;background:var(--surface);border:1px solid var(--line);border-left:4px solid var(--warn);border-radius:12px;padding:14px 18px;box-shadow:var(--shadow);transition:transform .15s,border-color .15s}
+.prep-row:hover{transform:translateY(-2px);border-color:var(--warn-line);border-left-color:var(--warn)}
+.prep-row:focus-visible{outline:2px solid var(--accent)}
+.pd{display:flex;flex-direction:column;align-items:center;background:var(--warn-soft);border-radius:10px;padding:6px 0}
+.pd b{font-family:var(--display);font-size:24px;font-weight:800;line-height:1;color:var(--warn)}
+.pd small{font-size:11px;font-weight:700;letter-spacing:.1em;color:var(--warn)}
+.pt{min-width:0}.pt b{display:block;font-size:16px;font-weight:700}.pt small{display:block;color:var(--muted);font-size:13px}
+.ps{display:flex;flex-direction:column;align-items:flex-end;gap:4px;max-width:380px}.ps .tag{white-space:normal;text-align:right;text-transform:none;letter-spacing:0;font-size:12.5px}.ps small{color:var(--faint);font-size:12px}
+.prep-row .go{color:var(--warn);font-weight:700}
+@media (max-width:640px){.prep-row{grid-template-columns:54px minmax(0,1fr)}.ps{grid-column:1/-1;align-items:flex-start}.prep-row .go{display:none}}
+.upd{position:relative;background:var(--brand-soft);border:1px solid var(--brand-line);border-radius:10px;padding:12px 14px;display:flex;flex-direction:column;gap:6px}
+.upd ul{margin:0;padding-left:18px;font-size:14px;display:flex;flex-direction:column;gap:3px}
+.trk{position:absolute;top:10px;right:12px;font-size:11.5px;font-weight:700;color:#fff;background:var(--ok);border-radius:6px;padding:3px 9px}
+.ov-mh{font-size:18px;font-weight:800;color:var(--fg);margin:6px 0 14px;display:flex;align-items:center;gap:10px}
+.ov-mh::after{content:"";flex:1;height:1px;background:var(--line)}
+.tag.pend{color:var(--warn);background:var(--warn-soft);border-color:var(--warn-line)}
+.tag.est{color:var(--warn);background:var(--warn-soft);border-color:var(--warn-line)}
+.geo{color:var(--muted);font-size:13.5px}
+.tier{margin-left:auto;font-size:11.5px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;padding:4px 9px;border-radius:6px;border:1px solid}
+.tier.t-must{background:var(--accent-soft);border-color:var(--accent-line)}
+.tier.t-rec{background:var(--rec-soft);border-color:var(--rec-line)}
+.tier.t-mon{background:var(--mon-soft);border-color:var(--mon-line)}
+.card h3{font-size:22px;font-weight:700;line-height:1.2}
+.card h3 a{text-decoration:none}
+.card h3 a:hover{text-decoration:underline;text-decoration-color:var(--accent)}
+.card h3 .arr{color:var(--accent);font-size:.8em;margin-left:4px}
+.orgl{color:var(--fg);font-size:14px;margin-top:-6px;line-height:1.6}
+.orgl .ol{color:var(--muted);font-weight:600}
+.orgl a{color:var(--rec)}
+.em{user-select:all;color:var(--brand);font-weight:500;overflow-wrap:anywhere}
+.meta{display:flex;flex-wrap:wrap;gap:6px 16px;color:var(--muted);font-size:14px}
+.meta span{display:inline-flex;align-items:center;gap:6px;min-width:0}
+.meta svg{width:15px;height:15px;flex:none;color:var(--accent)}
+.why{margin:0;font-size:15px;line-height:1.5}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.mini{border:1px solid var(--line);background:var(--bg-soft);padding:4px 9px;border-radius:6px;font-size:13px;color:var(--fg)}
+.lab{font-size:11.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.scoreline{display:flex;justify-content:space-between;align-items:baseline;gap:10px}
+.scoreline .v{font-weight:700;font-variant-numeric:tabular-nums}
+.big-track{height:7px;border-radius:99px;background:var(--line);overflow:hidden}
+.big-track i{display:block;height:100%;border-radius:99px;background:linear-gradient(90deg,currentColor,color-mix(in srgb,currentColor 55%,transparent))}
+.part{display:flex;gap:8px;align-items:flex-start;font-size:14px;background:var(--bg-soft);border-radius:8px;padding:9px 11px}
+.part b{white-space:nowrap}
+.more{border:1px solid var(--accent-line);background:var(--accent-soft);color:var(--accent);font-weight:700;padding:11px;border-radius:9px;width:100%}
+.more .car{display:inline-block;transition:transform .2s;margin-right:6px}
+.more[aria-expanded="true"] .car{transform:rotate(180deg)}
+.details{display:flex;flex-direction:column;gap:14px;border-top:1px dashed var(--line-strong);padding-top:16px}
+.bd-toggle{all:unset;box-sizing:border-box;cursor:pointer;display:flex;justify-content:space-between;align-items:center;width:100%;padding:10px 12px;border:1px solid var(--brand-line);background:var(--brand-soft);border-radius:9px;color:var(--brand);font-weight:700;font-size:13px;letter-spacing:.06em;text-transform:uppercase}
+.bd-toggle:focus-visible{outline:2px solid var(--accent)}
+.bd-toggle .car{transition:transform .2s}
+.bd-toggle[aria-expanded="true"] .car{transform:rotate(180deg)}
+.bd-wrap{display:flex;flex-direction:column;gap:6px}
+.bd-wrap[hidden]{display:none}
+.bd{display:flex;flex-direction:column;gap:2px}
+.bdrow,.wrow{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:4px 10px;align-items:center;font-size:13.5px;padding:6px 8px;margin:0 -8px;border-radius:8px;transition:background .15s}
+.bdrow:focus-visible,.wrow:focus-visible{outline:2px solid var(--accent);outline-offset:0}
+.bdrow .go,.wrow .go{color:var(--brand);font-weight:700;text-align:right}
+.bdrow .t2,.wrow .wbar{grid-column:1/-1;height:5px;border-radius:99px;background:var(--line);overflow:hidden}
+.bdrow .t2 i,.wrow .wbar i{display:block;height:100%;background:var(--brand)}
+.bdrow b,.wrow b{text-align:right;font-variant-numeric:tabular-nums}
+.wrow{font-size:14px}
+.hint{font-size:12.5px;color:var(--muted);margin:0}
+/* Criterion modal */
+.modal{position:fixed;inset:0;z-index:20;display:grid;place-items:center;padding:max(16px,env(safe-area-inset-top,0px)) max(16px,env(safe-area-inset-right,0px)) max(16px,env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px));background:rgba(27,23,38,.45)}
+.modal-box{background:var(--surface);border-radius:14px;box-shadow:0 20px 60px rgba(0,0,0,.25);width:min(760px,100%);max-height:calc(100vh - 48px);display:flex;flex-direction:column;overflow:hidden}
+.modal-head{padding:20px 22px 14px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;gap:16px;align-items:flex-start}
+.modal-head h3{font-size:21px;font-weight:800}
+.modal-head p{margin:4px 0 0;color:var(--muted);font-size:13.5px}
+.modal-close{border:1px solid var(--line-strong);background:var(--surface);border-radius:9px;padding:6px 12px;font-weight:600;color:var(--muted);flex:none}
+.modal-body{overflow-y:auto;padding:18px 22px 22px;display:flex;flex-direction:column;gap:14px}
+.modal-list{overflow-y:auto;padding:8px 14px 16px;margin:0;list-style:none}
+.modal-list li{display:grid;grid-template-columns:28px minmax(0,1fr) minmax(90px,180px) 40px;gap:12px;align-items:center;padding:8px;border-radius:8px;font-size:14px}
+.modal-list li + li{border-top:1px solid var(--line)}
+.modal-list li.me{background:var(--accent-soft);border-top-color:transparent}
+.modal-list .rk{color:var(--faint);font-weight:700;font-variant-numeric:tabular-nums}
+.modal-list .nm{font-weight:600;min-width:0}
+.modal-list .nm small{display:block;color:var(--muted);font-weight:400;font-size:12px}
+.modal-list .tr{height:7px;border-radius:99px;background:var(--line);overflow:hidden}
+.modal-list .tr i{display:block;height:100%;background:var(--brand);border-radius:99px}
+.modal-list b{text-align:right;font-variant-numeric:tabular-nums}
+@media (max-width:640px){.modal-list li{grid-template-columns:24px minmax(0,1fr) 40px}.modal-list .tr{grid-column:2/-1;grid-row:2}}
+dl.kv{display:grid;grid-template-columns:auto minmax(0,1fr);gap:7px 14px;margin:0;font-size:14px}
+dl.kv dt{color:var(--faint);font-weight:600}
+dl.kv dd{margin:0;min-width:0;overflow-wrap:anywhere}
+dl.kv a{color:var(--rec)}
+.empty-state{text-align:center;padding:48px 16px;color:var(--muted);border:1px dashed var(--line-strong);border-radius:12px;background:var(--surface)}
+footer{color:var(--faint);font-size:13px}
+footer .foot-main{color:var(--muted);font-size:14.5px;line-height:1.65;max-width:110ch}
+footer .foot-main strong{color:var(--brand)}
+footer .foot-sub{color:var(--faint);font-size:12.5px;margin-top:6px}
+footer .wrap{padding-block:24px 36px;border-top:1px solid var(--line);display:flex;flex-direction:column;gap:6px}
+
+@media (max-width:1000px){.cal{grid-template-columns:repeat(4,minmax(0,1fr))}.two{grid-template-columns:1fr}.kpis .wrap{grid-template-columns:repeat(3,1fr);row-gap:20px}.kpi:nth-child(4){border-left:0}}
+@media (max-width:860px){.grid,.clashes{grid-template-columns:1fr}}
+@media (max-width:640px){
+  .cal{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .kpis .wrap{grid-template-columns:repeat(2,1fr)}
+  .kpi:nth-child(3),.kpi:nth-child(5){border-left:0}.kpi:nth-child(4){border-left:1px solid var(--line)}
+  .kpi b{font-size:34px}
+  .top button{grid-template-columns:28px minmax(0,1fr);row-gap:6px}
+  .top .sbar{grid-column:2}
+  .cb{padding:18px}
+  .card h3{font-size:20px}
+  
+  .fg > span{min-width:100%}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+
+<div class="fx" aria-hidden="true"><span class="blob b1"></span><span class="blob b2"></span><span class="blob b3"></span><span class="glow"></span><span class="dots"></span></div>
+<header class="site-nav">
+  <div class="wrap nav-in">
+    <a class="logo" href="#top" aria-label="center3 home">
+      <svg viewBox="0 0 26 26" fill="none" aria-hidden="true"><path d="M13 1.8 24.2 13 13 24.2 1.8 13Z" stroke="currentColor" stroke-width="2.3" stroke-linejoin="miter"/><path d="M13 2v22M2.5 13H13" stroke="currentColor" stroke-width="2.3"/><rect x="9.6" y="9.6" width="6.8" height="6.8" fill="#ff2e63"/></svg>
+      center3
+    </a>
+    <nav class="nav-links" aria-label="Sections">
+      <a href="#timeline">Timeline</a><a href="#top-ten">Top 10</a><a href="#calendar">Calendar</a><a href="#events" class="nav-cta">All events</a>
+    </nav>
+  </div>
+</header>
+<header class="hero" id="top">
+  <div class="wrap">
+    <div class="hero-grid">
+    <div class="hero-main">
+    <h1>center3 <em>Events</em><span class="h1y">2027</span></h1>
+    <p class="lede">An intelligence guide to the data centre, subsea, interconnection, cloud and AI, wholesale telecom and infrastructure investment events where center3's buyers, partners and competitors meet. Each event is scored out of 100 against center3's commercial priorities.</p>
+    <p class="updated">Last updated 29 October 2026. Dates marked “est.” are not yet published by the organiser.</p>
+    </div>
+    <div class="legend" id="legend" aria-label="Show events by tier"></div>
+    </div>
+    <section class="htl" id="timeline" aria-label="2027 timeline">
+      <div class="htl-head"><h2>2027 <em>Timeline</em></h2><p>Select a number to see which event it is.</p></div>
+      <div class="htl-scroll"><div class="htl-grid" id="htl"></div></div>
+      <div class="htl-key"><span><i class="node"></i>Events in the month</span><span><i class="ev"></i>Event (select to view)</span></div>
+      <div class="htl-info" id="htlInfo" aria-live="polite" hidden></div>
+    </section>
+  </div>
+</header>
+
+<section class="kpis" aria-label="Summary"><div class="wrap" id="kpis"></div></section>
+
+<section class="sec" id="top-ten">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><h2>Top 10 <em>by Score</em></h2><p>The ten events with the highest weighted score. Select one to open its card.</p></div>
+    </div>
+    <div class="two">
+      <div class="panel"><ol class="top" id="top10"></ol></div>
+      <aside class="panel method" aria-label="Scoring method">
+        <h3>How events are scored</h3>
+        <div id="weights" style="display:flex;flex-direction:column;gap:8px"></div>
+        <div class="tiers">
+          <div><i class="dot t-must"></i><b>Must attend</b>&nbsp;· score 75 or higher</div>
+          <div><i class="dot t-rec"></i><b>Recommended</b>&nbsp;· score 60 to 74</div>
+          <div><i class="dot t-mon"></i><b>Watchlist</b>&nbsp;· score below 60</div>
+        </div>
+        <p class="note">Each criterion is rated 0–10 and multiplied by its weight. Ratings are analyst judgements based on audience, past center3 results, competitor presence and cost, and can be adjusted by the events team.</p>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="calendar">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><h2>2027 <em>Calendar</em></h2><p>Every event by month, coloured by tier. Dashed outlines mark estimated dates.</p></div>
+    </div>
+    <div class="cal" id="cal"></div>
+  </div>
+</section>
+
+
+<nav class="bar" aria-label="Filters">
+  <div class="wrap">
+    <div class="row1">
+      <div class="tabs" id="tierTabs" role="group" aria-label="Tier"></div>
+      <div class="search">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+        <input id="q" type="search" placeholder="Search an event, city or country…" aria-label="Search events" role="combobox" aria-expanded="false" aria-controls="sugg" aria-autocomplete="list" autocomplete="off">
+        <button class="q-clear" id="qClear" aria-label="Clear search" hidden>×</button>
+        <div class="sugg" id="sugg" role="listbox" hidden></div>
+      </div>
+      <div class="bar-right">
+        <button class="toggle-f" id="toggleF" aria-expanded="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 6h16M7 12h10M10 18h4"/></svg><span id="toggleLbl">Filters</span></button>
+        <select class="sort" id="sort" aria-label="Sort"><option value="score">Sort by score</option><option value="date">Sort by date</option></select>
+        <div class="count"><b id="cnt">0</b> events</div>
+      </div>
+    </div>
+    <div class="fgroups" id="fgroups" data-open="false"></div>
+  </div>
+</nav>
+
+<main id="events"><div class="wrap" id="groups"></div></main>
+<section class="sec ov-sec" id="clashes-sec">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><h2>Overlapping <em>Events</em></h2><p>Months where two or more Must attend or Recommended events compete for the same team and budget.</p></div>
+    </div>
+    <div class="clashes" id="clashes"></div>
+  </div>
+</section>
+<main id="watchlist" class="main2"><div class="wrap" id="groups2"></div></main>
+<div class="modal" id="evModal" hidden role="dialog" aria-modal="true" aria-labelledby="evTitle">
+  <div class="modal-box">
+    <div class="modal-head"><div style="min-width:0"><div class="ctop" id="evTags"></div><h3 id="evTitle" style="margin-top:8px"></h3><p id="evOrg"></p></div><button class="modal-close" data-closemodal="evModal">Close</button></div>
+    <div class="modal-body" id="evBody"></div>
+  </div>
+</div>
+<div class="modal" id="critModal" hidden role="dialog" aria-modal="true" aria-labelledby="critTitle">
+  <div class="modal-box">
+    <div class="modal-head"><div><h3 id="critTitle"></h3><p id="critSub"></p></div><button class="modal-close" id="critClose">Close</button></div>
+    <ol class="modal-list" id="critList"></ol>
+  </div>
+</div>
+<section class="logos" aria-label="Events in this guide">
+  <div class="wrap">
+    <div class="logos-head"><h2>Events in this <em>guide</em></h2><p>All 38 events covered. Select one to see its details.</p></div>
+  </div>
+  <div class="marquee"><div class="track" id="logoTrack"></div></div>
+</section>
+<footer><div class="wrap">
+  <div class="foot-main"><strong>center3 Events 2027</strong> brings together the events that matter most to center3's growth: where hyperscalers, carriers, content providers, investors and government decision-makers meet across data centres, subsea and connectivity, interconnection, cloud and AI infrastructure. Each event is selected and scored for how well it helps center3 win customers, build partnerships and strengthen its position as the digital infrastructure hub linking the Kingdom, the Gulf, Africa and the world.</div>
+  <div class="foot-sub">Prepared by the center3 Events team · Last updated 29 October 2026</div>
+</div></footer>
+
+<script>
+/* center3 Events Intelligence Hub 2027 — event dataset
+   r = ratings 0–10 for [audience fit, deal potential, brand visibility, speaking, strategic market fit, competitor presence, cost efficiency]
+   est = true when the organiser has not published 2027 dates yet */
+const EVENTS = [
+{id:"dcwme26",n:"Data Center World Middle East 2026",org:"Data Center World (Informa)",s:"2026-11-17",e:"2026-11-18",est:false,city:"Abu Dhabi",ctry:"UAE",venue:"Dusit Thani Abu Dhabi",geo:"GCC",
+ spec:["dc","ai"],aud:["hyper","ent","gov"],att:1500,attL:"~1,500 (est.)",exh:"Sponsors and exhibitors",
+ url:"https://www.datacenterworldmiddleeast.com/",contact:"Contact form on event website",isNew:"",
+ part:"Attending + keynote panel",cost:"Delegate passes",costLvl:1,
+ comp:["Khazna","Moro Hub","Gulf Data Hub","Equinix"],awards:"",
+ hist:"Keynote panel by Luthfur Khan confirmed (internal tracker). The 2027 edition is listed separately.",
+ status:"Team Dubai attending; passes being finalised",statusDate:"20 Oct 2026",track:"On track",
+ updates:["Team Dubai will attend (Luthfur, Ritwiq, Mehdi)","Hussein AlNajrani's participation in the “AI, Power & Sovereign Demand” panel was cancelled due to a scheduling conflict"],
+ next:["Finalize passes"],
+ why:"A key regional data centre forum this year, with center3's Dubai team attending to engage operators, hyperscalers and government stakeholders.",
+ r:[6,6,6,8,8,8,7],src:"Internal status update (20 Oct 2026)"},
+{id:"ptc",n:"PTC'27",org:"Pacific Telecommunications Council (PTC)",s:"2027-01-17",e:"2027-01-20",est:false,city:"Honolulu",ctry:"USA",venue:"Hilton Hawaiian Village Waikiki Beach Resort",geo:"Global",
+ spec:["subsea","telecom","dc","ix"],aud:["hyper","carrier","content","inv"],att:4000,attL:"~4,000 (est.)",exh:"Exhibition + private meeting suites",
+ url:"https://www.ptc.org/ptc27/",contact:"info@ptc.org · ptcreg@ptc.org · +1 808 941 3789",isNew:"",
+ part:"Speaking + meeting suite + branding",cost:"Full conference pass US$1,275–1,525 (non-member) or US$825–1,000 (member company). Meeting suites and sponsorship on request.",costLvl:2,
+ comp:["Telecom Egypt","Ooredoo","Mobily","Sparkle","Equinix","Zain Omantel International"],awards:"PTC'27 Awards",
+ hist:"No center3 presence found in public sources (2023–2026).",why:"The leading annual meeting for subsea capacity and hyperscale network buyers, and the strongest opportunity to build center3's presence with US and Asia-Pacific customers.",
+ r:[10,9,7,7,8,8,5],src:"https://www.ptc.org/ptc27/"},
+
+{id:"dcn",n:"Data Center Nation (DCN) Riyadh 2027",org:"Data Center Nation",s:"2027-01-27",e:"2027-01-27",est:false,city:"Riyadh",ctry:"KSA",venue:"Riyadh International Convention & Exhibition Center",geo:"KSA",
+ spec:["dc","ai"],aud:["ent","gov"],att:2000,attL:"~2,000 (est.)",exh:"Exhibition",
+ url:"",contact:"Contact form on event website",isNew:"",
+ part:"Participation (contract pending approval)",cost:"Per contract under review; sponsorship on request",costLvl:1,
+ comp:["Mobily","Gulf Data Hub","DataVolt","Ezditek"],awards:"",
+ hist:"Previously tracked as attendance only. Sponsorship contract now in progress.",status:"Sponsorship contract under management approval",statusDate:"20 Oct 2026",track:"On track",updates:["The sponsorship contract is currently under management approval"],next:["Raise the PR once the legal review is complete"],why:"A cost-effective way to engage Saudi enterprise and government IT decision-makers. center3's sponsorship is progressing, subject to management approval.",
+ r:[5,6,6,5,9,6,8],src:"Internal tracker (Q4_Events_PowerBI_v7.xlsx)"},
+
+{id:"gais",n:"Global AI Show Riyadh 2027",org:"Global AI Show",s:"2027-02-02",e:"2027-02-03",est:false,city:"Riyadh",ctry:"KSA",venue:"Venue to be announced",geo:"KSA",
+ spec:["ai"],aud:["ent","gov","inv"],att:5000,attL:"5,000+",exh:"100+ exhibitors and sponsors",
+ url:"https://www.globalaishow.com/riyadh/",contact:"Contact form on event website",isNew:"New to Riyadh: the series describes itself as 'now in KSA'",
+ part:"Attending; speaking if offered",cost:"Delegate pass; sponsorship on request",costLvl:1,
+ comp:["HUMAIN","DataVolt","Microsoft","Oracle"],awards:"",
+ hist:"No previous participation.",why:"Brings together AI decision-makers in the Kingdom. Relevant for center3's AI hosting proposition, though smaller and less infrastructure-focused than priority events.",
+ r:[4,5,5,6,8,4,7],src:"https://www.globalaishow.com/riyadh/"},
+
+{id:"metro",n:"Metro Connect USA 2027",org:"Capacity Media (techoraco)",s:"2027-02-08",e:"2027-02-10",est:false,city:"Hollywood, Florida",ctry:"USA",venue:"Signia by Hilton Diplomat Beach Resort",geo:"Global",
+ spec:["telecom","dc","invest"],aud:["carrier","inv","hyper"],att:5000,attL:"5,000+ (75% director level or above)",exh:"Sponsors and exhibitors",
+ url:"https://capacityglobal.com/events/",contact:"marketing@capacityglobal.com · +44 20 7779 7227",isNew:"",
+ part:"Attending (business development team)",cost:"Delegate pass; sponsorship on request",costLvl:2,
+ comp:["Zayo","Equinix","Digital Realty"],awards:"",
+ hist:"No previous participation.",why:"Connects center3 with the US fibre, data centre and investor community. Valuable for investor relations and US route partnerships, with a largely domestic US focus.",
+ r:[6,6,4,4,4,4,5],src:"https://baxtel.com/events/metro-connect-usa-2027"},
+
+{id:"iigs",n:"Infrastructure Investor Global Summit 2027",org:"PEI Group",s:"2027-02-22",e:"2027-02-25",est:false,city:"Berlin",ctry:"Germany",venue:"STATION Berlin",geo:"Global",
+ spec:["invest"],aud:["inv"],att:3500,attL:"3,500+ (1,200+ LPs)",exh:"400+ speakers",
+ url:"https://live.peievents.com/infrastructure-investor-global-summit",contact:"Contact form on event website",isNew:"",
+ part:"Attending (strategy / investor relations)",cost:"Delegate pass (premium pricing); sponsorship on request",costLvl:3,
+ comp:["Brookfield","Digital Bridge","Stonepeak"],awards:"",
+ hist:"No previous participation.",why:"The largest global gathering of infrastructure investors, and a strong platform should center3 seek capital partners for its 1GW expansion.",
+ r:[3,6,5,5,6,3,4],src:"https://live.peievents.com/infrastructure-investor-global-summit"},
+
+{id:"mwc",n:"MWC Barcelona 2027",org:"GSMA",s:"2027-03-01",e:"2027-03-04",est:false,city:"Barcelona",ctry:"Spain",venue:"Fira Gran Via",geo:"Global",
+ spec:["telecom","ai"],aud:["carrier","hyper","ent","gov"],att:100000,attL:"~100,000 (est., based on recent editions)",exh:"~2,700 exhibitors (est.)",
+ url:"https://www.mwcbarcelona.com/",contact:"Contact form on event website",isNew:"",
+ part:"Booth within the stc Group pavilion + meetings",cost:"High: stand space and passes; joining stc Group's pavilion keeps it down",costLvl:3,
+ comp:["e&","du","Ooredoo","Mobily","Zain","Telecom Egypt"],awards:"GSMA GLOMO Awards",
+ hist:"stc Group exhibits each year. No standalone center3 presence found.",why:"The world's largest telecom gathering. Best leveraged as part of the stc Group presence and as a meeting point with international carriers.",
+ r:[7,7,9,5,6,8,3],src:"https://www.cmswire.com/events/conference/gsma-mwc-barcelona-2027/"},
+
+{id:"dcwl",n:"Data Centre World London 2027",org:"CloserStill Media",s:"2027-03-10",e:"2027-03-11",est:false,city:"London",ctry:"UK",venue:"ExCeL London (part of Tech Show London)",geo:"Global",
+ spec:["dc"],aud:["ent"],att:15000,attL:"Tech Show London scale (est.)",exh:"Large exhibition",
+ url:"https://www.datacentreworld.com/",contact:"Contact form on event website",isNew:"",
+ part:"Attending (engineering and supply chain)",cost:"Free for pre-registered end users",costLvl:1,
+ comp:["Equinix","Digital Realty","Global Switch"],awards:"Data Centre World Awards (10 Mar 2027)",
+ hist:"No previous participation.",why:"An operations and supply-chain focused event, well suited to engaging vendors and technology partners rather than acquiring customers.",
+ r:[4,4,5,4,4,5,8],src:"https://baxtel.com/events/data-centre-world-london-2027"},
+
+{id:"gtc",n:"NVIDIA GTC 2027",org:"NVIDIA",s:"2027-03-14",e:"2027-03-18",est:false,city:"San Jose",ctry:"USA",venue:"San Jose McEnery Convention Center",geo:"Global",
+ spec:["ai","dc"],aud:["hyper","ent","inv"],att:25000,attL:"25,000+ (est.)",exh:"Large exhibition",
+ url:"https://www.nvidia.com/gtc/",contact:"Contact form on event website",isNew:"",
+ part:"Attending (AI infrastructure and partnerships team)",cost:"Conference pass; exhibition on request",costLvl:2,
+ comp:["G42 / Khazna","HUMAIN","Equinix","CoreWeave"],awards:"",
+ hist:"No previous participation.",why:"The leading stage for AI infrastructure partnerships, supporting the positioning of the HUMAIN and center3 AI data centre joint venture.",
+ r:[7,6,6,3,5,6,5],src:"https://baxtel.com/events/nvidia-gtc-2027"},
+
+{id:"capme",n:"Capacity Middle East x Datacloud Middle East 2027",org:"Capacity Media (techoraco)",s:"2027-03-15",e:"2027-03-18",est:false,city:"Dubai",ctry:"UAE",venue:"Grand Hyatt Dubai Conference & Exhibition Centre",geo:"GCC",
+ spec:["subsea","telecom","dc","ix"],aud:["carrier","hyper","content","inv"],att:3500,attL:"3,500+ from 90+ countries (2026 edition)",exh:"Sponsors and exhibitors",
+ url:"https://www.capacitymiddleeast.com/",contact:"marketing@capacityglobal.com · +44 20 7779 7227",isNew:"",
+ part:"Booth + speaking + branding (partner level)",cost:"Partner package on request (center3 has been a sponsor or co-sponsor in past years)",costLvl:2,
+ comp:["e&","du","Ooredoo","Khazna","Equinix","Gulf Data Hub","Zain Omantel International"],awards:"",
+ hist:"Every year 2023–2026: under stc sponsorship, the Etihad Salam deal (2025) and panels by CCO and CTO (2026).",why:"center3's core regional event, bringing together the wholesale, subsea and data centre buyers most relevant to its business.",
+ r:[10,10,9,9,10,10,6],src:"https://baxtel.com/events/capacity-middle-east-x-datacloud-middle-east-2027"},
+
+{id:"dciif",n:"Data Centre Infrastructure & Innovation Forum KSA",org:"Forum organiser (see internal tracker)",s:"2027-03-30",e:"2027-03-31",est:false,city:"Riyadh",ctry:"KSA",venue:"Hyatt Regency Olaya",geo:"KSA",
+ spec:["dc"],aud:["ent","gov"],att:500,attL:"~500 (est.)",exh:"Small exhibition",
+ url:"",contact:"Through internal events team",isNew:"",
+ part:"Speaking (keynote panel)",cost:"Speaking slot; no sponsorship needed",costLvl:1,
+ comp:["Mobily","DataVolt","Gulf Data Hub"],awards:"",
+ hist:"Keynote panel moved here from Nov 2026, pending confirmation (internal tracker).",status:"Keynote panel rescheduled from Nov 2026; awaiting organiser confirmation",statusDate:"14 Oct 2026",why:"A cost-effective keynote opportunity to position center3 as a thought leader in its home market.",
+ r:[5,6,6,8,9,6,8],src:"Internal tracker (Q4_Events_PowerBI_v7.xlsx)"},
+
+{id:"gpf",n:"Global Peering Forum (GPF) 2027",org:"Global Peering Forum Inc.",s:"2027-04-04",e:"2027-04-07",est:false,city:"Calgary",ctry:"Canada",venue:"Venue on event website",geo:"Global",
+ spec:["ix"],aud:["content","carrier","hyper"],att:600,attL:"~600 (est.)",exh:"Sponsor tables",
+ url:"https://globalpeeringforum.org/",contact:"Contact form on event website",isNew:"",
+ part:"Attending (peering team) + sponsorship",cost:"Low: registration and small sponsorship",costLvl:1,
+ comp:["DE-CIX","LINX","AMS-IX","UAE-IX"],awards:"",
+ hist:"No previous participation.",why:"The global meeting point for content providers and networks to agree peering, supporting growth at center3's internet exchanges.",
+ r:[8,7,4,5,6,5,7],src:"https://globalpeeringforum.org/"},
+
+{id:"samena",n:"SAMENA Council Leaders' Summit 2027",org:"SAMENA Telecommunications Council",s:"2027-04-01",e:"2027-04-30",est:true,city:"Dubai",ctry:"UAE",venue:"To be announced",geo:"MENA",
+ spec:["telecom"],aud:["carrier","gov"],att:500,attL:"~500 (est.)",exh:"Summit format",
+ url:"https://www.samenacouncil.org/",contact:"info@samenacouncil.org",isNew:"",
+ part:"Speaking",cost:"Low: invitation or council membership",costLvl:1,
+ comp:["e&","du","Zain","Ooredoo","Mobily"],awards:"",
+ hist:"No center3 presence found. stc is an active SAMENA member.",why:"A CEO-level forum for the region's operators and regulators, valuable for policy engagement and senior carrier relationships.",
+ r:[6,5,6,7,8,7,8],src:"https://samenacouncil.org/press-release?id=225"},
+
+{id:"leap",n:"LEAP 2027",org:"Tahaluf (with MCIT and SAFCSP)",s:"2027-04-12",e:"2027-04-15",est:true,city:"Riyadh",ctry:"KSA",venue:"Riyadh Exhibition & Convention Centre, Malham",geo:"KSA",
+ spec:["ai","dc","telecom","invest"],aud:["gov","ent","hyper","inv"],att:200000,attL:"~200,000 (2026 edition expected 201,000)",exh:"Very large exhibition (DeepFest co-located)",
+ url:"https://onegiantleap.com/",contact:"Contact form on event website",isNew:"",
+ part:"Booth (with stc) + speaking + deal signings",cost:"High: stand build and partner package (center3 was Hosting & Data Partner in 2024)",costLvl:3,
+ comp:["DataVolt","HUMAIN","Mobily","Zain KSA","Microsoft","Oracle","Google Cloud"],awards:"",
+ hist:"2024 Hosting & Data Partner; 2025 Zoom deal; 2026 SEC-PDC framework agreement.",why:"The Kingdom's flagship technology event, where center3 secures major agreements and engages government leaders and hyperscalers.",
+ r:[8,10,10,8,10,9,3],src:"https://www.beri.net/events/leap-2027"},
+
+{id:"dcer",n:"Data Center Expo Riyadh 2027",org:"Data Center Expo (see internal tracker)",s:"2027-04-29",e:"2027-04-29",est:false,city:"Riyadh",ctry:"KSA",venue:"Rosh Olaya Hotel",geo:"KSA",
+ spec:["dc"],aud:["ent","gov"],att:800,attL:"~800 (est.)",exh:"Small exhibition",
+ url:"",contact:"Through internal events team",isNew:"",
+ part:"Speaking (15-minute opening keynote) + branding",cost:"Associate Partner sponsorship package (internal tracker)",costLvl:2,
+ comp:["Mobily","DataVolt","Ezditek"],awards:"",
+ hist:"Keynote moved here from 20 Oct 2026 (internal tracker).",status:"Opening keynote under Associate Partner package; rescheduled from 20 Oct 2026",statusDate:"14 Oct 2026",why:"An opening keynote that gives center3 a leading voice in front of local data centre buyers.",
+ r:[5,6,6,8,9,6,6],src:"Internal tracker (Q4_Events_PowerBI_v7.xlsx)"},
+
+{id:"itw",n:"ITW 2027 (International Telecoms Week)",org:"Capacity Media (techoraco)",s:"2027-05-10",e:"2027-05-13",est:false,city:"National Harbor (Washington DC)",ctry:"USA",venue:"Gaylord National Resort & Convention Center",geo:"Global",
+ spec:["telecom","subsea","dc","ix"],aud:["carrier","hyper","content","inv"],att:6500,attL:"~6,500 (over half in senior leadership)",exh:"Large meeting floor and exhibition",
+ url:"https://www.itwglobalevent.com/",contact:"marketing@capacityglobal.com · +44 20 7779 7227",isNew:"",
+ part:"Meeting space + branding + speaking",cost:"Delegate pass plus meeting-space packages on request",costLvl:2,
+ comp:["Telecom Egypt","Sparkle","Ooredoo","Mobily","Zain Omantel International","Equinix"],awards:"",
+ hist:"center3 logo appeared on the 2026 sponsor and exhibitor display (low confidence).",why:"The world's largest wholesale carrier gathering, offering a full programme of one-to-one meetings with subsea and transit capacity buyers.",
+ r:[10,10,8,7,8,9,4],src:"https://baxtel.com/events/itw-2027"},
+
+{id:"dcgc",n:"Datacloud Global Congress 2027",org:"Datacloud (techoraco)",s:"2027-06-02",e:"2027-06-04",est:false,city:"Cannes",ctry:"France",venue:"Palais des Festivals et des Congrès",geo:"Global",
+ spec:["dc","invest","ai"],aud:["hyper","inv","ent"],att:3000,attL:"~3,000+ (est.)",exh:"Exhibition + sponsors",
+ url:"https://www.datacloudglobalcongress.com/",contact:"marketing@capacityglobal.com (techoraco group)",isNew:"",
+ part:"Speaking + branding + award entry",cost:"Delegate pass; sponsorship on request",costLvl:3,
+ comp:["Khazna","Equinix","Digital Realty","AirTrunk","Gulf Data Hub"],awards:"Datacloud Awards (center3 won Best Data Centre in MEA in 2025 and 2026)",
+ hist:"Award winner 2025 and 2026; CCO panel speaker in 2026.",why:"The premier global event for data centre investment, where center3 will defend its title as Best Data Centre in the Middle East and Africa.",
+ r:[9,8,9,8,7,9,4],src:"https://baxtel.com/events/datacloud-global-congress-2027"},
+
+{id:"mwcs",n:"MWC Shanghai 2027",org:"GSMA",s:"2027-06-23",e:"2027-06-25",est:false,city:"Shanghai",ctry:"China",venue:"Shanghai New International Expo Centre",geo:"Global",
+ spec:["telecom","ai"],aud:["carrier","ent"],att:40000,attL:"~40,000 (est.)",exh:"Large exhibition",
+ url:"https://www.mwcshanghai.com/",contact:"Contact form on event website",isNew:"",
+ part:"Monitor only",cost:"High relative to fit",costLvl:3,
+ comp:["China Mobile","China Telecom","China Unicom"],awards:"",
+ hist:"No previous participation.",why:"Focused on the Asian carrier ecosystem. A lower priority unless a specific China corridor opportunity arises.",
+ r:[4,4,5,3,3,4,4],src:"https://www.shifair.com/informationDetails/381688.html"},
+
+{id:"afpif",n:"AfPIF 2027 (Africa Peering & Interconnection Forum)",org:"Internet Society / AfPIF",s:"2027-08-01",e:"2027-08-31",est:true,city:"Host city to be announced",ctry:"Africa",venue:"To be announced",geo:"Africa",
+ spec:["ix"],aud:["content","carrier"],att:400,attL:"~400 (est.)",exh:"Sponsor tables",
+ url:"https://www.afpif.org/",contact:"Contact form on event website",isNew:"",
+ part:"Attending + sponsorship (peering team)",cost:"Low",costLvl:1,
+ comp:["Teraco","Africa Data Centres","NAPAfrica","IXPN"],awards:"",
+ hist:"No previous participation.",why:"Brings together Africa's peering community, supporting CMC Networks and center3's Africa corridor.",
+ r:[7,5,4,7,8,5,8],src:"https://indico.afpif.org/event/8/overview"},
+
+{id:"itwa",n:"ITW Africa x Datacloud Africa 2027",org:"Capacity Media / Datacloud (techoraco)",s:"2027-09-06",e:"2027-09-09",est:false,city:"Nairobi",ctry:"Kenya",venue:"Radisson Blu Hotel Nairobi Upper Hill",geo:"Africa",
+ spec:["telecom","dc","subsea"],aud:["carrier","hyper","content","inv"],att:1800,attL:"1,800+ from 80+ countries",exh:"Sponsors and exhibitors",
+ url:"https://www.itwglobalevent.com/itw-series",contact:"marketing@capacityglobal.com · +44 20 7779 7227",isNew:"",
+ part:"Speaking + branding (with CMC Networks)",cost:"Medium: delegate pass and partner package on request",costLvl:2,
+ comp:["Teraco","Africa Data Centres","Liquid Intelligent Technologies","Telecom Egypt","WIOCC"],awards:"",
+ hist:"No center3 presence found. CMC Networks (subsidiary) won African Connectivity Provider of the Year in 2026.",why:"Africa's main wholesale and data centre gathering, building on CMC Networks' established footprint across the continent.",
+ r:[8,8,7,8,9,7,7],src:"https://baxtel.com/events/datacloud-africa-2027"},
+
+{id:"gain",n:"Global AI Summit (GAIN) 2027",org:"SDAIA",s:"2027-09-07",e:"2027-09-09",est:false,city:"Riyadh",ctry:"KSA",venue:"To be announced",geo:"KSA",
+ spec:["ai"],aud:["gov","hyper","ent"],att:20000,attL:"Large (est.)",exh:"Exhibition",
+ url:"https://globalaisummit.org/",contact:"Contact form on event website",isNew:"",
+ part:"Speaking + branding",cost:"Medium: partner packages on request",costLvl:2,
+ comp:["HUMAIN","DataVolt","Microsoft","Google Cloud"],awards:"",
+ hist:"No center3 presence found.",why:"Central to the Kingdom's national AI agenda and closely aligned with the HUMAIN and center3 AI data centre joint venture.",
+ r:[7,7,9,7,10,7,7],src:"https://menastartupdigest.com/?p=47387"},
+
+{id:"dcdl",n:"DCD>Connect London 2027",org:"DatacenterDynamics (DCD)",s:"2027-09-14",e:"2027-09-15",est:false,city:"London",ctry:"UK",venue:"Olympia London",geo:"Global",
+ spec:["dc","invest"],aud:["hyper","ent","inv"],att:5000,attL:"5,000+ senior professionals",exh:"200 exhibitors · 280+ speakers",
+ url:"https://www.datacenterdynamics.com/en/dcdconnect-live/london/2027/",contact:"Contact form on event website",isNew:"",
+ part:"Attending; speaking if offered",cost:"Medium",costLvl:2,
+ comp:["Equinix","Digital Realty","Khazna","Global Switch"],awards:"DCD Global Awards (December, London)",
+ hist:"No previous participation.",why:"Reaches a senior European audience of data centre operators and investors.",
+ r:[6,6,6,6,4,6,5],src:"https://baxtel.com/events/dcd-connect-london-2027"},
+
+{id:"rcdc",n:"Riyadh Cloud & Datacenter Convention 2027",org:"W.Media",s:"2027-09-21",e:"2027-09-21",est:false,city:"Riyadh",ctry:"KSA",venue:"To be announced",geo:"KSA",
+ spec:["dc","ai"],aud:["ent","gov","hyper"],att:800,attL:"~800 (est.)",exh:"Sponsors",
+ url:"https://clouddatacenter.events/events/riyadh-cloud-datacenter-convention-2027/",contact:"clouddatacenter.events/contact",isNew:"New on the 2027 calendar (edition number not stated)",
+ part:"Speaking + branding",cost:"Low to medium",costLvl:1,
+ comp:["DataVolt","Mobily","Gulf Data Hub","Ezditek"],awards:"W.Media Cloud & Datacenter Awards (regional)",
+ hist:"No previous participation.",why:"A focused Saudi audience of data centre and cloud leaders, centred on sovereign cloud, power and AI.",
+ r:[6,6,6,8,9,7,8],src:"https://clouddatacenter.events/events/riyadh-cloud-datacenter-convention-2027/"},
+
+{id:"snw",n:"Submarine Networks World 2027",org:"Terrapinn",s:"2027-09-01",e:"2027-09-30",est:true,city:"Singapore",ctry:"Singapore",venue:"Marina Bay Sands",geo:"Global",
+ spec:["subsea"],aud:["carrier","hyper","content"],att:1500,attL:"~1,500 (est.)",exh:"Exhibition",
+ url:"https://www.terrapinn.com/conference/submarine-networks-world/",contact:"jessica.foong@terrapinn.com",isNew:"",
+ part:"Speaking + attending",cost:"Medium",costLvl:2,
+ comp:["Telecom Egypt","Sparkle","Ooredoo","Mobily"],awards:"",
+ hist:"No center3 presence found.",why:"Asia's leading subsea event, building on center3's three consecutive subsea awards and opening new Asian corridors.",
+ r:[8,7,6,7,7,7,6],src:"https://www.eventseye.com/fairs/f-submarine-networks-world-22139-0.html"},
+
+{id:"aie",n:"Ai Everything Abu Dhabi 2027",org:"KAOUN International",s:"2027-10-01",e:"2027-10-31",est:true,city:"Abu Dhabi",ctry:"UAE",venue:"ADNEC Centre Abu Dhabi",geo:"GCC",
+ spec:["ai","dc"],aud:["gov","ent","inv","hyper"],att:30000,attL:"Large (est.)",exh:"Large exhibition (Halls 1–4 in 2026)",
+ url:"https://www.adnec.ae/en/eventlisting/ai-everything-abu-dhabi",contact:"Contact form on event website",isNew:"",
+ part:"Attending; speaking if offered",cost:"Medium",costLvl:2,
+ comp:["G42 / Khazna","Moro Hub","e&","du"],awards:"",
+ hist:"No center3 presence found.",why:"Engages the UAE's sovereign AI ecosystem, where center3's main regional competitors are active.",
+ r:[6,6,7,6,8,8,5],src:"https://www.adnec.ae/en/eventlisting/ai-everything-abu-dhabi"},
+
+{id:"cape",n:"Capacity Europe 2027 + Global Connectivity Awards",org:"Capacity Media (techoraco)",s:"2027-10-18",e:"2027-10-21",est:false,city:"London",ctry:"UK",venue:"InterContinental London – The O2",geo:"Global",
+ spec:["telecom","subsea","dc","ix"],aud:["carrier","hyper","content","inv"],att:4000,attL:"4,000+ from 90+ countries",exh:"200+ sponsors and exhibitors",
+ url:"https://www.capacityeurope.com/",contact:"marketing@capacityglobal.com · +44 20 7779 7227",isNew:"",
+ part:"Sponsorship + speaking + award entries",cost:"High: 2026 Diamond tier included Mobily and Sparkle",costLvl:3,
+ comp:["Mobily","Sparkle","Telecom Egypt","Vodafone","EXA Infrastructure","Colt"],awards:"Global Connectivity Awards (center3 won subsea awards 2023, 2024, 2025)",
+ hist:"Every year 2023–2026: three subsea awards and reported Diamond sponsor in 2026.",why:"Europe's leading wholesale event and center3's principal awards platform.",
+ r:[10,9,9,7,8,10,4],src:"https://www.capacityeurope.com/"},
+
+{id:"trls",n:"Telecom Review Leaders' Summit 2027",org:"Telecom Review",s:"2027-10-01",e:"2027-12-31",est:true,city:"Dubai",ctry:"UAE",venue:"To be announced",geo:"GCC",
+ spec:["telecom"],aud:["carrier","gov"],att:600,attL:"~600 (est.)",exh:"Summit format",
+ url:"https://telecomreview.com/summit/",contact:"info@telecomreview.com",isNew:"",
+ part:"Speaking + award entries",cost:"Low",costLvl:1,
+ comp:["e&","du","Ooredoo","Zain","Mobily"],awards:"Telecom Review Excellence Awards (center3 won two in 2024)",
+ hist:"Two awards in 2024; nominee in 2025.",why:"A regional stage for telecom leaders, with an awards programme in which center3 has previously been recognised.",
+ r:[6,5,7,7,8,8,7],src:"https://telecomreview.com/summit/previous-editions/dubai-2025/"},
+
+{id:"ocp",n:"OCP Global Summit 2027",org:"Open Compute Project Foundation",s:"2027-10-01",e:"2027-10-31",est:true,city:"San Jose",ctry:"USA",venue:"San Jose McEnery Convention Center (usual venue)",geo:"Global",
+ spec:["ai","dc"],aud:["hyper","ent"],att:7000,attL:"~7,000 (est.)",exh:"Large exhibition",
+ url:"https://www.opencompute.org/summit/global-summit",contact:"events@opencompute.org · sponsorship@opencompute.org",isNew:"",
+ part:"Attending (engineering)",cost:"Medium",costLvl:2,
+ comp:["Equinix","Digital Realty"],awards:"",
+ hist:"No previous participation.",why:"Sets engineering standards for hyperscale and AI infrastructure. Most relevant for design and engineering teams rather than sales.",
+ r:[5,4,4,4,4,5,5],src:"https://www.opencompute.org/events/upcoming-event"},
+
+{id:"fii",n:"FII 2027 (Future Investment Initiative)",org:"FII Institute",s:"2027-10-01",e:"2027-10-31",est:true,city:"Riyadh",ctry:"KSA",venue:"King Abdulaziz International Conference Center (usual venue)",geo:"KSA",
+ spec:["invest","ai"],aud:["inv","gov","ent"],att:7000,attL:"~7,000 (est.)",exh:"Invitation-led",
+ url:"https://fii-institute.org/",contact:"Contact form on event website",isNew:"",
+ part:"Attending (executive leadership); speaking if invited",cost:"High: invitation or partner packages",costLvl:3,
+ comp:["HUMAIN","DataVolt","PIF portfolio companies"],awards:"",
+ hist:"No center3 presence found.",why:"Provides visibility with sovereign and global investors for center3's expansion and AI data centre plans.",
+ r:[6,8,9,6,10,6,4],src:"https://mena.entrepreneur.com/business-news/future-investment-initiative-institute-announces-10th-edition-set-for-riyadh-in-october"},
+
+{id:"dcdm",n:"DCD>Connect MENA 2027",org:"DatacenterDynamics (DCD)",s:"2027-10-25",e:"2027-10-26",est:true,city:"Dubai",ctry:"UAE",venue:"To be announced",geo:"GCC",
+ spec:["dc","ai"],aud:["hyper","ent","inv"],att:1500,attL:"~1,500 (est.)",exh:"Sponsors and exhibitors",
+ url:"https://www.datacenterdynamics.com/en/dcd-downloads/connect-mena-sponsorship-brochure/",contact:"Contact form on event website",isNew:"Recent launch: DCD expanded Connect to the Middle East in 2025",
+ part:"Speaking + branding",cost:"Medium",costLvl:2,
+ comp:["Khazna","Equinix","Gulf Data Hub","Moro Hub","DataVolt"],awards:"DCD Global Awards (December, London)",
+ hist:"No center3 presence found.",why:"A focused regional audience of data centre buyers and investors, with strong participation from key competitors.",
+ r:[7,7,7,8,9,9,6],src:"https://www.vdura.com/?p=16660"},
+
+{id:"adipec",n:"ADIPEC 2027",org:"ADNOC, organised by dmg events",s:"2027-11-01",e:"2027-11-04",est:true,city:"Abu Dhabi",ctry:"UAE",venue:"ADNEC Centre Abu Dhabi",geo:"GCC",
+ spec:["invest"],aud:["ent","gov","inv"],att:180000,attL:"Very large (est.)",exh:"Very large exhibition",
+ url:"https://www.adipec.com/",contact:"adipec@dmgeventsme.com · +971 2 444 4909",isNew:"",
+ part:"Monitor; attending for the energy-for-data-centres track",cost:"Medium (attending only)",costLvl:2,
+ comp:["Khazna","Masdar"],awards:"ADIPEC Awards",
+ hist:"No previous participation.",why:"Connects center3 with energy and power partners for AI data centres, offering indirect commercial value.",
+ r:[3,5,5,4,7,3,4],src:"https://www.eventseye.com/fairs/f-adipec-22-0.html"},
+
+{id:"cwksa",n:"Connected World KSA 2027",org:"Terrapinn Middle East",s:"2027-11-01",e:"2027-11-30",est:true,city:"Riyadh",ctry:"KSA",venue:"Riyadh Front Exhibition & Conference Center (2026 venue)",geo:"KSA",
+ spec:["telecom","ai"],aud:["carrier","ent","gov"],att:3000,attL:"~3,000 (est.)",exh:"Exhibition",
+ url:"https://www.terrapinn.com/conference/connected-world-ksa/",contact:"saoirse.fallon@terrapinn.com",isNew:"",
+ part:"Speaking (keynote)",cost:"Low",costLvl:1,
+ comp:["Mobily","Zain KSA","Salam"],awards:"",
+ hist:"CCO and a presales manager listed on an earlier agenda.",why:"A local telecom and connectivity platform with keynote opportunities.",
+ r:[6,6,6,8,9,7,7],src:"https://www.showsbee.com/fairs/66502-Connected-World-KSA-2026.html"},
+
+{id:"mwcd",n:"MWC Doha 2027",org:"GSMA",s:"2027-11-01",e:"2027-11-30",est:true,city:"Doha",ctry:"Qatar",venue:"Doha Exhibition and Convention Center",geo:"GCC",
+ spec:["telecom","ai"],aud:["carrier","gov","ent"],att:10000,attL:"Medium (est.)",exh:"Exhibition",
+ url:"",contact:"Contact form on event website",isNew:"Recent launch: first edition Nov 2025",
+ part:"Attending (with stc Group)",cost:"Medium",costLvl:2,
+ comp:["Ooredoo","e&","du","Zain"],awards:"",
+ hist:"No previous participation.",why:"A new GSMA event in the Gulf, worth monitoring as it grows.",
+ r:[5,5,6,5,7,7,6],src:"https://www.shifair.com/informationDetails/381688.html"},
+
+{id:"dcwme",n:"Data Center World Middle East 2027",org:"Data Center World (Informa)",s:"2027-11-01",e:"2027-11-30",est:true,city:"Abu Dhabi",ctry:"UAE",venue:"Dusit Thani Abu Dhabi (2026 venue)",geo:"GCC",
+ spec:["dc","ai"],aud:["hyper","ent","gov"],att:1500,attL:"~1,500 (est.)",exh:"Sponsors and exhibitors",
+ url:"https://www.datacenterworldmiddleeast.com/",contact:"Contact form on event website",isNew:"",
+ part:"Speaking (keynote panel)",cost:"Low to medium",costLvl:1,
+ comp:["Khazna","Moro Hub","Gulf Data Hub","Equinix"],awards:"",
+ hist:"2026: keynote panel by Luthfur Khan confirmed; a second panel was cancelled.",why:"Reaches a regional data centre audience, building on center3's established speaking relationship with the event.",
+ r:[6,6,6,8,8,8,7],src:"https://www.datacenterworldmiddleeast.com/speakers/hussein-alnajrani/"},
+
+{id:"gccm",n:"Middle East GCCM & SIS Summit 2027",org:"Summit organiser (see internal tracker)",s:"2027-11-01",e:"2027-11-30",est:true,city:"Gulf (2026: Muscat)",ctry:"GCC",venue:"To be announced",geo:"GCC",
+ spec:["telecom","subsea","ai"],aud:["carrier","gov"],att:400,attL:"~400 (est.)",exh:"Summit format",
+ url:"",contact:"Through internal events team",isNew:"",
+ part:"Speaking (panel)",cost:"Low: complimentary slots offered in 2026",costLvl:1,
+ comp:["Omantel","Ooredoo","e&","Zain"],awards:"",
+ hist:"2026: two complimentary panel slots offered, pending management direction.",why:"A cost-effective panel opportunity to engage Gulf carriers and regulators.",
+ r:[5,5,5,8,8,6,8],src:"Internal tracker (Q4_Events_PowerBI_v7.xlsx)"},
+
+{id:"menog",n:"MENOG 27",org:"MENOG with RIPE NCC",s:"2027-11-01",e:"2027-11-30",est:true,city:"Host city to be announced",ctry:"MENA",venue:"To be announced",geo:"MENA",
+ spec:["ix"],aud:["carrier","content"],att:300,attL:"~300 (est.)",exh:"Sponsor tables",
+ url:"https://www.menog.org/",contact:"Contact form on event website",isNew:"",
+ part:"Speaking + sponsorship (peering and IX team)",cost:"Low",costLvl:1,
+ comp:["UAE-IX (Datamena)","DE-CIX","Gulf IX"],awards:"",
+ hist:"No center3 presence found.",why:"The region's network operator community, supporting peering growth at center3's internet exchanges.",
+ r:[6,4,4,7,8,5,9],src:"https://menog26.menog.org/"},
+
+{id:"atf",n:"Africa Tech Festival (AfricaCom) 2027",org:"Informa (KAOUN International)",s:"2027-11-16",e:"2027-11-18",est:false,city:"Cape Town",ctry:"South Africa",venue:"Cape Town International Convention Centre (CTICC)",geo:"Africa",
+ spec:["telecom","dc"],aud:["carrier","ent","gov","inv"],att:15000,attL:"15,000+ (2026 edition)",exh:"Large exhibition",
+ url:"https://africatechfestival.com/",contact:"Contact form on event website",isNew:"",
+ part:"Booth or meeting space with CMC Networks + speaking",cost:"Medium",costLvl:2,
+ comp:["Liquid Intelligent Technologies","Teraco","Africa Data Centres","Telecom Egypt","WIOCC"],awards:"AfricaCom Awards",
+ hist:"No center3 presence found.",why:"Africa's largest telecom event and the strongest platform for CMC Networks and the Africa corridor.",
+ r:[7,7,7,7,9,7,5],src:"https://startupmaphub.com/events/africa-tech-festival-africacom-africatech-2027"},
+
+{id:"gitex",n:"GITEX Global 2027",org:"KAOUN International",s:"2027-12-06",e:"2027-12-10",est:true,city:"Dubai",ctry:"UAE",venue:"Expo City Dubai",geo:"GCC",
+ spec:["ai","telecom","dc"],aud:["gov","ent","hyper","inv"],att:200000,attL:"~200,000 (est.)",exh:"Very large exhibition",
+ url:"https://www.gitex.com/",contact:"GitexSales@dwtc.com · gitexpartnerships@dwtc.com",isNew:"",
+ part:"Booth within the stc Group pavilion + speaking",cost:"High",costLvl:3,
+ comp:["e&","du","Khazna","Moro Hub","Microsoft","Oracle"],awards:"",
+ hist:"No center3 presence found; stc exhibits.",why:"The Gulf's largest technology event, where center3's presence alongside UAE competitors would strengthen its regional visibility.",
+ r:[6,7,9,5,8,9,3],src:"https://www.vdura.com/?p=16682"},
+
+{id:"itwasia",n:"ITW Asia x Datacloud Asia 2027",org:"Capacity Media / Datacloud (techoraco)",s:"2027-12-01",e:"2027-12-31",est:true,city:"Asia (city to be announced)",ctry:"APAC",venue:"To be announced",geo:"Global",
+ spec:["telecom","dc","subsea"],aud:["carrier","hyper","content"],att:1500,attL:"~1,500 (est.)",exh:"Sponsors",
+ url:"https://www.itwglobalevent.com/itw-series",contact:"marketing@capacityglobal.com · +44 20 7779 7227",isNew:"New series: first ITW Asia held 2–3 Dec 2026",
+ part:"Attending",cost:"Medium",costLvl:2,
+ comp:["Singtel","PCCW Global","Telecom Egypt"],awards:"",
+ hist:"No previous participation.",why:"A new APAC wholesale gathering, best monitored over its first editions before committing investment.",
+ r:[7,6,5,6,6,5,6],src:"https://www.itwglobalevent.com/agenda/itw-series-calendar"}
+];
+
+const W=[["Audience fit with center3 buyers",25],["Business and deal potential",20],["Brand visibility and media",15],["Speaking and thought leadership",15],["Strategic market fit",10],["Competitor presence",10],["Cost efficiency",5]];
+const SPEC={dc:"Data centres",subsea:"Subsea & connectivity",ix:"IX & peering",ai:"Cloud & AI infrastructure",telecom:"Telecom & wholesale",invest:"Investment & energy"};
+const AUD={hyper:"Hyperscalers",carrier:"Carriers",content:"Content providers",ent:"Enterprise",gov:"Government & regulators",inv:"Investors"};
+const GEO={KSA:"Local · KSA",GCC:"Regional · GCC",MENA:"Regional · MENA",Africa:"Regional · Africa",Global:"Global"};
+const SCALE=[["s","Under 1,000",0,999],["m","1,000–5,000",1000,5000],["l","5,001–20,000",5001,20000],["xl","Over 20,000",20001,1e9]];
+const TIERS={must:{label:"Must attend",cls:"t-must"},rec:{label:"Recommended",cls:"t-rec"},mon:{label:"Watchlist",cls:"t-mon"}};
+const MONTHS=["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+const FULLM=["January","February","March","April","May","June","July","August","September","October","November","December"];
+const esc=s=>String(s??"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const d=s=>new Date(s+"T00:00:00");
+
+EVENTS.forEach(e=>{
+  e.score=Math.round(e.r.reduce((a,r,i)=>a+r/10*W[i][1],0));
+  e.tier=e.score>=75?"must":e.score>=60?"rec":"mon";
+  e.m=d(e.s).getMonth();
+  const A=d(e.s),B=d(e.e);
+  e.dl=e.est?(e.s.slice(8)==="01"&&(B-A)>20*864e5?`${FULLM[e.m]} 2027 (est.)`:`${A.getDate()}–${B.getDate()} ${MONTHS[e.m]} 2027 (est.)`)
+     :e.s===e.e?`${A.getDate()} ${MONTHS[e.m]} 2027`:A.getMonth()===B.getMonth()?`${A.getDate()}–${B.getDate()} ${MONTHS[e.m]} 2027`:`${A.getDate()} ${MONTHS[e.m]} – ${B.getDate()} ${MONTHS[B.getMonth()]} 2027`;
+  e.short=e.est?(e.dl.includes("–")?e.dl.replace(" 2027 (est.)",""):"est."):e.dl.replace(" 2027","");
+  e.region=e.geo==="KSA"?"local":e.geo==="Global"?"global":"regional";
+});
+/* Events outside 2027 (current-year participations) appear only under In Preparation */
+const PREV=[];for(let i=EVENTS.length-1;i>=0;i--){const e=EVENTS[i];if(e.s<"2027"){const A=d(e.s),B=d(e.e);e.dl=e.s===e.e?`${A.getDate()} ${MONTHS[A.getMonth()]} ${A.getFullYear()}`:`${A.getDate()}–${B.getDate()} ${MONTHS[A.getMonth()]} ${A.getFullYear()}`;e.short=e.dl;PREV.unshift(e);EVENTS.splice(i,1)}}
+const ALLEV=()=>EVENTS.concat(PREV);
+
+const icon={
+ cal:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>',
+ pin:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s7-6.2 7-12a7 7 0 1 0-14 0c0 5.8 7 12 7 12Z"/><circle cx="12" cy="9" r="2.5"/></svg>',
+ ppl:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0M16 4.5a3.5 3.5 0 0 1 0 7M21.5 20a6.5 6.5 0 0 0-4-6"/></svg>'
+};
+
+const contactHTML=e=>{const ems=(e.contact.match(/[\w.+-]+@[\w-]+\.[\w.]+/g)||[]);
+  return ems.length?ems.map(m=>`<span class="em">${esc(m)}</span>`).join(" · "):(e.url?`<a href="${esc(e.url)}" target="_blank" rel="noopener">via event website</a>`:esc(e.contact))};
+/* Legend + KPIs */
+document.getElementById("legend").innerHTML=Object.entries(TIERS).map(([k,t])=>`<button class="chip" data-apply='{"tier":"${k}"}' aria-label="Show ${t.label} events"><i class="dot ${t.cls}"></i><b>${t.label}</b><span class="cn">${EVENTS.filter(e=>e.tier===k).length}</span><span class="arr" aria-hidden="true">→</span></button>`).join("");
+const cnt=f=>EVENTS.filter(f).length;
+document.getElementById("kpis").innerHTML=[
+ [EVENTS.length,"Total events","January – December 2027",{}],
+ [cnt(e=>e.tier==="must"),"Must attend","score 75+",{tier:"must"}],
+ [cnt(e=>e.tier==="rec"),"Recommended","score 60–74",{tier:"rec"}],
+ [cnt(e=>e.region==="local"),"In KSA","local events",{region:"local"}],
+ [cnt(e=>e.region==="regional"),"Regional","GCC, MENA and Africa",{region:"regional"}],
+ [cnt(e=>e.region==="global"),"Global","international events",{region:"global"}]
+].map(([n,l,s,f])=>`<button class="kpi" data-apply='${JSON.stringify(f)}' aria-label="Show ${l.toLowerCase()}: ${n} events"><b>${n}</b><span>${l}</span><small>${s}</small></button>`).join("");
+
+/* Weights */
+document.getElementById("weights").innerHTML=W.map(([l,w])=>`<div class="wrow"><span>${l}</span><b>${w} pts</b><span class="wbar"><i style="width:${w*4}%"></i></span></div>`).join("");
+
+/* Top 10 */
+const ranked=[...EVENTS].sort((a,b)=>b.score-a.score||d(a.s)-d(b.s));
+document.getElementById("top10").innerHTML=ranked.slice(0,10).map((e,i)=>`<li><button data-go="${e.id}">
+  <span class="rank">${i+1}</span>
+  <span style="min-width:0"><span class="nm">${esc(e.n)}</span><span class="sub" style="display:block">${esc(e.dl)} · ${esc(e.city)}</span></span>
+  <span class="sbar ${TIERS[e.tier].cls}"><span class="strack"><span class="fill" style="width:${e.score}%"></span></span><b>${e.score}</b></span>
+</button></li>`).join("");
+
+/* Calendar */
+const byMonth=MONTHS.map((_,m)=>EVENTS.filter(e=>e.m===m).sort((a,b)=>d(a.s)-d(b.s)||b.score-a.score));
+function overlaps(a,b){return d(a.s)<=d(b.e)&&d(b.s)<=d(a.e)}
+const clashMonths=[];
+byMonth.forEach((list,m)=>{
+  const key=list.filter(e=>e.tier!=="mon");
+  if(key.length<2)return;
+  const hard=[];
+  for(let i=0;i<key.length;i++)for(let j=i+1;j<key.length;j++){const a=key[i],b=key[j];if(!a.est&&!b.est&&overlaps(a,b))hard.push([a,b])}
+  clashMonths.push({m,key,hard});
+});
+const clashSet=new Set(clashMonths.map(c=>c.m));
+const OVIDS=new Set(clashMonths.flatMap(c=>c.key.map(e=>e.id)));
+document.getElementById("cal").innerHTML=byMonth.map((list,m)=>`<div class="mon">
+  <div class="mon-h"><b>${MONTHS[m]}</b>${clashSet.has(m)?`<span class="clash-flag" title="Key events overlap this month">Overlap</span>`:""}<span>${list.length} event${list.length===1?"":"s"}</span></div>
+  ${list.length?list.map(e=>`<button class="ev-pill${e.est?" est":""}" data-go="${e.id}" aria-label="${esc(e.n)}, ${esc(e.dl)}, ${TIERS[e.tier].label}, score ${e.score}"><i class="dot ${TIERS[e.tier].cls}"></i><span class="txt">${esc(e.n.replace(/ 2027.*$/,"").replace(/ \(.*\)$/,""))}<small>${esc(e.short)} · ${e.score}</small></span></button>`).join(""):`<span class="note">No events listed</span>`}
+</div>`).join("");
+
+/* Hero timeline */
+const info=document.getElementById("htlInfo");
+function htlInfo(e){
+  const T=TIERS[e.tier];
+  info.innerHTML=`<div style="min-width:0">
+    <div class="ctop"><span class="tag sp">${esc(SPEC[e.spec[0]])}</span>${e.status?`<span class="tag pend" title="${esc(e.status)} (as of ${esc(e.statusDate)})">In preparation</span>`:""}${e.isNew?`<span class="tag new">New</span>`:""}${e.est?`<span class="tag est">Est. date</span>`:""}<span class="geo">${esc(GEO[e.geo])}</span></div>
+    <h3 style="margin-top:8px">${e.url?`<a href="${esc(e.url)}" target="_blank" rel="noopener" style="text-decoration:none">${esc(e.n)} <span style="color:var(--accent)">↗</span></a>`:esc(e.n)}</h3>
+    <div class="sub"><b style="font-weight:600">Organiser:</b> ${esc(e.org)} · <b style="font-weight:600">Contact:</b> ${contactHTML(e)}</div>
+    <div class="facts"><span><b>Date:</b> ${esc(e.dl)}</span><span><b>Where:</b> ${esc(e.city)}${e.ctry&&!e.city.includes(e.ctry)?", "+esc(e.ctry):""}</span><span><b>Scale:</b> ${esc(e.attL)}</span></div>
+    <p>${esc(e.why)}</p>
+  </div>
+  <div class="htl-side"><span class="tier ${T.cls}" style="margin:0">${T.label}</span><div class="htl-score ${T.cls}">${e.score}<small>/100</small></div><button class="htl-close" data-close="1">Close</button></div>`;
+  info.hidden=false;
+}
+function htlSelect(id){
+  document.querySelectorAll(".htl-num").forEach(b=>b.setAttribute("aria-pressed",b.dataset.ev===id));
+  document.querySelectorAll(".htl-col").forEach(c=>c.classList.toggle("sel",!!id&&!!c.querySelector(`[data-ev="${id}"]`)));
+  if(id)htlInfo(EVENTS.find(e=>e.id===id));else{info.hidden=true;info.innerHTML=""}
+}
+document.getElementById("htl").innerHTML=byMonth.map((list,m)=>`<div class="htl-col${list.length?"":" zero"}">
+  <div class="htl-m">${MONTHS[m].toUpperCase()}</div>
+  <div class="htl-node" aria-label="${list.length} events in ${FULLM[m]}">${list.length}</div>
+  <div class="htl-nums">${list.map((e,i)=>`<button class="htl-num" data-ev="${e.id}" aria-pressed="false" aria-label="${MONTHS[m]} event ${i+1}"><span>${i+1}</span></button>`).join("")}</div>
+</div>`).join("");
+document.querySelector(".htl").addEventListener("click",ev=>{
+  if(ev.target.closest("[data-close]"))return htlSelect(null);
+  const b=ev.target.closest(".htl-num");if(!b)return;
+  htlSelect(b.getAttribute("aria-pressed")==="true"?null:b.dataset.ev);
+});
+
+/* Clashes */
+const ADVICE={
+ 0:"PTC'27 (17–20 Jan) and DCN Riyadh (27 Jan) fall in different weeks, so one team can cover both. Book PTC meeting suites early.",
+ 2:"MWC (1–4 Mar), Capacity Middle East (15–18 Mar) and DCIIF KSA (30–31 Mar) are in separate weeks but stretch the same team. Capacity Middle East takes priority. NVIDIA GTC (Watchlist) overlaps it on 15–18 Mar.",
+ 3:"LEAP (12–15 Apr, est.) is the priority. GPF (4–7 Apr) and SAMENA (date TBC) need the peering and regulatory teams. Data Center Expo Riyadh (29 Apr) follows two weeks after LEAP.",
+ 8:"ITW Africa / Datacloud Africa (6–9 Sep) overlaps GAIN Summit (7–9 Sep) in Riyadh. Split teams: CMC Networks and wholesale to Nairobi, executive leadership to GAIN.",
+ 9:"Capacity Europe (18–21 Oct) sits in the same month as FII, DCD>Connect MENA, Ai Everything and Telecom Review. Confirm FII and DCD dates early; Capacity Europe and its awards should stay fixed.",
+ 10:"Four key regional events are expected in November. Group the Gulf events by speaker and send the Africa team to Africa Tech Festival.",
+ 11:"GITEX Global and ITW Asia are both expected in December. Join GITEX through the stc Group pavilion; watch ITW Asia's first editions before committing."
+};
+document.getElementById("legend").insertAdjacentHTML("afterbegin",`<button class="chip prep-chip" data-apply='{"tier":"prep"}' aria-label="Show events in preparation"><i class="dot" style="color:var(--warn)"></i><b>In preparation</b><span class="cn">${ALLEV().filter(e=>e.status).length}</span><span class="arr" aria-hidden="true">→</span></button>`);
+document.getElementById("legend").insertAdjacentHTML("beforeend",`<button class="chip ov-chip" data-apply='{"tier":"ov"}' aria-label="Show overlapping events"><span class="ov-ic" aria-hidden="true"><i></i><i></i></span><b>Overlapping events</b><span class="cn">${clashMonths.length}</span><span class="arr" aria-hidden="true">→</span></button>`);
+document.getElementById("clashes").innerHTML=clashMonths.length?clashMonths.map(c=>{
+  const hardIds=new Set(c.hard.flat().map(e=>e.id));
+  return `<article class="clash">
+  <h4>${FULLM[c.m]} 2027 <span class="sev ${c.hard.length?"hard":"soft"}">${c.hard.length?"Dates overlap":"Same month"}</span></h4>
+  <ul>${c.key.map(e=>`<li><button class="ov-ev" data-evmodal="${e.id}"><i class="dot ${TIERS[e.tier].cls}"></i><span><b>${esc(e.n)}</b> <span class="when">${esc(e.dl.replace(" 2027",""))}</span>${hardIds.has(e.id)?` <span class="sev hard" style="font-size:10px">overlap</span>`:""}</span><span class="go" aria-hidden="true">›</span></button></li>`).join("")}</ul>
+  ${ADVICE[c.m]?`<div class="advice">${esc(ADVICE[c.m])}</div>`:""}
+</article>`}).join(""):`<p class="note">No overlapping key events.</p>`;
+
+/* Filters */
+const tf=document.getElementById("toggleF");
+const state={tier:"all",region:"all",spec:"all",aud:"all",scale:"all",flag:"all",text:"",sort:"score"};
+try{const s=JSON.parse(localStorage.getItem("c3hub27")||"{}");Object.assign(state,s,{text:""})}catch(e){}
+const GROUPS=[
+ ["region","Geography",[["all","All"],["local","Local · KSA"],["regional","Regional"],["GCC","GCC"],["MENA","MENA"],["Africa","Africa"],["global","Global"]]],
+ ["spec","Specialty",[["all","All"],...Object.entries(SPEC)]],
+ ["aud","Audience",[["all","All"],...Object.entries(AUD)]],
+ ["scale","Scale",[["all","All"],...SCALE.map(s=>[s[0],s[1]+" attendees"])]],
+ ["flag","Status",[["all","All"],["prep","In preparation"],["new","New or recent launch"],["confirmed","Dates confirmed"],["est","Dates estimated"]]]
+];
+function drawFilters(){
+  document.getElementById("tierTabs").innerHTML=[["all","All Events"],["prep","In preparation"],["must","Must attend"],["rec","Recommended"],["ov","Overlapping"],["mon","Watchlist"]].map(([v,l])=>`<button class="tab" data-k="tier" data-v="${v}" aria-pressed="${state.tier===v}">${l}</button>`).join("");
+  const active=GROUPS.some(([k])=>state[k]!=="all");
+  const n=GROUPS.filter(([k])=>state[k]!=="all").length;document.getElementById("toggleLbl").textContent=n?`Filters (${n})`:"Filters";tf.classList.toggle("on",!!n);
+  document.getElementById("fgroups").innerHTML=GROUPS.map(([k,label,opts])=>`<div class="fg" role="group" aria-label="${label}"><span>${label}</span>${opts.map(([v,l])=>`<button class="pill" data-k="${k}" data-v="${v}" aria-pressed="${state[k]===v}">${esc(l)}</button>`).join("")}</div>`).join("")+
+    (active?`<div class="fg"><span></span><button class="reset" data-reset="1">Clear filters</button></div>`:"");
+  document.getElementById("sort").value=state.sort;
+}
+function save(){try{localStorage.setItem("c3hub27",JSON.stringify({...state,text:""}))}catch(e){}}
+document.querySelector(".bar").addEventListener("click",ev=>{
+  const r=ev.target.closest("[data-reset]");
+  if(r){GROUPS.forEach(([k])=>state[k]="all");save();drawFilters();render();return}
+  const b=ev.target.closest("[data-k]");if(!b)return;
+  state[b.dataset.k]=b.dataset.v;save();drawFilters();render();
+  if(b.dataset.k==="tier"){const t=state.tier==="mon"?document.getElementById("watchlist"):document.getElementById("events");if(t.getBoundingClientRect().top<0||state.tier==="mon")t.scrollIntoView({behavior:matchMedia("(prefers-reduced-motion: reduce)").matches?"auto":"smooth",block:"start"})}
+});
+/* Smart search */
+const norm=s=>String(s||"").normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLowerCase().replace(/[^a-z0-9@&.+ ]+/g," ").replace(/\s+/g," ").trim();
+const SYN={ksa:"saudi arabia riyadh ksa",saudi:"saudi arabia ksa",uae:"uae emirates dubai abu dhabi",emirates:"uae",uk:"uk united kingdom britain england london",usa:"usa us united states america",us:"usa united states",gcc:"gcc gulf",ai:"ai artificial intelligence",dc:"data centre data center",datacenter:"data centre data center",datacentre:"data centre data center",subsea:"subsea submarine cable"};
+ALLEV().forEach(e=>{const ctryFull={KSA:"Saudi Arabia KSA",UAE:"UAE United Arab Emirates",UK:"UK United Kingdom",USA:"USA United States"}[e.ctry]||e.ctry;
+  e.hay=norm([e.n,e.org,e.city,ctryFull,e.venue,e.geo,GEO[e.geo],e.why,e.awards,e.hist,MONTHS[e.m],FULLM[e.m],TIERS[e.tier].label,...e.comp,...e.spec.map(s=>SPEC[s]),...e.aud.map(a=>AUD[a])].join(" "));
+  e.nameN=norm(e.n);});
+const toks=q=>norm(q).split(" ").filter(Boolean);
+function hit(e,q){return toks(q).every(t=>e.hay.includes(t)||(SYN[t]||"").split(" ").some(s=>s&&e.hay.includes(s)))}
+const qEl=document.getElementById("q"),sugg=document.getElementById("sugg"),qClear=document.getElementById("qClear");let sIdx=-1,sItems=[];
+const hl=(txt,q)=>{let out=esc(txt);toks(q).filter(t=>t.length>1).forEach(t=>{out=out.replace(new RegExp("("+t.replace(/[.*+?^${}()|[\]\\]/g,"\\$&")+")","ig"),"<mark>$1</mark>")});return out};
+function places(){const m=new Map();EVENTS.forEach(e=>{const c=e.city.split(" (")[0].split(",")[0];if(/announced|^Asia|^Gulf/.test(c))return;const k=c+"|"+e.ctry;m.set(k,(m.get(k)||0)+1)});return [...m].map(([k,n])=>{const [c,ct]=k.split("|");return {c,ct,n}})}
+const PLACES=places();
+function buildSugg(){
+  const q=qEl.value.trim();qClear.hidden=!q;
+  if(!q){sugg.hidden=true;qEl.setAttribute("aria-expanded","false");return}
+  const nq=norm(q);
+  const evs=ALLEV().filter(e=>hit(e,q)).sort((a,b)=>(b.nameN.startsWith(nq)-a.nameN.startsWith(nq))||(b.nameN.includes(nq)-a.nameN.includes(nq))||b.score-a.score).slice(0,6);
+  const CF={KSA:"saudi arabia ksa",UAE:"uae united arab emirates",UK:"uk united kingdom",USA:"usa united states"};
+  const pls=PLACES.filter(p=>{const ph=norm(p.c+" "+p.ct+" "+(CF[p.ct]||""));return toks(q).every(t=>ph.includes(t)||(SYN[t]||"").split(" ").some(s=>s.length>2&&ph.includes(s)))}).sort((a,b)=>b.n-a.n).slice(0,4);
+  sItems=[];let html="";
+  if(pls.length){html+=`<div class="sg-h">Cities & countries</div>`;pls.forEach(p=>{sItems.push({type:"place",val:p.c});html+=`<div class="sg" role="option" id="sg${sItems.length-1}" data-i="${sItems.length-1}"><span class="ic">${icon.pin}</span><span class="tx"><b>${hl(p.c,q)}</b><small>${esc(p.ct)}</small></span><span class="ct">${p.n} event${p.n>1?"s":""}</span></div>`})}
+  if(evs.length){html+=`<div class="sg-h">Events</div>`;evs.forEach(e=>{sItems.push({type:"event",val:e.id});html+=`<div class="sg" role="option" id="sg${sItems.length-1}" data-i="${sItems.length-1}"><span class="ic"><i class="dot ${TIERS[e.tier].cls}"></i></span><span class="tx"><b>${hl(e.n,q)}</b><small>${esc(e.dl)} · ${esc(e.city)} · ${e.score}/100</small></span></div>`})}
+  const total=ALLEV().filter(e=>hit(e,q)).length;
+  if(total){sItems.push({type:"all"});html+=`<div class="sg" role="option" id="sg${sItems.length-1}" data-i="${sItems.length-1}" style="color:var(--accent);font-weight:700"><span class="ic">↵</span><span class="tx">Show all ${total} result${total>1?"s":""} for “${esc(q)}”</span></div>`}
+  else html=`<div class="sg-empty">No events match “${esc(q)}”. Try a city (Riyadh, Dubai, London), a country (KSA, UAE) or an event name.</div>`;
+  sugg.innerHTML=html;sugg.hidden=false;qEl.setAttribute("aria-expanded","true");sIdx=-1;
+}
+function pick(i){const it=sItems[i];if(!it)return;sugg.hidden=true;qEl.setAttribute("aria-expanded","false");
+  if(it.type==="event"){qEl.value="";state.text="";qClear.hidden=true;render();const b=document.createElement("span");b.dataset.go=it.val;document.body.appendChild(b);b.click();b.remove();return}
+  if(it.type==="place")qEl.value=it.val;
+  state.text=qEl.value.trim();render();document.getElementById("events").scrollIntoView({behavior:"smooth",block:"start"});
+}
+qEl.addEventListener("input",()=>{state.text=qEl.value.trim();render();buildSugg()});
+qEl.addEventListener("focus",()=>{if(qEl.value.trim())buildSugg()});
+qEl.addEventListener("keydown",ev=>{
+  if(sugg.hidden&&ev.key!=="Enter")return;
+  const n=sItems.length;
+  if(ev.key==="ArrowDown"){ev.preventDefault();sIdx=(sIdx+1)%n}
+  else if(ev.key==="ArrowUp"){ev.preventDefault();sIdx=(sIdx-1+n)%n}
+  else if(ev.key==="Enter"){ev.preventDefault();if(sIdx>=0)pick(sIdx);else{sugg.hidden=true;state.text=qEl.value.trim();render();document.getElementById("events").scrollIntoView({behavior:"smooth",block:"start"})}return}
+  else if(ev.key==="Escape"){sugg.hidden=true;return}else return;
+  sugg.querySelectorAll(".sg").forEach((el,i)=>el.setAttribute("aria-selected",i===sIdx));
+  const cur=document.getElementById("sg"+sIdx);if(cur){cur.scrollIntoView({block:"nearest"});qEl.setAttribute("aria-activedescendant","sg"+sIdx)}
+});
+sugg.addEventListener("mousedown",ev=>{const s=ev.target.closest(".sg");if(s){ev.preventDefault();pick(+s.dataset.i)}});
+document.addEventListener("click",ev=>{if(!ev.target.closest(".search"))sugg.hidden=true});
+qClear.addEventListener("click",()=>{qEl.value="";state.text="";qClear.hidden=true;sugg.hidden=true;render();qEl.focus()});
+document.getElementById("sort").addEventListener("change",e=>{state.sort=e.target.value;save();render()});
+tf.addEventListener("click",()=>{const g=document.getElementById("fgroups");const open=g.dataset.open!=="true";g.dataset.open=open;tf.setAttribute("aria-expanded",open)});
+
+function match(e){
+  if(state.tier==="ov"){if(!OVIDS.has(e.id))return false}else if(state.tier==="prep"){if(!e.status)return false}else if(state.tier!=="all"&&e.tier!==state.tier)return false;
+  if(state.region!=="all"&&!(e.region===state.region||e.geo===state.region))return false;
+  if(state.spec!=="all"&&!e.spec.includes(state.spec))return false;
+  if(state.aud!=="all"&&!e.aud.includes(state.aud))return false;
+  if(state.scale!=="all"){const s=SCALE.find(x=>x[0]===state.scale);if(!(e.att>=s[2]&&e.att<=s[3]))return false}
+  if(state.flag==="new"&&!e.isNew)return false;
+  if(state.flag==="prep"&&!e.status)return false;
+  if(state.flag==="confirmed"&&e.est)return false;
+  if(state.flag==="est"&&!e.est)return false;
+  if(state.text&&!hit(e,state.text))return false;
+  return true;
+}
+
+function card(e){
+  const T=TIERS[e.tier];
+  const name=e.url?`<a href="${esc(e.url)}" target="_blank" rel="noopener">${esc(e.n)}<span class="arr" aria-hidden="true">↗</span></a>`:esc(e.n);
+  return `<article class="card" id="ev-${e.id}">
+  <div class="stripe ${T.cls}"></div>
+  <div class="cb">
+    <div class="ctop"><span class="tag sp">${esc(SPEC[e.spec[0]])}</span>${e.status?`<span class="tag pend" title="${esc(e.status)} (as of ${esc(e.statusDate)})">In preparation</span>`:""}${e.isNew?`<span class="tag new">New</span>`:""}${e.est?`<span class="tag est">Est. date</span>`:""}<span class="geo">${esc(GEO[e.geo])}</span><span class="tier ${T.cls}">${T.label}</span></div>
+    <h3>${name}</h3>
+    <div class="orgl"><span class="ol">Organiser:</span> ${esc(e.org)}<br><span class="ol">Contact:</span> ${contactHTML(e)}</div>
+    <div class="meta"><span>${icon.cal}${esc(e.dl)}</span><span>${icon.pin}${esc(e.city)}${e.ctry&&!e.city.includes(e.ctry)?", "+esc(e.ctry):""}</span><span>${icon.ppl}${esc(e.attL)}</span></div>
+    <p class="why">${esc(e.why)}</p>
+    ${e.updates?`<div class="upd">${e.track?`<span class="trk">${esc(e.track)}</span>`:""}<div class="lab" style="color:var(--brand)">Updates</div><ul>${e.updates.map(u=>`<li>${esc(u)}</li>`).join("")}</ul>${e.next?`<div class="lab" style="color:var(--accent)">Next steps</div><ul>${e.next.map(u=>`<li>${esc(u)}</li>`).join("")}</ul>`:""}</div>`:""}
+    <div class="chips">${e.aud.map(a=>`<span class="mini">${esc(AUD[a])}</span>`).join("")}</div>
+    <div class="scoreline"><span class="lab">center3 score</span><span class="v ${T.cls}">${e.score}/100 — ${T.label}</span></div>
+    <div class="big-track ${T.cls}"><i style="width:${e.score}%"></i></div>
+    <div class="lab">Key competitors usually present</div>
+    <div class="chips">${e.comp.map(c=>`<span class="mini">${esc(c)}</span>`).join("")}</div>
+    <button class="more" aria-expanded="false" aria-controls="det-${e.id}"><span class="car">▾</span><span class="ml">Full Details</span></button>
+    <div class="details" id="det-${e.id}" hidden>
+      <button class="bd-toggle" aria-expanded="false" aria-controls="bd-${e.id}"><span>Score breakdown</span><span class="car" aria-hidden="true">▾</span></button>
+      <div class="bd-wrap" id="bd-${e.id}" hidden><div class="bd">${W.map(([l,w],i)=>`<div class="bdrow"><span>${l} <span class="note">(of ${w})</span></span><b>${(e.r[i]/10*w).toFixed(e.r[i]*w%10?1:0)}</b><span class="t2"><i style="width:${e.r[i]*10}%"></i></span></div>`).join("")}</div></div>
+      <dl class="kv">
+        <dt>Dates</dt><dd>${esc(e.dl)}${e.est?" — not yet published by the organiser":""}</dd>
+        <dt>Venue</dt><dd>${esc(e.venue)}, ${esc(e.city)}</dd>
+        <dt>Specialty</dt><dd>${e.spec.map(s=>esc(SPEC[s])).join(", ")}</dd>
+        <dt>Scale</dt><dd>${esc(e.attL)} · ${esc(e.exh)}</dd>
+        <dt>Indicative cost</dt><dd>${"$".repeat(e.costLvl)}<span class="note">${"$".repeat(3-e.costLvl)}</span> · ${esc(e.cost)}</dd>
+        <dt>Awards</dt><dd>${esc(e.awards||"No linked awards programme")}</dd>
+        ${e.status?`<dt>center3 status</dt><dd><b style="color:var(--warn)">${esc(e.status)}</b> · updated ${esc(e.statusDate)}</dd>`:""}<dt>center3 history</dt><dd>${esc(e.hist)}</dd>
+        ${e.isNew?`<dt>New</dt><dd>${esc(e.isNew)}</dd>`:""}
+        <dt>Website</dt><dd>${e.url?`<a href="${esc(e.url)}" target="_blank" rel="noopener">${esc(e.url.replace(/^https?:\/\//,"").replace(/\/$/,""))}</a>`:"Not public"}</dd>
+        <dt>Organiser contact</dt><dd>${esc(e.contact)}</dd>
+        <dt>Source</dt><dd>${/^https?:/.test(e.src)?`<a href="${esc(e.src)}" target="_blank" rel="noopener">${esc(e.src.replace(/^https?:\/\//,"").slice(0,60))}</a>`:esc(e.src)}</dd>
+      </dl>
+    </div>
+  </div>
+</article>`;
+}
+function render(){
+  document.getElementById("clashes-sec").hidden=state.tier!=="all";
+  const list=(state.tier==="prep"?ALLEV():EVENTS).filter(match).sort(state.sort==="date"?(a,b)=>d(a.s)-d(b.s)||b.score-a.score:(a,b)=>b.score-a.score||d(a.s)-d(b.s));
+  document.getElementById("cnt").textContent=list.length;
+  const g=document.getElementById("groups"),g2=document.getElementById("groups2");
+  if(!list.length){g.innerHTML=`<div class="empty-state">No events match these filters. Choose “Clear filters” or “All Events” to see the full list.</div>`;g2.innerHTML="";g2.parentElement.hidden=true;return}
+  const desc={must:"Highest-value events for center3's buyers, deals and visibility in 2027",rec:"Strong fit; attend when budget and team capacity allow",mon:"Lower fit or unproven; keep on the radar and revisit as 2027 plans firm up"};
+  const grp=t=>{const evs=list.filter(e=>e.tier===t);if(!evs.length)return"";
+    return `<section class="${TIERS[t].cls}"><div class="group-head"><div><h2>${TIERS[t].label}</h2><p>${desc[t]}</p></div><span class="badge-count" style="background:var(--surface)">${evs.length} event${evs.length>1?"s":""}</span></div><div class="grid">${evs.map(card).join("")}</div></section>`};
+  const prepL=ALLEV().filter(e=>e.status&&match(e)).sort((a,b)=>d(a.s)-d(b.s));
+  const prep=prepL.length&&state.tier==="all"&&state.flag==="all"?`<section class="prep"><div class="group-head" style="color:var(--warn)"><div><h2>In Preparation</h2><p>Events center3 is already preparing for. Status is from the internal events tracker.</p></div><span class="badge-count" style="background:var(--surface)">${prepL.length} event${prepL.length>1?"s":""}</span></div>
+    <div class="prep-list">${prepL.map(e=>`<button class="prep-row" data-evmodal="${e.id}"><span class="pd"><b>${d(e.s).getDate()}</b><small>${MONTHS[e.m].toUpperCase()}</small></span><span class="pt"><b>${esc(e.n)}</b><small>${esc(e.city)} · ${esc(e.org)}</small></span><span class="ps">${e.track?`<span class="trk" style="position:static">${esc(e.track)}</span>`:""}<span class="tag pend">${esc(e.status.split(";")[0])}</span><small>Updated ${esc(e.statusDate)}</small></span><span class="go" aria-hidden="true">›</span></button>`).join("")}</div></section>`:"";
+  if(state.tier==="ov"){const ms=[...new Set(list.map(e=>e.m))].sort((a,b)=>a-b);
+    g.innerHTML=`<section style="color:var(--warn)"><div class="group-head"><div><h2>Overlapping Events</h2><p>Must attend and Recommended events that share a month with other key events. Grouped by month.</p></div><span class="badge-count" style="background:var(--surface)">${list.length} event${list.length>1?"s":""}</span></div>${ms.map(m=>`<h3 class="ov-mh">${FULLM[m]} 2027</h3><div class="grid" style="margin-bottom:28px">${list.filter(e=>e.m===m).sort((a,b)=>d(a.s)-d(b.s)).map(card).join("")}</div>`).join("")}</section>`;g.parentElement.hidden=false;g2.innerHTML="";g2.parentElement.hidden=true;return}
+  if(state.tier==="prep"){g.innerHTML=`<section style="color:var(--warn)"><div class="group-head"><div><h2>In Preparation</h2><p>Events center3 is already preparing for. Status is from the internal events tracker.</p></div><span class="badge-count" style="background:var(--surface)">${list.length} event${list.length>1?"s":""}</span></div><div class="grid">${list.map(card).join("")}</div></section>`;g.parentElement.hidden=false;g2.innerHTML="";g2.parentElement.hidden=true;return}
+  g.innerHTML=prep+grp("must")+grp("rec");g.parentElement.hidden=!g.innerHTML;
+  g2.innerHTML=grp("mon");g2.parentElement.hidden=!g2.innerHTML;
+}
+document.addEventListener("click",ev=>{
+  const b=ev.target.closest(".more");if(!b)return;
+  const open=b.getAttribute("aria-expanded")!=="true";
+  b.setAttribute("aria-expanded",open);
+  document.getElementById(b.getAttribute("aria-controls")).hidden=!open;
+  b.querySelector(".ml").textContent=open?"Hide Details":"Full Details";
+});
+document.addEventListener("click",ev=>{
+  const b=ev.target.closest("[data-go]");if(!b)return;
+  let c=document.getElementById("ev-"+b.dataset.go);
+  if(!c){Object.assign(state,{tier:"all",region:"all",spec:"all",aud:"all",scale:"all",flag:"all",text:""});document.getElementById("q").value="";drawFilters();render();c=document.getElementById("ev-"+b.dataset.go)}
+  c.scrollIntoView({behavior:matchMedia("(prefers-reduced-motion: reduce)").matches?"auto":"smooth",block:"start"});
+  c.classList.add("flash");setTimeout(()=>c.classList.remove("flash"),1600);
+});
+document.addEventListener("click",ev=>{
+  const b=ev.target.closest("[data-apply]");if(!b)return;
+  Object.assign(state,{tier:"all",region:"all",spec:"all",aud:"all",scale:"all",flag:"all",text:""},JSON.parse(b.dataset.apply));
+  document.getElementById("q").value="";save();drawFilters();render();
+  const tgt=(JSON.parse(b.dataset.apply).tier==="mon")?document.getElementById("watchlist"):document.getElementById("events");
+  tgt.scrollIntoView({behavior:matchMedia("(prefers-reduced-motion: reduce)").matches?"auto":"smooth",block:"start"});
+});
+/* Criterion comparison */
+const modal=document.getElementById("critModal");let lastFocus=null;
+const pts=(e,i)=>e.r[i]/10*W[i][1];
+const fmt=v=>v%1?v.toFixed(1):String(v);
+function openCrit(i,evId){
+  lastFocus=document.activeElement;
+  const [label,w]=W[i];
+  const list=[...EVENTS].sort((a,b)=>pts(b,i)-pts(a,i)||b.score-a.score);
+  document.getElementById("critTitle").textContent=label;
+  document.getElementById("critSub").textContent=`Worth ${w} of 100 points. All ${EVENTS.length} events ranked on this criterion${evId?"; the event you came from is highlighted":""}.`;
+  document.getElementById("critList").innerHTML=list.map((e,k)=>`<li class="${e.id===evId?"me":""}"><span class="rk">${k+1}</span><span class="nm">${esc(e.n)}<small>${esc(e.dl)} · total ${e.score}/100</small></span><span class="tr"><i style="width:${e.r[i]*10}%"></i></span><b>${fmt(pts(e,i))}</b></li>`).join("");
+  modal.hidden=false;document.body.style.overflow="hidden";
+  document.getElementById("critClose").focus();
+  const me=modal.querySelector("li.me");if(me)me.scrollIntoView({block:"center"});
+}
+function closeCrit(){modal.hidden=true;document.body.style.overflow="";if(lastFocus)lastFocus.focus()}
+document.getElementById("critClose").addEventListener("click",closeCrit);
+modal.addEventListener("click",ev=>{if(ev.target===modal)closeCrit()});
+document.addEventListener("keydown",ev=>{if(ev.key==="Escape"&&!modal.hidden)closeCrit()});
+/* Event modal (from Overlapping Events) */
+const evModal=document.getElementById("evModal");
+function openEv(id){
+  const e=ALLEV().find(x=>x.id===id),T=TIERS[e.tier];
+  lastFocus=document.activeElement;
+  document.getElementById("evTags").innerHTML=`<span class="tag sp">${esc(SPEC[e.spec[0]])}</span>${e.status?`<span class="tag pend" title="${esc(e.status)} (as of ${esc(e.statusDate)})">In preparation</span>`:""}${e.isNew?`<span class="tag new">New</span>`:""}${e.est?`<span class="tag est">Est. date</span>`:""}<span class="geo">${esc(GEO[e.geo])}</span>`;
+  document.getElementById("evTitle").innerHTML=e.url?`<a href="${esc(e.url)}" target="_blank" rel="noopener" style="text-decoration:none">${esc(e.n)} <span style="color:var(--accent)">↗</span></a>`:esc(e.n);
+  document.getElementById("evOrg").innerHTML=`<b style="font-weight:600">Organiser:</b> ${esc(e.org)}<br><b style="font-weight:600">Contact:</b> ${contactHTML(e)}`;
+  document.getElementById("evBody").innerHTML=`
+    <div class="scoreline"><span class="tier ${T.cls}" style="margin:0">${T.label}</span><span class="v ${T.cls}" style="font-family:var(--display);font-size:28px;font-weight:800">${e.score}<span class="note" style="font-size:14px">/100</span></span></div>
+    <div class="big-track ${T.cls}"><i style="width:${e.score}%"></i></div>
+    <p class="why">${esc(e.why)}</p>
+    <dl class="kv">
+      <dt>Dates</dt><dd>${esc(e.dl)}${e.est?" — not yet published by the organiser":""}</dd>
+      <dt>Venue</dt><dd>${esc(e.venue)}, ${esc(e.city)}</dd>
+      <dt>Scale</dt><dd>${esc(e.attL)}</dd>
+      <dt>Audience</dt><dd>${e.aud.map(a=>esc(AUD[a])).join(", ")}</dd>
+      <dt>Cost</dt><dd>${esc(e.cost)}</dd>
+      <dt>Competitors</dt><dd>${e.comp.map(esc).join(", ")}</dd>
+      ${e.status?`<dt>center3 status</dt><dd><b style="color:var(--warn)">${esc(e.status)}</b> · updated ${esc(e.statusDate)}</dd>`:""}<dt>center3 history</dt><dd>${esc(e.hist)}</dd>
+    </dl>`;
+  evModal.hidden=false;document.body.style.overflow="hidden";
+  evModal.querySelector(".modal-close").focus();
+}
+function closeEv(){evModal.hidden=true;document.body.style.overflow="";if(lastFocus)lastFocus.focus()}
+document.addEventListener("click",ev=>{const b=ev.target.closest("[data-evmodal]");if(b)openEv(b.dataset.evmodal)});
+evModal.querySelector(".modal-close").addEventListener("click",closeEv);
+evModal.addEventListener("click",ev=>{if(ev.target===evModal)closeEv()});
+document.addEventListener("keydown",ev=>{if(ev.key==="Escape"&&!evModal.hidden)closeEv()});
+document.addEventListener("click",ev=>{
+  const t=ev.target.closest(".bd-toggle");if(!t)return;
+  const open=t.getAttribute("aria-expanded")!=="true";
+  t.setAttribute("aria-expanded",open);document.getElementById(t.getAttribute("aria-controls")).hidden=!open;
+});
+/* Interactive page background */
+(function(){const f=document.querySelector(".fx");if(!f)return;
+  addEventListener("pointermove",ev=>{f.style.setProperty("--mx",ev.clientX+"px");f.style.setProperty("--my",ev.clientY+"px")},{passive:true});
+})();
+/* Events strip */
+(function(){const short=n=>n.replace(/ 2027.*$/,"").replace(/ \(.*\)$/,"");
+  const tiles=[...EVENTS].sort((a,b)=>d(a.s)-d(b.s)).map(e=>`<button class="logo-tile" data-evmodal="${e.id}" aria-label="${esc(e.n)}"><b>${esc(short(e.n))}</b><span>${esc(e.short.replace("est.",MONTHS[e.m]+" (est.)"))} · ${esc(e.city.split(" (")[0])}</span></button>`).join("");
+  document.getElementById("logoTrack").innerHTML=tiles+tiles.replace(/<button /g,'<button tabindex="-1" aria-hidden="true" ');
+})();
+function equalize(){const cs=[...document.querySelectorAll(".card")].filter(c=>c.querySelector(".details")?.hidden!==false);
+  document.documentElement.style.removeProperty("--card-h");
+  requestAnimationFrame(()=>{document.documentElement.style.setProperty("--card-h","0px");
+    const h=Math.max(...cs.map(c=>c.getBoundingClientRect().height));if(isFinite(h)&&h>0)document.documentElement.style.setProperty("--card-h",Math.ceil(h)+"px")})}
+const _render=render;render=function(){_render();equalize()};addEventListener("resize",equalize);
+document.fonts&&document.fonts.ready.then(equalize);
+drawFilters();render();
+</script>
+
+</body>
+</html>
