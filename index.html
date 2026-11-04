@@ -246,7 +246,7 @@ button.chip:hover{border-color:var(--accent)}
 .sugg{position:absolute;left:0;right:0;top:calc(100% + 6px);z-index:12;background:var(--surface);border:1px solid var(--line);border-radius:12px;box-shadow:0 16px 40px rgba(27,23,38,.14);max-height:min(460px,70vh);overflow-y:auto;padding:6px;height:auto}
 .sg-h{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--faint);padding:10px 10px 4px}
 .sg{display:flex;align-items:center;gap:10px;padding:8px 10px;border-radius:8px;cursor:pointer;font-size:14px}
-.sg[aria-selected="true"],.sg:hover{background:var(--brand-soft)}
+.sg[aria-selected="true"],.sg.on,.sg:hover{background:var(--brand-soft)}
 .sg .ic svg{width:15px;height:15px}
 .sg .ic{width:28px;height:28px;flex:none;border-radius:8px;display:grid;place-items:center;background:var(--bg-soft);color:var(--brand);font-size:13px;font-weight:700}
 .sg .tx{min-width:0;flex:1}
@@ -399,6 +399,52 @@ footer .wrap{padding-block:24px 36px;border-top:1px solid var(--line);display:fl
   .fg > span{min-width:100%}
 }
 @media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+
+/* Speaking opportunities */
+.sp-sub{margin-top:26px;padding-top:22px;border-top:1px dashed var(--warn-line);color:var(--fg)}
+.sp-head{display:flex;justify-content:space-between;align-items:flex-end;gap:12px;margin-bottom:12px;color:var(--warn)}
+.sp-eyebrow{display:block;font-size:11.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--warn);margin-bottom:2px}
+.sp-head h3{font-size:20px;font-weight:800}.sp-head p{margin:4px 0 0;color:var(--muted);font-size:14px}
+.sp-sub{scroll-margin-top:136px}
+.sp-sum{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 16px}
+.sp-f{all:unset;box-sizing:border-box;cursor:pointer;display:inline-flex;align-items:center;gap:8px;font-size:13.5px;font-weight:600;padding:7px 12px;border-radius:999px;border:1px solid var(--line);background:var(--surface);color:var(--muted)}
+.sp-f b{font-family:var(--display);color:var(--fg)}
+.sp-f[aria-pressed="true"]{background:var(--brand);border-color:var(--brand);color:#fff}.sp-f[aria-pressed="true"] b{color:#fff}
+.sp-f:focus-visible{outline:2px solid var(--accent)}
+.sp-list{display:flex;flex-direction:column;gap:10px}
+.sp-row{display:grid;grid-template-columns:64px minmax(0,1fr) minmax(200px,300px);gap:16px;align-items:center;background:var(--surface);border:1px solid var(--line);border-left:4px solid var(--brand);border-radius:12px;padding:14px 18px;box-shadow:var(--shadow)}
+.sp-row.st-cancelled{opacity:.62;border-left-color:var(--mon)}
+.sp-row.st-offered{border-left-color:var(--rec)}.sp-row.st-rescheduled{border-left-color:var(--warn)}.sp-row.st-confirmed{border-left-color:var(--ok)}
+.sp-row .pd{background:var(--brand-soft)}.sp-row .pd b,.sp-row .pd small{color:var(--brand)}
+.sp-main{min-width:0;display:flex;flex-direction:column;gap:3px}
+.sp-type{font-size:11.5px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--accent)}
+.sp-title{font-size:16px;font-weight:700;line-height:1.35}
+.sp-ev{all:unset;cursor:pointer;color:var(--muted);font-size:13.5px}.sp-ev:hover{color:var(--brand);text-decoration:underline}
+span.sp-ev{cursor:default}span.sp-ev:hover{color:var(--muted);text-decoration:none}
+.sp-meta{display:flex;flex-direction:column;align-items:flex-end;gap:5px;text-align:right}
+.sp-st{font-size:12px;font-weight:700;padding:4px 10px;border-radius:6px;border:1px solid}
+.sp-st.confirmed{color:var(--ok);background:var(--ok-soft);border-color:var(--ok-line)}
+.sp-st.offered{color:var(--rec);background:var(--rec-soft);border-color:var(--rec-line)}
+.sp-st.rescheduled{color:var(--warn);background:var(--warn-soft);border-color:var(--warn-line)}
+.sp-st.cancelled{color:var(--mon);background:var(--mon-soft);border-color:var(--mon-line)}
+.sp-meta small{color:var(--muted);font-size:12.5px}.sp-meta .sp-next{color:var(--fg);font-weight:600}
+@media (max-width:760px){.sp-row{grid-template-columns:54px minmax(0,1fr)}.sp-meta{grid-column:1/-1;align-items:flex-start;text-align:left}}
+.sp-chip{border-color:var(--brand-line)!important;background:var(--brand-soft)!important}
+.sp-mod{display:flex;flex-direction:column;gap:8px;margin-top:4px}
+.sp-mod div{border:1px solid var(--line);border-radius:8px;padding:8px 10px;font-size:14px}
+
+/* Hero quick search */
+.hero-grid{position:relative;z-index:6}.legend .hs{z-index:7}.hs .sugg{z-index:20}
+.legend .hs{position:relative;padding:0!important;animation:drop .7s cubic-bezier(.2,.9,.3,1.15) both;border-color:var(--brand-line);cursor:text}
+.legend .hs:focus-within{border-color:var(--brand);box-shadow:0 0 0 3px var(--brand-soft)}
+.hs label{display:flex;align-items:center;gap:8px;padding:11px 14px;width:100%;cursor:text}
+.hs svg{width:17px;height:17px;flex:none;color:var(--brand)}
+.hs input{all:unset;flex:1;min-width:0;font-size:14px;font-weight:600;color:var(--fg)}
+.hs input::placeholder{color:var(--muted);font-weight:600}
+.hs .sugg{left:auto;right:0;width:min(420px,calc(100vw - 32px));text-align:left}
+@media (max-width:860px){.legend .hs{flex:1 1 100%}.hs .sugg{left:0;right:auto}}
+.flash{animation:flash 1.6s ease}
+@keyframes flash{0%,40%{box-shadow:0 0 0 4px var(--accent-line)}100%{box-shadow:var(--shadow)}}
 </style>
 
 <div class="fx" aria-hidden="true"><span class="blob b1"></span><span class="blob b2"></span><span class="blob b3"></span><span class="glow"></span><span class="dots"></span></div>
@@ -409,7 +455,7 @@ footer .wrap{padding-block:24px 36px;border-top:1px solid var(--line);display:fl
       center3
     </a>
     <nav class="nav-links" aria-label="Sections">
-      <a href="#timeline">Timeline</a><a href="#top-ten">Top 10</a><a href="#calendar">Calendar</a><a href="#events" class="nav-cta">All events</a>
+      <a href="#timeline">Timeline</a><a href="#speaking">Speaking</a><a href="#top-ten">Top 10</a><a href="#calendar">Calendar</a><a href="#events" class="nav-cta">All events</a>
     </nav>
   </div>
 </header>
@@ -419,7 +465,7 @@ footer .wrap{padding-block:24px 36px;border-top:1px solid var(--line);display:fl
     <div class="hero-main">
     <h1>center3 <em>Events</em><span class="h1y">2027</span></h1>
     <p class="lede">An intelligence guide to the data centre, subsea, interconnection, cloud and AI, wholesale telecom and infrastructure investment events where center3's buyers, partners and competitors meet. Each event is scored out of 100 against center3's commercial priorities.</p>
-    <p class="updated">Last updated 29 October 2026. Dates marked “est.” are not yet published by the organiser.</p>
+    <p class="updated">Last updated 4 November 2026. Dates marked “est.” are not yet published by the organiser.</p>
     </div>
     <div class="legend" id="legend" aria-label="Show events by tier"></div>
     </div>
@@ -433,6 +479,7 @@ footer .wrap{padding-block:24px 36px;border-top:1px solid var(--line);display:fl
 </header>
 
 <section class="kpis" aria-label="Summary"><div class="wrap" id="kpis"></div></section>
+
 
 <section class="sec" id="top-ten">
   <div class="wrap">
@@ -515,7 +562,7 @@ footer .wrap{padding-block:24px 36px;border-top:1px solid var(--line);display:fl
 </section>
 <footer><div class="wrap">
   <div class="foot-main"><strong>center3 Events 2027</strong> brings together the events that matter most to center3's growth: where hyperscalers, carriers, content providers, investors and government decision-makers meet across data centres, subsea and connectivity, interconnection, cloud and AI infrastructure. Each event is selected and scored for how well it helps center3 win customers, build partnerships and strengthen its position as the digital infrastructure hub linking the Kingdom, the Gulf, Africa and the world.</div>
-  <div class="foot-sub">Prepared by the center3 Events team · Last updated 29 October 2026</div>
+  <div class="foot-sub">Prepared by the center3 Events team · Last updated 4 November 2026</div>
 </div></footer>
 
 <script>
@@ -963,6 +1010,46 @@ document.getElementById("clashes").innerHTML=clashMonths.length?clashMonths.map(
   ${ADVICE[c.m]?`<div class="advice">${esc(ADVICE[c.m])}</div>`:""}
 </article>`}).join(""):`<p class="note">No overlapping key events.</p>`;
 
+
+/* Speaking opportunities (internal events tracker) */
+const SPEAK=[
+ {date:"2026-11-03",ev:"Middle East GCCM & SIS Summit 2026",city:"Muscat",type:"Panel",title:"AI-Era Digital Infrastructure & Regional Connectivity",speaker:"TBC",time:"09:15–10:30",st:"Cancelled",note:"Cancelled",next:""},
+ {date:"2026-11-04",ev:"Middle East GCCM & SIS Summit 2026",city:"Muscat",type:"Panel",title:"The Next Tech Frontier for 2027: AI-Native Networks, Advanced Fibre, Data Centres and Secure Infrastructure",speaker:"TBC",time:"10:30–11:15",st:"Cancelled",note:"Cancelled",next:""},
+ {date:"2026-11-06",ev:"CMF Select London 2026",city:"London",type:"Panel",title:"AI, Digital Infrastructure & the Future of Capital Markets",speaker:"Hussain Alnajrani",time:"11:20–12:05 (tentative)",st:"Cancelled",note:"Cancelled (updated 14 Oct 2026)",next:""},
+ {date:"2026-11-17",id:"dcwme26",ev:"Data Center World Middle East 2026",city:"Abu Dhabi",type:"Keynote panel",title:"Decentralization in the Desert: The Convergence of Edge & Colocation Infrastructure",speaker:"Luthfur Khan",time:"10:15–11:00",st:"Confirmed",note:"Session day to be confirmed by the organiser",next:"Prepare speaker brief and talking points"},
+ {date:"2026-11-17",id:"dcwme26",ev:"Data Center World Middle East 2026",city:"Abu Dhabi",type:"Keynote panel",title:"AI, Power & Sovereign Demand: Realities & Risks for The Gulf's 3GW Target",speaker:"Hussain Alnajrani",time:"—",st:"Cancelled",note:"Cancelled due to a scheduling conflict",next:""},
+ {date:"2027-03-30",id:"dciif",ev:"Data Centre Infrastructure & Innovation Forum KSA",city:"Riyadh",type:"Keynote panel",title:"Saudi Arabia's Digital Infrastructure Strategy & Data Centre Expansion Roadmap",speaker:"Hussain Alnajrani",time:"TBC",st:"Rescheduled",note:"Moved from 24 Nov 2026 to 30–31 Mar 2027",next:"Await organiser confirmation of the new date"},
+ {date:"2027-04-29",id:"dcer",ev:"Data Center Expo Riyadh 2027",city:"Riyadh",type:"Keynote",title:"15-minute opening keynote (Associate Partner sponsorship package)",speaker:"TBC",time:"TBC",st:"Rescheduled",note:"Moved from 20 Oct 2026 to 29 Apr 2027",next:"Nominate the speaker and confirm the slot"}
+];
+
+
+/* Precise scrolling: lands every target just below the sticky header(s) */
+function goTo(el){if(!el)return;const nav=document.querySelector(".site-nav"),bar=document.querySelector("nav.bar");
+  const navH=nav?nav.offsetHeight:0,barH=bar?bar.offsetHeight:0;
+  const cal=document.getElementById("calendar"),barTop=cal?cal.getBoundingClientRect().bottom+scrollY:0;
+  const y=el.getBoundingClientRect().top+scrollY;
+  const off=(y-navH-barH>=barTop?navH+barH:navH)+14;
+  scrollTo({top:Math.max(0,y-off),behavior:matchMedia("(prefers-reduced-motion: reduce)").matches?"auto":"smooth"})}
+document.addEventListener("click",ev=>{const a=ev.target.closest('a[href^="#"]');if(!a||a.getAttribute("href")==="#speaking")return;const t=document.getElementById(a.getAttribute("href").slice(1));if(!t)return;ev.preventDefault();
+  if(a.getAttribute("href")==="#events"&&(state.tier!=="all"||state.flag!=="all"||state.text)){Object.assign(state,{tier:"all",region:"all",spec:"all",aud:"all",scale:"all",flag:"all",text:""});document.getElementById("q").value="";drawFilters();render()}
+  goTo(a.getAttribute("href")==="#top"?document.body:(a.getAttribute("href")==="#events"?(t.querySelector(".group-head")||t):t))});
+function spScroll(el){goTo(el||document.getElementById("speaking"))}
+function toSpeaking(){Object.assign(state,{tier:"prep",region:"all",spec:"all",aud:"all",scale:"all",flag:"all",text:""});const q=document.getElementById("q");if(q)q.value="";drawFilters();render();setTimeout(()=>spScroll(),30)}
+const SPST=["Confirmed","Offered","Rescheduled"];let spF="active";
+const spBlock=()=>`<div class="sp-sub" id="speaking"><div class="sp-head"><div><span class="sp-eyebrow">In Preparation ›</span><h3>Speaking Opportunities</h3><p>Speaking slots offered to center3, with the session, speaker and next preparation step.</p></div><span class="badge-count" style="background:var(--surface)">${SPEAK.filter(x=>x.st!=="Cancelled").length} active session${SPEAK.filter(x=>x.st!=="Cancelled").length===1?"":"s"}</span></div><div class="sp-sum" id="spSum" role="group" aria-label="Filter sessions by status"></div><div class="sp-list" id="spList"></div></div>`;
+function drawSpeak(){
+  const sum=document.getElementById("spSum");if(!sum)return;
+  const n=s=>SPEAK.filter(x=>x.st===s).length,act=SPEAK.filter(x=>x.st!=="Cancelled").length;
+  sum.innerHTML=[["active","All active",act],...SPST.map(s=>[s,s,n(s)]),["Cancelled","Cancelled",n("Cancelled")]].filter(x=>x[2]).map(([v,l,c])=>`<button class="sp-f" data-spf="${v}" aria-pressed="${spF===v}">${l} <b>${c}</b></button>`).join("");
+  const L=SPEAK.filter(x=>spF==="active"?x.st!=="Cancelled":x.st===spF).sort((a,b)=>a.date.localeCompare(b.date));
+  document.getElementById("spList").innerHTML=L.map(x=>{const dt=d(x.date),k=x.st.toLowerCase();
+   const evl=x.id?`<button class="sp-ev" data-evmodal="${x.id}">${esc(x.ev)} · ${esc(x.city)} ›</button>`:`<span class="sp-ev">${esc(x.ev)} · ${esc(x.city)}</span>`;
+   return `<article class="sp-row st-${k}"><span class="pd"><b>${dt.getDate()}</b><small>${MONTHS[dt.getMonth()].toUpperCase()} ${String(dt.getFullYear()).slice(2)}</small></span>
+   <div class="sp-main"><span class="sp-type">${esc(x.type)}</span><span class="sp-title">${esc(x.title)}</span>${evl}</div>
+   <div class="sp-meta"><span class="sp-st ${k}">${esc(x.st)}</span><small><b>Speaker:</b> ${esc(x.speaker)}${x.time&&x.time!=="—"?` · ${esc(x.time)}`:""}</small><small>${esc(x.note)}</small>${x.next?`<small class="sp-next">Next: ${esc(x.next)}</small>`:""}</div></article>`}).join("");
+}
+document.addEventListener("click",ev=>{const b=ev.target.closest("[data-spf]");if(b){spF=b.dataset.spf;drawSpeak()}});
+document.addEventListener("click",ev=>{const a=ev.target.closest('a[href="#speaking"]');if(!a)return;ev.preventDefault();toSpeaking()},true);
 /* Filters */
 const tf=document.getElementById("toggleF");
 const state={tier:"all",region:"all",spec:"all",aud:"all",scale:"all",flag:"all",text:"",sort:"score"};
@@ -988,7 +1075,7 @@ document.querySelector(".bar").addEventListener("click",ev=>{
   if(r){GROUPS.forEach(([k])=>state[k]="all");save();drawFilters();render();return}
   const b=ev.target.closest("[data-k]");if(!b)return;
   state[b.dataset.k]=b.dataset.v;save();drawFilters();render();
-  if(b.dataset.k==="tier"){const t=state.tier==="mon"?document.getElementById("watchlist"):document.getElementById("events");if(t.getBoundingClientRect().top<0||state.tier==="mon")t.scrollIntoView({behavior:matchMedia("(prefers-reduced-motion: reduce)").matches?"auto":"smooth",block:"start"})}
+  if(b.dataset.k==="tier"){const t=state.tier==="mon"?document.getElementById("watchlist"):document.getElementById("events");goTo(t.querySelector(".group-head")||t)}
 });
 /* Smart search */
 const norm=s=>String(s||"").normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLowerCase().replace(/[^a-z0-9@&.+ ]+/g," ").replace(/\s+/g," ").trim();
@@ -1020,7 +1107,7 @@ function buildSugg(){
 function pick(i){const it=sItems[i];if(!it)return;sugg.hidden=true;qEl.setAttribute("aria-expanded","false");
   if(it.type==="event"){qEl.value="";state.text="";qClear.hidden=true;render();const b=document.createElement("span");b.dataset.go=it.val;document.body.appendChild(b);b.click();b.remove();return}
   if(it.type==="place")qEl.value=it.val;
-  state.text=qEl.value.trim();render();document.getElementById("events").scrollIntoView({behavior:"smooth",block:"start"});
+  state.text=qEl.value.trim();render();goTo(document.querySelector("#events .group-head")||document.getElementById("events"));
 }
 qEl.addEventListener("input",()=>{state.text=qEl.value.trim();render();buildSugg()});
 qEl.addEventListener("focus",()=>{if(qEl.value.trim())buildSugg()});
@@ -1029,7 +1116,7 @@ qEl.addEventListener("keydown",ev=>{
   const n=sItems.length;
   if(ev.key==="ArrowDown"){ev.preventDefault();sIdx=(sIdx+1)%n}
   else if(ev.key==="ArrowUp"){ev.preventDefault();sIdx=(sIdx-1+n)%n}
-  else if(ev.key==="Enter"){ev.preventDefault();if(sIdx>=0)pick(sIdx);else{sugg.hidden=true;state.text=qEl.value.trim();render();document.getElementById("events").scrollIntoView({behavior:"smooth",block:"start"})}return}
+  else if(ev.key==="Enter"){ev.preventDefault();if(sIdx>=0)pick(sIdx);else{sugg.hidden=true;state.text=qEl.value.trim();render();goTo(document.querySelector("#events .group-head")||document.getElementById("events"))}return}
   else if(ev.key==="Escape"){sugg.hidden=true;return}else return;
   sugg.querySelectorAll(".sg").forEach((el,i)=>el.setAttribute("aria-selected",i===sIdx));
   const cur=document.getElementById("sg"+sIdx);if(cur){cur.scrollIntoView({block:"nearest"});qEl.setAttribute("aria-activedescendant","sg"+sIdx)}
@@ -1082,7 +1169,7 @@ function card(e){
         <dt>Scale</dt><dd>${esc(e.attL)} · ${esc(e.exh)}</dd>
         <dt>Indicative cost</dt><dd>${"$".repeat(e.costLvl)}<span class="note">${"$".repeat(3-e.costLvl)}</span> · ${esc(e.cost)}</dd>
         <dt>Awards</dt><dd>${esc(e.awards||"No linked awards programme")}</dd>
-        ${e.status?`<dt>center3 status</dt><dd><b style="color:var(--warn)">${esc(e.status)}</b> · updated ${esc(e.statusDate)}</dd>`:""}<dt>center3 history</dt><dd>${esc(e.hist)}</dd>
+        ${e.status?`<dt>center3 status</dt><dd><b style="color:var(--warn)">${esc(e.status)}</b> · updated ${esc(e.statusDate)}</dd>`:""}<dt>center3 history</dt><dd>${esc(e.hist)}</dd>${(()=>{const S=SPEAK.filter(x=>x.id===e.id);return S.length?`<dt>Speaking sessions</dt><dd><div class="sp-mod">${S.map(x=>`<div><span class="sp-st ${x.st.toLowerCase()}">${esc(x.st)}</span> <b>${esc(x.type)}</b>: ${esc(x.title)}<br><small style="color:var(--muted)">Speaker: ${esc(x.speaker)}${x.next?" · Next: "+esc(x.next):""}</small></div>`).join("")}</div></dd>`:""})()}
         ${e.isNew?`<dt>New</dt><dd>${esc(e.isNew)}</dd>`:""}
         <dt>Website</dt><dd>${e.url?`<a href="${esc(e.url)}" target="_blank" rel="noopener">${esc(e.url.replace(/^https?:\/\//,"").replace(/\/$/,""))}</a>`:"Not public"}</dd>
         <dt>Organiser contact</dt><dd>${esc(e.contact)}</dd>
@@ -1102,12 +1189,12 @@ function render(){
   const grp=t=>{const evs=list.filter(e=>e.tier===t);if(!evs.length)return"";
     return `<section class="${TIERS[t].cls}"><div class="group-head"><div><h2>${TIERS[t].label}</h2><p>${desc[t]}</p></div><span class="badge-count" style="background:var(--surface)">${evs.length} event${evs.length>1?"s":""}</span></div><div class="grid">${evs.map(card).join("")}</div></section>`};
   const prepL=ALLEV().filter(e=>e.status&&match(e)).sort((a,b)=>d(a.s)-d(b.s));
-  const prep=prepL.length&&state.tier==="all"&&state.flag==="all"?`<section class="prep"><div class="group-head" style="color:var(--warn)"><div><h2>In Preparation</h2><p>Events center3 is already preparing for. Status is from the internal events tracker.</p></div><span class="badge-count" style="background:var(--surface)">${prepL.length} event${prepL.length>1?"s":""}</span></div>
-    <div class="prep-list">${prepL.map(e=>`<button class="prep-row" data-evmodal="${e.id}"><span class="pd"><b>${d(e.s).getDate()}</b><small>${MONTHS[e.m].toUpperCase()}</small></span><span class="pt"><b>${esc(e.n)}</b><small>${esc(e.city)} · ${esc(e.org)}</small></span><span class="ps">${e.track?`<span class="trk" style="position:static">${esc(e.track)}</span>`:""}<span class="tag pend">${esc(e.status.split(";")[0])}</span><small>Updated ${esc(e.statusDate)}</small></span><span class="go" aria-hidden="true">›</span></button>`).join("")}</div></section>`:"";
+  const prep=prepL.length&&state.tier==="all"&&state.flag==="all"?`<section class="prep"><div class="group-head" style="color:var(--warn)"><div><h2>In Preparation</h2><p>Events and speaking slots center3 is already preparing for. Status is from the internal events tracker.</p></div><span class="badge-count" style="background:var(--surface)">${prepL.length} event${prepL.length>1?"s":""}</span></div>
+    <div class="prep-list">${prepL.map(e=>`<button class="prep-row" data-evmodal="${e.id}"><span class="pd"><b>${d(e.s).getDate()}</b><small>${MONTHS[e.m].toUpperCase()}</small></span><span class="pt"><b>${esc(e.n)}</b><small>${esc(e.city)} · ${esc(e.org)}</small></span><span class="ps">${e.track?`<span class="trk" style="position:static">${esc(e.track)}</span>`:""}<span class="tag pend">${esc(e.status.split(";")[0])}</span><small>Updated ${esc(e.statusDate)}</small></span><span class="go" aria-hidden="true">›</span></button>`).join("")}</div>${spBlock()}</section>`:"";
   if(state.tier==="ov"){const ms=[...new Set(list.map(e=>e.m))].sort((a,b)=>a-b);
     g.innerHTML=`<section style="color:var(--warn)"><div class="group-head"><div><h2>Overlapping Events</h2><p>Must attend and Recommended events that share a month with other key events. Grouped by month.</p></div><span class="badge-count" style="background:var(--surface)">${list.length} event${list.length>1?"s":""}</span></div>${ms.map(m=>`<h3 class="ov-mh">${FULLM[m]} 2027</h3><div class="grid" style="margin-bottom:28px">${list.filter(e=>e.m===m).sort((a,b)=>d(a.s)-d(b.s)).map(card).join("")}</div>`).join("")}</section>`;g.parentElement.hidden=false;g2.innerHTML="";g2.parentElement.hidden=true;return}
-  if(state.tier==="prep"){g.innerHTML=`<section style="color:var(--warn)"><div class="group-head"><div><h2>In Preparation</h2><p>Events center3 is already preparing for. Status is from the internal events tracker.</p></div><span class="badge-count" style="background:var(--surface)">${list.length} event${list.length>1?"s":""}</span></div><div class="grid">${list.map(card).join("")}</div></section>`;g.parentElement.hidden=false;g2.innerHTML="";g2.parentElement.hidden=true;return}
-  g.innerHTML=prep+grp("must")+grp("rec");g.parentElement.hidden=!g.innerHTML;
+  if(state.tier==="prep"){g.innerHTML=`<section style="color:var(--warn)"><div class="group-head"><div><h2>In Preparation</h2><p>Events and speaking slots center3 is already preparing for. Status is from the internal events tracker.</p></div><span class="badge-count" style="background:var(--surface)">${list.length} event${list.length>1?"s":""}</span></div><div class="grid">${list.map(card).join("")}</div>${spBlock()}</section>`;g.parentElement.hidden=false;g2.innerHTML="";g2.parentElement.hidden=true;drawSpeak();return}
+  g.innerHTML=prep+grp("must")+grp("rec");g.parentElement.hidden=!g.innerHTML;drawSpeak();
   g2.innerHTML=grp("mon");g2.parentElement.hidden=!g2.innerHTML;
 }
 document.addEventListener("click",ev=>{
@@ -1121,7 +1208,7 @@ document.addEventListener("click",ev=>{
   const b=ev.target.closest("[data-go]");if(!b)return;
   let c=document.getElementById("ev-"+b.dataset.go);
   if(!c){Object.assign(state,{tier:"all",region:"all",spec:"all",aud:"all",scale:"all",flag:"all",text:""});document.getElementById("q").value="";drawFilters();render();c=document.getElementById("ev-"+b.dataset.go)}
-  c.scrollIntoView({behavior:matchMedia("(prefers-reduced-motion: reduce)").matches?"auto":"smooth",block:"start"});
+  goTo(c);
   c.classList.add("flash");setTimeout(()=>c.classList.remove("flash"),1600);
 });
 document.addEventListener("click",ev=>{
@@ -1129,7 +1216,7 @@ document.addEventListener("click",ev=>{
   Object.assign(state,{tier:"all",region:"all",spec:"all",aud:"all",scale:"all",flag:"all",text:""},JSON.parse(b.dataset.apply));
   document.getElementById("q").value="";save();drawFilters();render();
   const tgt=(JSON.parse(b.dataset.apply).tier==="mon")?document.getElementById("watchlist"):document.getElementById("events");
-  tgt.scrollIntoView({behavior:matchMedia("(prefers-reduced-motion: reduce)").matches?"auto":"smooth",block:"start"});
+  goTo(tgt.querySelector(".group-head")||tgt);
 });
 /* Criterion comparison */
 const modal=document.getElementById("critModal");let lastFocus=null;
@@ -1200,6 +1287,57 @@ function equalize(){const cs=[...document.querySelectorAll(".card")].filter(c=>c
 const _render=render;render=function(){_render();equalize()};addEventListener("resize",equalize);
 document.fonts&&document.fonts.ready.then(equalize);
 drawFilters();render();
+
+/* Hero quick search: type anything and jump straight to it */
+(function(){
+  const lg=document.getElementById("legend");
+  lg.insertAdjacentHTML("beforeend",`<div class="chip hs"><label><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><input id="hq" type="search" placeholder="Search anything…" autocomplete="off" aria-label="Search the page" role="combobox" aria-expanded="false" aria-controls="hsugg"></label><div class="sugg" id="hsugg" role="listbox" hidden></div></div>`);
+  const inp=document.getElementById("hq"),box=document.getElementById("hsugg");let items=[],act=-1;
+  const reset=()=>{Object.assign(state,{tier:"all",region:"all",spec:"all",aud:"all",scale:"all",flag:"all",text:""});const q=document.getElementById("q");if(q)q.value="";drawFilters();render()};
+  const SECS=[
+   ["In preparation","Events center3 is preparing for",()=>apply({tier:"prep"}),"preparation prep preparing status"],
+   ["Speaking opportunities","Sessions, speakers and next steps",()=>toSpeaking(),"speaking speaker speakers keynote panel session sessions slot"],
+   ["Must attend","Events scored 75 or higher",()=>apply({tier:"must"}),"must attend priority top"],
+   ["Recommended","Events scored 60 to 74",()=>apply({tier:"rec"}),"recommended"],
+   ["Watchlist","Events scored below 60",()=>apply({tier:"mon"}),"watchlist monitor"],
+   ["Overlapping events","Events that share dates or a month",()=>apply({tier:"ov"}),"overlapping overlap clash clashes"],
+   ["2027 Timeline","Events by month",()=>goTo(document.getElementById("timeline")),"timeline months"],
+   ["Top 10 by score","Highest-scoring events and how scoring works",()=>goTo(document.getElementById("top-ten")),"top 10 ten score scoring ranking weights"],
+   ["2027 Calendar","Every event by month",()=>goTo(document.getElementById("calendar")),"calendar month"]
+  ];
+  function apply(f){const b=document.createElement("button");b.dataset.apply=JSON.stringify(f);b.hidden=true;document.body.appendChild(b);b.click();b.remove()}
+  const goEv=id=>{const b=document.createElement("span");b.dataset.go=id;document.body.appendChild(b);b.click();b.remove()};
+  const goSp=x=>{Object.assign(state,{tier:"prep",region:"all",spec:"all",aud:"all",scale:"all",flag:"all",text:""});drawFilters();render();spF=x.st==="Cancelled"?"Cancelled":"active";drawSpeak();const i=SPEAK.filter(s=>spF==="active"?s.st!=="Cancelled":s.st===spF).sort((a,b)=>a.date.localeCompare(b.date)).indexOf(x);const r=document.querySelectorAll("#spList .sp-row")[i];if(r){setTimeout(()=>spScroll(r),30);r.classList.remove("flash");void r.offsetWidth;r.classList.add("flash")}};
+  function build(){
+    const q=inp.value.trim();items=[];act=-1;if(!q){box.hidden=true;inp.setAttribute("aria-expanded","false");return}
+    const t=toks(q),has=h=>t.every(k=>h.includes(k));let html="";
+    const secs=SECS.filter(s=>has(norm(s[0]+" "+s[1]+" "+s[3])));
+    if(secs.length){html+=`<div class="sg-h">Sections</div>`;secs.forEach(s=>{items.push(s[2]);html+=`<div class="sg" role="option" data-i="${items.length-1}"><span class="ic">#</span><span class="tx"><b>${hl(s[0],q)}</b><small>${esc(s[1])}</small></span></div>`})}
+    const pls=places().filter(p=>has(norm(p.c+" "+p.ct))).slice(0,3);
+    if(pls.length){html+=`<div class="sg-h">Cities & countries</div>`;pls.forEach(pl=>{items.push(()=>{reset();state.text=pl.c;const q2=document.getElementById("q");if(q2)q2.value=pl.c;render();goTo(document.querySelector("#events .group-head")||document.getElementById("events"))});html+=`<div class="sg" role="option" data-i="${items.length-1}"><span class="ic">${icon.pin}</span><span class="tx"><b>${hl(pl.c,q)}</b><small>${esc(pl.ct)}</small></span><span class="ct">${pl.n} event${pl.n>1?"s":""}</span></div>`})}
+    const spFirst=SPEAK.some(x=>has(norm(x.speaker+" "+x.title)));
+    const addEv=()=>{
+    const evs=ALLEV().filter(e=>hit(e,q)).sort((a,b)=>(norm(b.n).includes(norm(q))-norm(a.n).includes(norm(q)))||b.score-a.score).slice(0,6);
+    if(evs.length){html+=`<div class="sg-h">Events</div>`;evs.forEach(e=>{items.push(()=>EVENTS.includes(e)?goEv(e.id):openEv(e.id));html+=`<div class="sg" role="option" data-i="${items.length-1}"><span class="ic"><i class="dot ${TIERS[e.tier].cls}"></i></span><span class="tx"><b>${hl(e.n,q)}</b><small>${esc(e.dl)} · ${esc(e.city)} · ${e.score}/100</small></span></div>`})}
+    };
+    const addSp=()=>{
+    const sps=SPEAK.filter(x=>has(norm([x.title,x.speaker,x.ev,x.city,x.type,x.st,"speaking speaker"].join(" ")))).slice(0,4);
+    if(sps.length){html+=`<div class="sg-h">Speaking sessions</div>`;sps.forEach(x=>{items.push(()=>goSp(x));html+=`<div class="sg" role="option" data-i="${items.length-1}"><span class="ic">${icon.ppl}</span><span class="tx"><b>${hl(x.title,q)}</b><small>${esc(x.speaker)} · ${esc(x.ev)} · ${esc(x.st)}</small></span></div>`})}
+    };
+    if(spFirst){addSp();addEv()}else{addEv();addSp()}
+    box.innerHTML=html||`<div class="sg" style="cursor:default;color:var(--muted)">No results for “${esc(q)}”</div>`;box.hidden=false;inp.setAttribute("aria-expanded","true");
+  }
+  const run=i=>{const f=items[i];if(!f)return;clearTimeout(window._hsT);box.hidden=true;inp.setAttribute("aria-expanded","false");inp.value="";inp.blur();f()};
+  const mark=()=>box.querySelectorAll(".sg[data-i]").forEach(el=>el.classList.toggle("on",+el.dataset.i===act));
+  inp.addEventListener("input",build);inp.addEventListener("focus",()=>{if(innerWidth<=860)window._hsT=setTimeout(()=>{if(document.activeElement!==inp)return;const y=inp.getBoundingClientRect().top+scrollY-80;scrollTo({top:y,behavior:"smooth"})},250);if(inp.value.trim())build()});
+  inp.addEventListener("keydown",ev=>{
+    if(ev.key==="ArrowDown"){ev.preventDefault();act=Math.min(act+1,items.length-1);mark()}
+    else if(ev.key==="ArrowUp"){ev.preventDefault();act=Math.max(act-1,0);mark()}
+    else if(ev.key==="Enter"){ev.preventDefault();run(act<0?0:act)}
+    else if(ev.key==="Escape"){box.hidden=true;inp.value=""}});
+  box.addEventListener("mousedown",ev=>{const s=ev.target.closest(".sg[data-i]");if(s){ev.preventDefault();run(+s.dataset.i)}});
+  document.addEventListener("click",ev=>{if(!ev.target.closest(".hs"))box.hidden=true});
+})();
 </script>
 
 </body>
