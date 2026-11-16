@@ -6,7 +6,7 @@
 <style>[hidden]{display:none!important}body{margin:0}img{max-width:100%}</style>
 </head>
 <body>
-<title>center3 Events 2027</title>
+<title>Suggested Events for center3</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -66,7 +66,7 @@ section,main,footer,.kpis{position:relative;z-index:1}
 .hero .wrap{padding-block:44px 44px}
 .logo{display:inline-flex;align-items:center;gap:9px;font-family:var(--display);font-weight:600;font-size:24px;color:var(--brand);letter-spacing:-.03em}
 .logo svg{width:28px;height:28px}
-.hero h1{font-size:clamp(34px,5.4vw,72px);line-height:1.03;font-weight:800;margin-top:8px;max-width:20ch}
+.hero h1{font-size:clamp(38px,5.6vw,80px);line-height:1.02;font-weight:800;margin-top:8px;max-width:none;letter-spacing:-.01em}
 .hero h1 em{font-style:normal;color:var(--accent)}
 .lede{color:var(--muted);font-size:clamp(16px,1.6vw,19px);max-width:none;margin:18px 0 0}
 .hero-grid{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:32px;align-items:start}
@@ -445,6 +445,31 @@ span.sp-ev{cursor:default}span.sp-ev:hover{color:var(--muted);text-decoration:no
 @media (max-width:860px){.legend .hs{flex:1 1 100%}.hs .sugg{left:0;right:auto}}
 .flash{animation:flash 1.6s ease}
 @keyframes flash{0%,40%{box-shadow:0 0 0 4px var(--accent-line)}100%{box-shadow:var(--shadow)}}
+
+/* Segment chips */
+.legend .seg-chip{border-color:var(--rec-line)}
+.seg-ic{display:inline-flex;color:var(--rec)}.seg-ic svg{width:16px;height:16px}
+/* Score breakdown on card */
+.sbd{display:grid;grid-template-columns:auto minmax(60px,1fr) auto;gap:5px 10px;align-items:center;font-size:12.5px;color:var(--muted);margin-top:2px}
+.sbd .l{white-space:nowrap}
+@media (max-width:560px){.sbd{grid-template-columns:minmax(0,1fr) 70px auto}.sbd .l{white-space:normal}}
+.sbd .m{height:5px;border-radius:99px;background:var(--line);overflow:hidden}
+.sbd .m i{display:block;height:100%;border-radius:99px;background:var(--brand)}
+.sbd b{color:var(--fg);font-variant-numeric:tabular-nums;text-align:right;white-space:nowrap}
+.sbd b small{color:var(--muted);font-weight:500}
+.sbd-h{display:flex;justify-content:space-between;align-items:baseline;gap:8px}
+.sbd-h small{color:var(--muted);font-size:11.5px}
+
+.segbar{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:0 0 18px;padding:10px 14px;border:1px solid var(--rec-line);background:var(--rec-soft);border-radius:10px;font-size:14px;color:var(--fg)}
+.segbar b{color:var(--rec);display:block;font-size:15px}.segbar small{display:block;color:var(--muted);font-size:13.5px;margin-top:2px}.segbar>div{flex:1;min-width:0}.segbar button{all:unset;cursor:pointer;margin-left:auto;font-weight:700;color:var(--accent);font-size:13.5px}.segbar button:focus-visible{outline:2px solid var(--accent)}
+
+/* Title entrance */
+.h1a .w{display:inline-block;opacity:0;transform:translateY(.45em);animation:wIn .7s cubic-bezier(.2,.8,.2,1) forwards;animation-delay:calc(var(--i)*.12s + .1s)}
+.h1a .h1y{display:block}
+.h1a em.w{animation:wIn .7s cubic-bezier(.2,.8,.2,1) forwards,wPulse 2.6s ease-in-out 1.2s 1;animation-delay:calc(var(--i)*.12s + .1s),1.2s}
+@keyframes wIn{to{opacity:1;transform:none}}
+@keyframes wPulse{0%,100%{transform:none}40%{transform:scale(1.06)}}
+@media (prefers-reduced-motion:reduce){.h1a .w{animation:none;opacity:1;transform:none}}
 </style>
 
 <div class="fx" aria-hidden="true"><span class="blob b1"></span><span class="blob b2"></span><span class="blob b3"></span><span class="glow"></span><span class="dots"></span></div>
@@ -463,9 +488,9 @@ span.sp-ev{cursor:default}span.sp-ev:hover{color:var(--muted);text-decoration:no
   <div class="wrap">
     <div class="hero-grid">
     <div class="hero-main">
-    <h1>center3 <em>Events</em><span class="h1y">2027</span></h1>
+    <h1 class="h1a"><span class="w" style="--i:0">Suggested</span> <em class="w" style="--i:1">Events</em> <span class="w" style="--i:2">for</span> <span class="w" style="--i:3">center3</span><span class="h1y w" style="--i:4">2027</span></h1>
     <p class="lede">An intelligence guide to the data centre, subsea, interconnection, cloud and AI, wholesale telecom and infrastructure investment events where center3's buyers, partners and competitors meet. Each event is scored out of 100 against center3's commercial priorities.</p>
-    <p class="updated">Last updated 10 November 2026. Dates marked “est.” are not yet published by the organiser.</p>
+    <p class="updated">Last updated 15 November 2026. Dates marked “est.” are not yet published by the organiser.</p>
     </div>
     <div class="legend" id="legend" aria-label="Show events by tier"></div>
     </div>
@@ -561,8 +586,8 @@ span.sp-ev{cursor:default}span.sp-ev:hover{color:var(--muted);text-decoration:no
   <div class="marquee"><div class="track" id="logoTrack"></div></div>
 </section>
 <footer><div class="wrap">
-  <div class="foot-main"><strong>center3 Events 2027</strong> brings together the events that matter most to center3's growth: where hyperscalers, carriers, content providers, investors and government decision-makers meet across data centres, subsea and connectivity, interconnection, cloud and AI infrastructure. Each event is selected and scored for how well it helps center3 win customers, build partnerships and strengthen its position as the digital infrastructure hub linking the Kingdom, the Gulf, Africa and the world.</div>
-  <div class="foot-sub">Prepared by the center3 Events team · Last updated 10 November 2026</div>
+  <div class="foot-main"><strong>Suggested Events for center3</strong> brings together the events that matter most to center3's growth: where hyperscalers, carriers, content providers, investors and government decision-makers meet across data centres, subsea and connectivity, interconnection, cloud and AI infrastructure. Each event is selected and scored for how well it helps center3 win customers, build partnerships and strengthen its position as the digital infrastructure hub linking the Kingdom, the Gulf, Africa and the world.</div>
+  <div class="foot-sub">Prepared by the center3 Events team · Last updated 15 November 2026</div>
 </div></footer>
 
 <script>
@@ -570,326 +595,109 @@ span.sp-ev{cursor:default}span.sp-ev:hover{color:var(--muted);text-decoration:no
    r = ratings 0–10 for [audience fit, deal potential, brand visibility, speaking, strategic market fit, competitor presence, cost efficiency]
    est = true when the organiser has not published 2027 dates yet */
 const EVENTS = [
-{id:"dcwme26",n:"Data Center World Middle East 2026",org:"Data Center World (Informa)",s:"2026-11-17",e:"2026-11-18",est:false,city:"Abu Dhabi",ctry:"UAE",venue:"Dusit Thani Abu Dhabi",geo:"GCC",
- spec:["dc","ai"],aud:["hyper","ent","gov"],att:1500,attL:"~1,500 (est.)",exh:"Sponsors and exhibitors",
- url:"https://www.datacenterworldmiddleeast.com/",contact:"Contact form on event website",isNew:"",
- part:"Attending + keynote panel",cost:"Delegate passes",costLvl:1,
- comp:["Khazna","Moro Hub","Gulf Data Hub","Equinix"],awards:"",
- hist:"Keynote panel by Luthfur Khan confirmed (internal tracker). The 2027 edition is listed separately.",
- status:"Team Dubai attending; passes being finalised",statusDate:"20 Oct 2026",track:"On track",
- updates:["Team Dubai will attend (Luthfur, Ritwiq, Mehdi)","Hussein AlNajrani's participation in the “AI, Power & Sovereign Demand” panel was cancelled due to a scheduling conflict"],
- next:["Finalize passes"],
- why:"A key regional data centre forum this year, with center3's Dubai team attending to engage operators, hyperscalers and government stakeholders.",
- r:[6,6,6,8,8,8,7],src:"Internal status update (20 Oct 2026)"},
-{id:"ptc",n:"PTC'27",org:"Pacific Telecommunications Council (PTC)",s:"2027-01-17",e:"2027-01-20",est:false,city:"Honolulu",ctry:"USA",venue:"Hilton Hawaiian Village Waikiki Beach Resort",geo:"Global",
- spec:["subsea","telecom","dc","ix"],aud:["hyper","carrier","content","inv"],att:4000,attL:"~4,000 (est.)",exh:"Exhibition + private meeting suites",
- url:"https://www.ptc.org/ptc27/",contact:"info@ptc.org · ptcreg@ptc.org · +1 808 941 3789",isNew:"",
- part:"Speaking + meeting suite + branding",cost:"Full conference pass US$1,275–1,525 (non-member) or US$825–1,000 (member company). Meeting suites and sponsorship on request.",costLvl:2,
- comp:["Telecom Egypt","Ooredoo","Mobily","Sparkle","Equinix","Zain Omantel International"],awards:"PTC'27 Awards",
- hist:"No center3 presence found in public sources (2023–2026).",why:"The leading annual meeting for subsea capacity and hyperscale network buyers, and the strongest opportunity to build center3's presence with US and Asia-Pacific customers.",
- r:[10,9,7,7,8,8,5],src:"https://www.ptc.org/ptc27/"},
+{id:"dcwme26",n:"Data Center World Middle East 2026",org:"Data Center World (Informa)",s:"2026-11-17",e:"2026-11-18",est:false,city:"Abu Dhabi",ctry:"UAE",venue:"Dusit Thani Abu Dhabi",geo:"GCC",spec:["dc", "ai"],aud:["hyper", "ent", "gov"],att:1500,attL:"~1,500 (est.)",exh:"Sponsors and exhibitors",url:"https://www.datacenterworldmiddleeast.com/",contact:"Contact form on event website",isNew:"",part:"Attending + keynote panel",cost:"Delegate passes",costLvl:1,comp:["Khazna", "Moro Hub", "Gulf Data Hub", "Equinix"],awards:"",hist:"Keynote panel by Luthfur Khan confirmed (internal tracker). The 2027 edition is listed separately.",status:"Team Dubai attending; passes being finalised",statusDate:"20 Oct 2026",track:"On track",updates:["Team Dubai will attend (Luthfur, Ritwiq, Mehdi)", "Hussein AlNajrani's participation in the “AI, Power & Sovereign Demand” panel was cancelled due to a scheduling conflict"],next:["Finalize passes"],why:"A key regional data centre forum this year, with center3's Dubai team attending to engage operators, hyperscalers and government stakeholders.",r:[6, 6, 6, 8, 8, 8, 7],src:"Internal status update (20 Oct 2026)"},
 
-{id:"dcn",n:"Data Center Nation (DCN) Riyadh 2027",org:"Data Center Nation",s:"2027-04-20",e:"2027-04-20",est:false,city:"Riyadh",ctry:"KSA",venue:"Mandarin Oriental Al Faisaliah, Riyadh",geo:"KSA",
- spec:["dc","ai"],aud:["ent","gov"],att:2000,attL:"~2,000 (est.)",exh:"Exhibition",
- url:"",contact:"Contact form on event website",isNew:"",
- part:"Sponsorship (PR raised)",cost:"Per contract under review; sponsorship on request",costLvl:1,
- comp:["Mobily","Gulf Data Hub","DataVolt","Ezditek"],awards:"",
- hist:"Previously tracked as attendance only. Sponsorship PR now raised.",status:"Rescheduled to 20 April 2027; sponsorship PR raised",statusDate:"10 Nov 2026",track:"On track",updates:["Rescheduled by the organiser from 27 January to 20 April 2027","New venue: Mandarin Oriental Al Faisaliah, Riyadh","The sponsorship PR has been raised"],next:["Follow up on the PR approval"],why:"A cost-effective way to engage Saudi enterprise and government IT decision-makers. center3's sponsorship is progressing, with the PR now raised.",
- r:[5,6,6,5,9,6,8],src:"Internal tracker (Q4_Events_PowerBI_v7.xlsx)"},
+{id:"ptc",n:"PTC'27",org:"Pacific Telecommunications Council (PTC)",s:"2027-01-17",e:"2027-01-20",est:false,city:"Honolulu",ctry:"USA",venue:"Hilton Hawaiian Village Waikiki Beach Resort",geo:"Asia",spec:["subsea", "telecom", "dc", "ix"],aud:["hyper", "carrier", "content", "inv"],att:4000,attL:"~4,000 (est.)",exh:"Exhibition + private meeting suites",url:"https://www.ptc.org/ptc27/",contact:"info@ptc.org · ptcreg@ptc.org · +1 808 941 3789",isNew:"",part:"Speaking + meeting suite + branding",cost:"Full conference pass US$1,275–1,525 (non-member) or US$825–1,000 (member company). Meeting suites and sponsorship on request.",costLvl:2,comp:["Telecom Egypt", "Ooredoo", "Mobily", "Sparkle", "Equinix", "Zain Omantel International"],awards:"PTC'27 Awards",hist:"No center3 presence found in public sources (2023–2026).",why:"The leading annual meeting for subsea capacity and hyperscale network buyers, and the strongest opportunity to build center3's presence with US and Asia-Pacific customers.",r:[10, 9, 7, 7, 8, 8, 5],src:"https://www.ptc.org/ptc27/"},
 
-{id:"gais",n:"Global AI Show Riyadh 2027",org:"Global AI Show",s:"2027-02-02",e:"2027-02-03",est:false,city:"Riyadh",ctry:"KSA",venue:"Venue to be announced",geo:"KSA",
- spec:["ai"],aud:["ent","gov","inv"],att:5000,attL:"5,000+",exh:"100+ exhibitors and sponsors",
- url:"https://www.globalaishow.com/riyadh/",contact:"Contact form on event website",isNew:"New to Riyadh: the series describes itself as 'now in KSA'",
- part:"Attending; speaking if offered",cost:"Delegate pass; sponsorship on request",costLvl:1,
- comp:["HUMAIN","DataVolt","Microsoft","Oracle"],awards:"",
- hist:"No previous participation.",why:"Brings together AI decision-makers in the Kingdom. Relevant for center3's AI hosting proposition, though smaller and less infrastructure-focused than priority events.",
- r:[4,5,5,6,8,4,7],src:"https://www.globalaishow.com/riyadh/"},
+{id:"gais",n:"Global AI Show Riyadh 2027",org:"Global AI Show",s:"2027-02-02",e:"2027-02-03",est:false,city:"Riyadh",ctry:"KSA",venue:"Venue to be announced",geo:"KSA",spec:["ai"],aud:["ent", "gov", "inv"],att:5000,attL:"5,000+",exh:"100+ exhibitors and sponsors",url:"https://www.globalaishow.com/riyadh/",contact:"Contact form on event website",isNew:"New to Riyadh: the series describes itself as 'now in KSA'",part:"Attending; speaking if offered",cost:"Delegate pass; sponsorship on request",costLvl:1,comp:["HUMAIN", "DataVolt", "Microsoft", "Oracle"],awards:"",hist:"No previous participation.",why:"Brings together AI decision-makers in the Kingdom. Relevant for center3's AI hosting proposition, though smaller and less infrastructure-focused than priority events.",r:[4, 5, 5, 6, 8, 4, 7],src:"https://www.globalaishow.com/riyadh/"},
 
-{id:"metro",n:"Metro Connect USA 2027",org:"Capacity Media (techoraco)",s:"2027-02-08",e:"2027-02-10",est:false,city:"Hollywood, Florida",ctry:"USA",venue:"Signia by Hilton Diplomat Beach Resort",geo:"Global",
- spec:["telecom","dc","invest"],aud:["carrier","inv","hyper"],att:5000,attL:"5,000+ (75% director level or above)",exh:"Sponsors and exhibitors",
- url:"https://capacityglobal.com/events/",contact:"marketing@capacityglobal.com · +44 20 7779 7227",isNew:"",
- part:"Attending (business development team)",cost:"Delegate pass; sponsorship on request",costLvl:2,
- comp:["Zayo","Equinix","Digital Realty"],awards:"",
- hist:"No previous participation.",why:"Connects center3 with the US fibre, data centre and investor community. Valuable for investor relations and US route partnerships, with a largely domestic US focus.",
- r:[6,6,4,4,4,4,5],src:"https://baxtel.com/events/metro-connect-usa-2027"},
+{id:"metro",n:"Metro Connect USA 2027",org:"Capacity Media (techoraco)",s:"2027-02-08",e:"2027-02-10",est:false,city:"Hollywood, Florida",ctry:"USA",venue:"Signia by Hilton Diplomat Beach Resort",geo:"Global",spec:["telecom", "dc", "invest"],aud:["carrier", "inv", "hyper"],att:5000,attL:"5,000+ (75% director level or above)",exh:"Sponsors and exhibitors",url:"https://capacityglobal.com/events/",contact:"marketing@capacityglobal.com · +44 20 7779 7227",isNew:"",part:"Attending (business development team)",cost:"Delegate pass; sponsorship on request",costLvl:2,comp:["Zayo", "Equinix", "Digital Realty"],awards:"",hist:"No previous participation.",why:"Connects center3 with the US fibre, data centre and investor community. Valuable for investor relations and US route partnerships, with a largely domestic US focus.",r:[6, 6, 4, 4, 4, 4, 5],src:"https://baxtel.com/events/metro-connect-usa-2027"},
 
-{id:"iigs",n:"Infrastructure Investor Global Summit 2027",org:"PEI Group",s:"2027-02-22",e:"2027-02-25",est:false,city:"Berlin",ctry:"Germany",venue:"STATION Berlin",geo:"Global",
- spec:["invest"],aud:["inv"],att:3500,attL:"3,500+ (1,200+ LPs)",exh:"400+ speakers",
- url:"https://live.peievents.com/infrastructure-investor-global-summit",contact:"Contact form on event website",isNew:"",
- part:"Attending (strategy / investor relations)",cost:"Delegate pass (premium pricing); sponsorship on request",costLvl:3,
- comp:["Brookfield","Digital Bridge","Stonepeak"],awards:"",
- hist:"No previous participation.",why:"The largest global gathering of infrastructure investors, and a strong platform should center3 seek capital partners for its 1GW expansion.",
- r:[3,6,5,5,6,3,4],src:"https://live.peievents.com/infrastructure-investor-global-summit"},
+{id:"iigs",n:"Infrastructure Investor Global Summit 2027",org:"PEI Group",s:"2027-02-22",e:"2027-02-25",est:false,city:"Berlin",ctry:"Germany",venue:"STATION Berlin",geo:"Global",spec:["invest"],aud:["inv"],att:3500,attL:"3,500+ (1,200+ LPs)",exh:"400+ speakers",url:"https://live.peievents.com/infrastructure-investor-global-summit",contact:"Contact form on event website",isNew:"",part:"Attending (strategy / investor relations)",cost:"Delegate pass (premium pricing); sponsorship on request",costLvl:3,comp:["Brookfield", "Digital Bridge", "Stonepeak"],awards:"",hist:"No previous participation.",why:"The largest global gathering of infrastructure investors, and a strong platform should center3 seek capital partners for its 1GW expansion.",r:[3, 6, 5, 5, 6, 3, 4],src:"https://live.peievents.com/infrastructure-investor-global-summit"},
 
-{id:"mwc",n:"MWC Barcelona 2027",org:"GSMA",s:"2027-03-01",e:"2027-03-04",est:false,city:"Barcelona",ctry:"Spain",venue:"Fira Gran Via",geo:"Global",
- spec:["telecom","ai"],aud:["carrier","hyper","ent","gov"],att:100000,attL:"~100,000 (est., based on recent editions)",exh:"~2,700 exhibitors (est.)",
- url:"https://www.mwcbarcelona.com/",contact:"Contact form on event website",isNew:"",
- part:"Booth within the stc Group pavilion + meetings",cost:"High: stand space and passes; joining stc Group's pavilion keeps it down",costLvl:3,
- comp:["e&","du","Ooredoo","Mobily","Zain","Telecom Egypt"],awards:"GSMA GLOMO Awards",
- hist:"stc Group exhibits each year. No standalone center3 presence found.",why:"The world's largest telecom gathering. Best leveraged as part of the stc Group presence and as a meeting point with international carriers.",
- r:[7,7,9,5,6,8,3],src:"https://www.cmswire.com/events/conference/gsma-mwc-barcelona-2027/"},
+{id:"apricot",n:"APRICOT 2027",org:"APNIC and APRICOT",s:"2027-02-24",e:"2027-03-04",est:false,city:"Hong Kong",ctry:"Hong Kong SAR",venue:"Hopewell Hotel, Wan Chai (summit 1–4 March)",geo:"Asia",spec:["ix"],aud:["carrier", "content", "hyper"],att:800,attL:"~800 (est.)",exh:"Sponsors",url:"https://2027.apricot.net/",contact:"via event website",isNew:"",part:"Attend; peering meetings",cost:"Low-cost registration",costLvl:1,comp:["Equinix", "PCCW Global", "Singtel"],awards:"",hist:"No previous participation.",why:"Asia-Pacific's main network operators and peering conference. A low-cost way to meet Asian carriers and content networks for interconnection deals.",r:[6, 5, 4, 6, 6, 4, 8],src:"https://2027.apricot.net/"},
 
-{id:"dcwl",n:"Data Centre World London 2027",org:"CloserStill Media",s:"2027-03-10",e:"2027-03-11",est:false,city:"London",ctry:"UK",venue:"ExCeL London (part of Tech Show London)",geo:"Global",
- spec:["dc"],aud:["ent"],att:15000,attL:"Tech Show London scale (est.)",exh:"Large exhibition",
- url:"https://www.datacentreworld.com/",contact:"Contact form on event website",isNew:"",
- part:"Attending (engineering and supply chain)",cost:"Free for pre-registered end users",costLvl:1,
- comp:["Equinix","Digital Realty","Global Switch"],awards:"Data Centre World Awards (10 Mar 2027)",
- hist:"No previous participation.",why:"An operations and supply-chain focused event, well suited to engaging vendors and technology partners rather than acquiring customers.",
- r:[4,4,5,4,4,5,8],src:"https://baxtel.com/events/data-centre-world-london-2027"},
+{id:"mwc",n:"MWC Barcelona 2027",org:"GSMA",s:"2027-03-01",e:"2027-03-04",est:false,city:"Barcelona",ctry:"Spain",venue:"Fira Gran Via",geo:"Global",spec:["telecom", "ai"],aud:["carrier", "hyper", "ent", "gov"],att:100000,attL:"~100,000 (est., based on recent editions)",exh:"~2,700 exhibitors (est.)",url:"https://www.mwcbarcelona.com/",contact:"Contact form on event website",isNew:"",part:"Booth within the stc Group pavilion + meetings",cost:"High: stand space and passes; joining stc Group's pavilion keeps it down",costLvl:3,comp:["e&", "du", "Ooredoo", "Mobily", "Zain", "Telecom Egypt"],awards:"GSMA GLOMO Awards",hist:"stc Group exhibits each year. No standalone center3 presence found.",why:"The world's largest telecom gathering. Best leveraged as part of the stc Group presence and as a meeting point with international carriers.",r:[7, 7, 9, 5, 6, 8, 3],src:"https://www.cmswire.com/events/conference/gsma-mwc-barcelona-2027/"},
 
-{id:"gtc",n:"NVIDIA GTC 2027",org:"NVIDIA",s:"2027-03-14",e:"2027-03-18",est:false,city:"San Jose",ctry:"USA",venue:"San Jose McEnery Convention Center",geo:"Global",
- spec:["ai","dc"],aud:["hyper","ent","inv"],att:25000,attL:"25,000+ (est.)",exh:"Large exhibition",
- url:"https://www.nvidia.com/gtc/",contact:"Contact form on event website",isNew:"",
- part:"Attending (AI infrastructure and partnerships team)",cost:"Conference pass; exhibition on request",costLvl:2,
- comp:["G42 / Khazna","HUMAIN","Equinix","CoreWeave"],awards:"",
- hist:"No previous participation.",why:"The leading stage for AI infrastructure partnerships, supporting the positioning of the HUMAIN and center3 AI data centre joint venture.",
- r:[7,6,6,3,5,6,5],src:"https://baxtel.com/events/nvidia-gtc-2027"},
+{id:"dcwl",n:"Data Centre World London 2027",org:"CloserStill Media",s:"2027-03-10",e:"2027-03-11",est:false,city:"London",ctry:"UK",venue:"ExCeL London (part of Tech Show London)",geo:"Global",spec:["dc"],aud:["ent"],att:15000,attL:"Tech Show London scale (est.)",exh:"Large exhibition",url:"https://www.datacentreworld.com/",contact:"Contact form on event website",isNew:"",part:"Attending (engineering and supply chain)",cost:"Free for pre-registered end users",costLvl:1,comp:["Equinix", "Digital Realty", "Global Switch"],awards:"Data Centre World Awards (10 Mar 2027)",hist:"No previous participation.",why:"An operations and supply-chain focused event, well suited to engaging vendors and technology partners rather than acquiring customers.",r:[4, 4, 5, 4, 4, 5, 8],src:"https://baxtel.com/events/data-centre-world-london-2027"},
 
-{id:"capme",n:"Capacity Middle East x Datacloud Middle East 2027",org:"Capacity Media (techoraco)",s:"2027-03-15",e:"2027-03-18",est:false,city:"Dubai",ctry:"UAE",venue:"Grand Hyatt Dubai Conference & Exhibition Centre",geo:"GCC",
- spec:["subsea","telecom","dc","ix"],aud:["carrier","hyper","content","inv"],att:3500,attL:"3,500+ from 90+ countries (2026 edition)",exh:"Sponsors and exhibitors",
- url:"https://www.capacitymiddleeast.com/",contact:"marketing@capacityglobal.com · +44 20 7779 7227",isNew:"",
- part:"Booth + speaking + branding (partner level)",cost:"Partner package on request (center3 has been a sponsor or co-sponsor in past years)",costLvl:2,
- comp:["e&","du","Ooredoo","Khazna","Equinix","Gulf Data Hub","Zain Omantel International"],awards:"",
- hist:"Every year 2023–2026: under stc sponsorship, the Etihad Salam deal (2025) and panels by CCO and CTO (2026).",why:"center3's core regional event, bringing together the wholesale, subsea and data centre buyers most relevant to its business.",
- r:[10,10,9,9,10,10,6],src:"https://baxtel.com/events/capacity-middle-east-x-datacloud-middle-east-2027"},
+{id:"gtc",n:"NVIDIA GTC 2027",org:"NVIDIA",s:"2027-03-14",e:"2027-03-18",est:false,city:"San Jose",ctry:"USA",venue:"San Jose McEnery Convention Center",geo:"Global",spec:["ai", "dc", "neocloud"],aud:["hyper", "ent", "inv"],att:25000,attL:"25,000+ (est.)",exh:"Large exhibition",url:"https://www.nvidia.com/gtc/",contact:"Contact form on event website",isNew:"",part:"Attending (AI infrastructure and partnerships team)",cost:"Conference pass; exhibition on request",costLvl:2,comp:["G42 / Khazna", "HUMAIN", "Equinix", "CoreWeave"],awards:"",hist:"No previous participation.",why:"The leading stage for AI infrastructure partnerships, supporting the positioning of the HUMAIN and center3 AI data centre joint venture.",r:[7, 6, 6, 3, 5, 6, 5],src:"https://baxtel.com/events/nvidia-gtc-2027"},
 
-{id:"dciif",n:"Data Centre Infrastructure & Innovation Forum KSA",org:"Forum organiser (see internal tracker)",s:"2027-03-30",e:"2027-03-31",est:false,city:"Riyadh",ctry:"KSA",venue:"Hyatt Regency Olaya",geo:"KSA",
- spec:["dc"],aud:["ent","gov"],att:500,attL:"~500 (est.)",exh:"Small exhibition",
- url:"",contact:"Through internal events team",isNew:"",
- part:"Speaking (keynote panel)",cost:"Speaking slot; no sponsorship needed",costLvl:1,
- comp:["Mobily","DataVolt","Gulf Data Hub"],awards:"",
- hist:"Keynote panel moved here from Nov 2026, pending confirmation (internal tracker).",status:"Keynote panel rescheduled from Nov 2026; awaiting organiser confirmation",statusDate:"14 Oct 2026",why:"A cost-effective keynote opportunity to position center3 as a thought leader in its home market.",
- r:[5,6,6,8,9,6,8],src:"Internal tracker (Q4_Events_PowerBI_v7.xlsx)"},
+{id:"capme",n:"Capacity Middle East x Datacloud Middle East 2027",org:"Capacity Media (techoraco)",s:"2027-03-15",e:"2027-03-18",est:false,city:"Dubai",ctry:"UAE",venue:"Grand Hyatt Dubai Conference & Exhibition Centre",geo:"GCC",spec:["subsea", "telecom", "dc", "ix"],aud:["carrier", "hyper", "content", "inv"],att:3500,attL:"3,500+ from 90+ countries (2026 edition)",exh:"Sponsors and exhibitors",url:"https://www.capacitymiddleeast.com/",contact:"marketing@capacityglobal.com · +44 20 7779 7227",isNew:"",part:"Booth + speaking + branding (partner level)",cost:"Partner package on request (center3 has been a sponsor or co-sponsor in past years)",costLvl:2,comp:["e&", "du", "Ooredoo", "Khazna", "Equinix", "Gulf Data Hub", "Zain Omantel International"],awards:"",hist:"Every year 2023–2026: under stc sponsorship, the Etihad Salam deal (2025) and panels by CCO and CTO (2026).",why:"center3's core regional event, bringing together the wholesale, subsea and data centre buyers most relevant to its business.",r:[10, 10, 9, 9, 10, 10, 6],src:"https://baxtel.com/events/capacity-middle-east-x-datacloud-middle-east-2027"},
 
-{id:"gpf",n:"Global Peering Forum (GPF) 2027",org:"Global Peering Forum Inc.",s:"2027-04-04",e:"2027-04-07",est:false,city:"Calgary",ctry:"Canada",venue:"Venue on event website",geo:"Global",
- spec:["ix"],aud:["content","carrier","hyper"],att:600,attL:"~600 (est.)",exh:"Sponsor tables",
- url:"https://globalpeeringforum.org/",contact:"Contact form on event website",isNew:"",
- part:"Attending (peering team) + sponsorship",cost:"Low: registration and small sponsorship",costLvl:1,
- comp:["DE-CIX","LINX","AMS-IX","UAE-IX"],awards:"",
- hist:"No previous participation.",why:"The global meeting point for content providers and networks to agree peering, supporting growth at center3's internet exchanges.",
- r:[8,7,4,5,6,5,7],src:"https://globalpeeringforum.org/"},
+{id:"neocon",n:"NeoCloudCon Europe 2027",org:"Cloud Native Computing Foundation (Linux Foundation)",s:"2027-03-15",e:"2027-03-15",est:false,city:"Barcelona",ctry:"Spain",venue:"Co-located with KubeCon + CloudNativeCon Europe",geo:"Global",spec:["neocloud", "ai"],aud:["hyper", "content", "ent"],att:500,attL:"Focused one-day event (est.)",exh:"Co-located with KubeCon Europe",url:"https://events.linuxfoundation.org/kubecon-cloudnativecon-europe/co-located-events/neocloudcon/",contact:"via event website",isNew:"New: first edition in 2027",part:"Attend; explore speaking on sovereign GPU hosting",cost:"KubeCon Europe pass plus co-located event ticket",costLvl:1,comp:["CoreWeave", "Nebius", "Lambda", "Crusoe"],awards:"",hist:"No previous participation.",why:"A dedicated gathering of GPU cloud and neocloud operators, the fastest-growing buyers of AI-ready colocation. A focused, low-cost way to meet them.",r:[8, 7, 5, 6, 8, 6, 8],src:"https://www.beri.net/events/neocloudcon-europe-2027"},
 
-{id:"samena",n:"SAMENA Council Leaders' Summit 2027",org:"SAMENA Telecommunications Council",s:"2027-04-01",e:"2027-04-30",est:true,city:"Dubai",ctry:"UAE",venue:"To be announced",geo:"MENA",
- spec:["telecom"],aud:["carrier","gov"],att:500,attL:"~500 (est.)",exh:"Summit format",
- url:"https://www.samenacouncil.org/",contact:"info@samenacouncil.org",isNew:"",
- part:"Speaking",cost:"Low: invitation or council membership",costLvl:1,
- comp:["e&","du","Zain","Ooredoo","Mobily"],awards:"",
- hist:"No center3 presence found. stc is an active SAMENA member.",why:"A CEO-level forum for the region's operators and regulators, valuable for policy engagement and senior carrier relationships.",
- r:[6,5,6,7,8,7,8],src:"https://samenacouncil.org/press-release?id=225"},
+{id:"dciif",n:"Data Centre Infrastructure & Innovation Forum KSA",org:"Forum organiser (see internal tracker)",s:"2027-03-30",e:"2027-03-31",est:false,city:"Riyadh",ctry:"KSA",venue:"Hyatt Regency Olaya",geo:"KSA",spec:["dc"],aud:["ent", "gov"],att:500,attL:"~500 (est.)",exh:"Small exhibition",url:"",contact:"Through internal events team",isNew:"",part:"Speaking (keynote panel)",cost:"Speaking slot; no sponsorship needed",costLvl:1,comp:["Mobily", "DataVolt", "Gulf Data Hub"],awards:"",hist:"Keynote panel moved here from Nov 2026, pending confirmation (internal tracker).",status:"Keynote panel rescheduled from Nov 2026; awaiting organiser confirmation",statusDate:"14 Oct 2026",why:"A cost-effective keynote opportunity to position center3 as a thought leader in its home market.",r:[5, 6, 6, 8, 9, 6, 8],src:"Internal tracker (Q4_Events_PowerBI_v7.xlsx)"},
 
-{id:"leap",n:"LEAP 2027",org:"Tahaluf (with MCIT and SAFCSP)",s:"2027-04-12",e:"2027-04-15",est:true,city:"Riyadh",ctry:"KSA",venue:"Riyadh Exhibition & Convention Centre, Malham",geo:"KSA",
- spec:["ai","dc","telecom","invest"],aud:["gov","ent","hyper","inv"],att:200000,attL:"~200,000 (2026 edition expected 201,000)",exh:"Very large exhibition (DeepFest co-located)",
- url:"https://onegiantleap.com/",contact:"Contact form on event website",isNew:"",
- part:"Booth (with stc) + speaking + deal signings",cost:"High: stand build and partner package (center3 was Hosting & Data Partner in 2024)",costLvl:3,
- comp:["DataVolt","HUMAIN","Mobily","Zain KSA","Microsoft","Oracle","Google Cloud"],awards:"",
- hist:"2024 Hosting & Data Partner; 2025 Zoom deal; 2026 SEC-PDC framework agreement.",why:"The Kingdom's flagship technology event, where center3 secures major agreements and engages government leaders and hyperscalers.",
- r:[8,10,10,8,10,9,3],src:"https://www.beri.net/events/leap-2027"},
+{id:"samena",n:"SAMENA Council Leaders' Summit 2027",org:"SAMENA Telecommunications Council",s:"2027-04-01",e:"2027-04-30",est:true,city:"Dubai",ctry:"UAE",venue:"To be announced",geo:"MENA",spec:["telecom"],aud:["carrier", "gov"],att:500,attL:"~500 (est.)",exh:"Summit format",url:"https://www.samenacouncil.org/",contact:"info@samenacouncil.org",isNew:"",part:"Speaking",cost:"Low: invitation or council membership",costLvl:1,comp:["e&", "du", "Zain", "Ooredoo", "Mobily"],awards:"",hist:"No center3 presence found. stc is an active SAMENA member.",why:"A CEO-level forum for the region's operators and regulators, valuable for policy engagement and senior carrier relationships.",r:[6, 5, 6, 7, 8, 7, 8],src:"https://samenacouncil.org/press-release?id=225"},
 
-{id:"dcer",n:"Data Center Expo Riyadh 2027",org:"Data Center Expo (see internal tracker)",s:"2027-04-29",e:"2027-04-29",est:false,city:"Riyadh",ctry:"KSA",venue:"Rosh Olaya Hotel",geo:"KSA",
- spec:["dc"],aud:["ent","gov"],att:800,attL:"~800 (est.)",exh:"Small exhibition",
- url:"",contact:"Through internal events team",isNew:"",
- part:"Speaking (15-minute opening keynote) + branding",cost:"Associate Partner sponsorship package (internal tracker)",costLvl:2,
- comp:["Mobily","DataVolt","Ezditek"],awards:"",
- hist:"Keynote moved here from 20 Oct 2026 (internal tracker).",status:"Opening keynote under Associate Partner package; rescheduled from 20 Oct 2026",statusDate:"14 Oct 2026",why:"An opening keynote that gives center3 a leading voice in front of local data centre buyers.",
- r:[5,6,6,8,9,6,6],src:"Internal tracker (Q4_Events_PowerBI_v7.xlsx)"},
+{id:"gpf",n:"Global Peering Forum (GPF) 2027",org:"Global Peering Forum Inc.",s:"2027-04-04",e:"2027-04-07",est:false,city:"Calgary",ctry:"Canada",venue:"Venue on event website",geo:"Global",spec:["ix"],aud:["content", "carrier", "hyper"],att:600,attL:"~600 (est.)",exh:"Sponsor tables",url:"https://globalpeeringforum.org/",contact:"Contact form on event website",isNew:"",part:"Attending (peering team) + sponsorship",cost:"Low: registration and small sponsorship",costLvl:1,comp:["DE-CIX", "LINX", "AMS-IX", "UAE-IX"],awards:"",hist:"No previous participation.",why:"The global meeting point for content providers and networks to agree peering, supporting growth at center3's internet exchanges.",r:[8, 7, 4, 5, 6, 5, 7],src:"https://globalpeeringforum.org/"},
 
-{id:"itw",n:"ITW 2027 (International Telecoms Week)",org:"Capacity Media (techoraco)",s:"2027-05-10",e:"2027-05-13",est:false,city:"National Harbor (Washington DC)",ctry:"USA",venue:"Gaylord National Resort & Convention Center",geo:"Global",
- spec:["telecom","subsea","dc","ix"],aud:["carrier","hyper","content","inv"],att:6500,attL:"~6,500 (over half in senior leadership)",exh:"Large meeting floor and exhibition",
- url:"https://www.itwglobalevent.com/",contact:"marketing@capacityglobal.com · +44 20 7779 7227",isNew:"",
- part:"Meeting space + branding + speaking",cost:"Delegate pass plus meeting-space packages on request",costLvl:2,
- comp:["Telecom Egypt","Sparkle","Ooredoo","Mobily","Zain Omantel International","Equinix"],awards:"",
- hist:"center3 logo appeared on the 2026 sponsor and exhibitor display (low confidence).",why:"The world's largest wholesale carrier gathering, offering a full programme of one-to-one meetings with subsea and transit capacity buyers.",
- r:[10,10,8,7,8,9,4],src:"https://baxtel.com/events/itw-2027"},
+{id:"leap",n:"LEAP 2027",org:"Tahaluf (with MCIT and SAFCSP)",s:"2027-04-12",e:"2027-04-15",est:true,city:"Riyadh",ctry:"KSA",venue:"Riyadh Exhibition & Convention Centre, Malham",geo:"KSA",spec:["ai", "dc", "telecom", "invest"],aud:["gov", "ent", "hyper", "inv"],att:200000,attL:"~200,000 (2026 edition expected 201,000)",exh:"Very large exhibition (DeepFest co-located)",url:"https://onegiantleap.com/",contact:"Contact form on event website",isNew:"",part:"Booth (with stc) + speaking + deal signings",cost:"High: stand build and partner package (center3 was Hosting & Data Partner in 2024)",costLvl:3,comp:["DataVolt", "HUMAIN", "Mobily", "Zain KSA", "Microsoft", "Oracle", "Google Cloud"],awards:"",hist:"2024 Hosting & Data Partner; 2025 Zoom deal; 2026 SEC-PDC framework agreement.",why:"The Kingdom's flagship technology event, where center3 secures major agreements and engages government leaders and hyperscalers.",r:[8, 10, 10, 8, 10, 9, 3],src:"https://www.beri.net/events/leap-2027"},
 
-{id:"dcgc",n:"Datacloud Global Congress 2027",org:"Datacloud (techoraco)",s:"2027-06-02",e:"2027-06-04",est:false,city:"Cannes",ctry:"France",venue:"Palais des Festivals et des Congrès",geo:"Global",
- spec:["dc","invest","ai"],aud:["hyper","inv","ent"],att:3000,attL:"~3,000+ (est.)",exh:"Exhibition + sponsors",
- url:"https://www.datacloudglobalcongress.com/",contact:"marketing@capacityglobal.com (techoraco group)",isNew:"",
- part:"Speaking + branding + award entry",cost:"Delegate pass; sponsorship on request",costLvl:3,
- comp:["Khazna","Equinix","Digital Realty","AirTrunk","Gulf Data Hub"],awards:"Datacloud Awards (center3 won Best Data Centre in MEA in 2025 and 2026)",
- hist:"Award winner 2025 and 2026; CCO panel speaker in 2026.",why:"The premier global event for data centre investment, where center3 will defend its title as Best Data Centre in the Middle East and Africa.",
- r:[9,8,9,8,7,9,4],src:"https://baxtel.com/events/datacloud-global-congress-2027"},
+{id:"dcn",n:"Data Center Nation (DCN) Riyadh 2027",org:"Data Center Nation",s:"2027-04-20",e:"2027-04-20",est:false,city:"Riyadh",ctry:"KSA",venue:"Mandarin Oriental Al Faisaliah, Riyadh",geo:"KSA",spec:["dc", "ai"],aud:["ent", "gov"],att:2000,attL:"~2,000 (est.)",exh:"Exhibition",url:"",contact:"Contact form on event website",isNew:"",part:"Sponsorship (PR raised)",cost:"Per contract under review; sponsorship on request",costLvl:1,comp:["Mobily", "Gulf Data Hub", "DataVolt", "Ezditek"],awards:"",hist:"Previously tracked as attendance only. Sponsorship PR now raised.",status:"Rescheduled to 20 April 2027; sponsorship PR raised",statusDate:"10 Nov 2026",track:"On track",updates:["Rescheduled by the organiser from 27 January to 20 April 2027", "New venue: Mandarin Oriental Al Faisaliah, Riyadh", "The sponsorship PR has been raised"],next:["Follow up on the PR approval"],why:"A cost-effective way to engage Saudi enterprise and government IT decision-makers. center3's sponsorship is progressing, with the PR now raised.",r:[5, 6, 6, 5, 9, 6, 8],src:"Internal tracker (Q4_Events_PowerBI_v7.xlsx)"},
 
-{id:"mwcs",n:"MWC Shanghai 2027",org:"GSMA",s:"2027-06-23",e:"2027-06-25",est:false,city:"Shanghai",ctry:"China",venue:"Shanghai New International Expo Centre",geo:"Global",
- spec:["telecom","ai"],aud:["carrier","ent"],att:40000,attL:"~40,000 (est.)",exh:"Large exhibition",
- url:"https://www.mwcshanghai.com/",contact:"Contact form on event website",isNew:"",
- part:"Monitor only",cost:"High relative to fit",costLvl:3,
- comp:["China Mobile","China Telecom","China Unicom"],awards:"",
- hist:"No previous participation.",why:"Focused on the Asian carrier ecosystem. A lower priority unless a specific China corridor opportunity arises.",
- r:[4,4,5,3,3,4,4],src:"https://www.shifair.com/informationDetails/381688.html"},
+{id:"dcer",n:"Data Center Expo Riyadh 2027",org:"Data Center Expo (see internal tracker)",s:"2027-04-29",e:"2027-04-29",est:false,city:"Riyadh",ctry:"KSA",venue:"Rosh Olaya Hotel",geo:"KSA",spec:["dc"],aud:["ent", "gov"],att:800,attL:"~800 (est.)",exh:"Small exhibition",url:"",contact:"Through internal events team",isNew:"",part:"Speaking (15-minute opening keynote) + branding",cost:"Associate Partner sponsorship package (internal tracker)",costLvl:2,comp:["Mobily", "DataVolt", "Ezditek"],awards:"",hist:"Keynote moved here from 20 Oct 2026 (internal tracker).",status:"Opening keynote under Associate Partner package; rescheduled from 20 Oct 2026",statusDate:"14 Oct 2026",why:"An opening keynote that gives center3 a leading voice in front of local data centre buyers.",r:[5, 6, 6, 8, 9, 6, 6],src:"Internal tracker (Q4_Events_PowerBI_v7.xlsx)"},
 
-{id:"afpif",n:"AfPIF 2027 (Africa Peering & Interconnection Forum)",org:"Internet Society / AfPIF",s:"2027-08-01",e:"2027-08-31",est:true,city:"Host city to be announced",ctry:"Africa",venue:"To be announced",geo:"Africa",
- spec:["ix"],aud:["content","carrier"],att:400,attL:"~400 (est.)",exh:"Sponsor tables",
- url:"https://www.afpif.org/",contact:"Contact form on event website",isNew:"",
- part:"Attending + sponsorship (peering team)",cost:"Low",costLvl:1,
- comp:["Teraco","Africa Data Centres","NAPAfrica","IXPN"],awards:"",
- hist:"No previous participation.",why:"Brings together Africa's peering community, supporting CMC Networks and center3's Africa corridor.",
- r:[7,5,4,7,8,5,8],src:"https://indico.afpif.org/event/8/overview"},
+{id:"gitexai",n:"GITEX AI Asia 2027",org:"KAOUN International with Dubai World Trade Centre",s:"2027-04-29",e:"2027-04-30",est:false,city:"Singapore",ctry:"Singapore",venue:"Sands Expo & Convention Centre, Marina Bay Sands",geo:"Asia",spec:["ai"],aud:["ent", "gov", "inv"],att:20000,attL:"Tens of thousands (2025 edition)",exh:"400+ exhibiting start-ups (2025)",url:"https://gitexasia.com",contact:"via event website",isNew:"Recent launch: first edition in 2025",part:"Attend; meet Asian AI and cloud buyers",cost:"Visitor pass; exhibition or sponsorship on request",costLvl:2,comp:["HUMAIN", "DataVolt", "STT GDC", "Equinix"],awards:"",hist:"No previous participation.",why:"The Asian edition of GITEX, run by the GITEX Global organiser. It extends center3's GITEX presence to Asian AI and cloud buyers looking at Gulf capacity.",r:[5, 5, 6, 5, 6, 5, 6],src:"https://www.beri.net/events/gitex-ai-asia-2027"},
 
-{id:"itwa",n:"ITW Africa x Datacloud Africa 2027",org:"Capacity Media / Datacloud (techoraco)",s:"2027-09-06",e:"2027-09-09",est:false,city:"Nairobi",ctry:"Kenya",venue:"Radisson Blu Hotel Nairobi Upper Hill",geo:"Africa",
- spec:["telecom","dc","subsea"],aud:["carrier","hyper","content","inv"],att:1800,attL:"1,800+ from 80+ countries",exh:"Sponsors and exhibitors",
- url:"https://www.itwglobalevent.com/itw-series",contact:"marketing@capacityglobal.com · +44 20 7779 7227",isNew:"",
- part:"Speaking + branding (with CMC Networks)",cost:"Medium: delegate pass and partner package on request",costLvl:2,
- comp:["Teraco","Africa Data Centres","Liquid Intelligent Technologies","Telecom Egypt","WIOCC"],awards:"",
- hist:"No center3 presence found. CMC Networks (subsidiary) won African Connectivity Provider of the Year in 2026.",why:"Africa's main wholesale and data centre gathering, building on CMC Networks' established footprint across the continent.",
- r:[8,8,7,8,9,7,7],src:"https://baxtel.com/events/datacloud-africa-2027"},
+{id:"itw",n:"ITW 2027 (International Telecoms Week)",org:"Capacity Media (techoraco)",s:"2027-05-10",e:"2027-05-13",est:false,city:"National Harbor (Washington DC)",ctry:"USA",venue:"Gaylord National Resort & Convention Center",geo:"Global",spec:["telecom", "subsea", "dc", "ix"],aud:["carrier", "hyper", "content", "inv"],att:6500,attL:"~6,500 (over half in senior leadership)",exh:"Large meeting floor and exhibition",url:"https://www.itwglobalevent.com/",contact:"marketing@capacityglobal.com · +44 20 7779 7227",isNew:"",part:"Meeting space + branding + speaking",cost:"Delegate pass plus meeting-space packages on request",costLvl:2,comp:["Telecom Egypt", "Sparkle", "Ooredoo", "Mobily", "Zain Omantel International", "Equinix"],awards:"",hist:"center3 logo appeared on the 2026 sponsor and exhibitor display (low confidence).",why:"The world's largest wholesale carrier gathering, offering a full programme of one-to-one meetings with subsea and transit capacity buyers.",r:[10, 10, 8, 7, 8, 9, 4],src:"https://baxtel.com/events/itw-2027"},
 
-{id:"gain",n:"Global AI Summit (GAIN) 2027",org:"SDAIA",s:"2027-09-07",e:"2027-09-09",est:false,city:"Riyadh",ctry:"KSA",venue:"To be announced",geo:"KSA",
- spec:["ai"],aud:["gov","hyper","ent"],att:20000,attL:"Large (est.)",exh:"Exhibition",
- url:"https://globalaisummit.org/",contact:"Contact form on event website",isNew:"",
- part:"Speaking + branding",cost:"Medium: partner packages on request",costLvl:2,
- comp:["HUMAIN","DataVolt","Microsoft","Google Cloud"],awards:"",
- hist:"No center3 presence found.",why:"Central to the Kingdom's national AI agenda and closely aligned with the HUMAIN and center3 AI data centre joint venture.",
- r:[7,7,9,7,10,7,7],src:"https://menastartupdigest.com/?p=47387"},
+{id:"atxsg",n:"Asia Tech x Singapore (ATxSG) 2027",org:"IMDA and Informa",s:"2027-05-26",e:"2027-05-28",est:false,city:"Singapore",ctry:"Singapore",venue:"Singapore EXPO (ATxEnterprise) and Capella Singapore (ATxSummit)",geo:"Asia",spec:["ai", "telecom"],aud:["gov", "ent", "carrier", "inv"],att:22000,attL:"22,000+",exh:"ATxEnterprise exhibition",url:"https://asiatechxsg.com",contact:"via event website",isNew:"",part:"Attend; seek invitation to ATxSummit",cost:"Delegate pass; sponsorship on request",costLvl:2,comp:["Singtel", "STT GDC", "Equinix", "NTT"],awards:"",hist:"No previous participation.",why:"Asia's government-backed technology week, where regulators, carriers and enterprise leaders meet. Useful for building relationships in Asian markets.",r:[6, 5, 6, 5, 6, 5, 6],src:"https://www.beri.net/events/asia-tech-x-singapore-2027"},
 
-{id:"dcdl",n:"DCD>Connect London 2027",org:"DatacenterDynamics (DCD)",s:"2027-09-14",e:"2027-09-15",est:false,city:"London",ctry:"UK",venue:"Olympia London",geo:"Global",
- spec:["dc","invest"],aud:["hyper","ent","inv"],att:5000,attL:"5,000+ senior professionals",exh:"200 exhibitors · 280+ speakers",
- url:"https://www.datacenterdynamics.com/en/dcdconnect-live/london/2027/",contact:"Contact form on event website",isNew:"",
- part:"Attending; speaking if offered",cost:"Medium",costLvl:2,
- comp:["Equinix","Digital Realty","Khazna","Global Switch"],awards:"DCD Global Awards (December, London)",
- hist:"No previous participation.",why:"Reaches a senior European audience of data centre operators and investors.",
- r:[6,6,6,6,4,6,5],src:"https://baxtel.com/events/dcd-connect-london-2027"},
+{id:"dcgc",n:"Datacloud Global Congress 2027",org:"Datacloud (techoraco)",s:"2027-06-02",e:"2027-06-04",est:false,city:"Cannes",ctry:"France",venue:"Palais des Festivals et des Congrès",geo:"Global",spec:["dc", "invest", "ai", "neocloud"],aud:["hyper", "inv", "ent"],att:3000,attL:"~3,000+ (est.)",exh:"Exhibition + sponsors",url:"https://www.datacloudglobalcongress.com/",contact:"marketing@capacityglobal.com (techoraco group)",isNew:"",part:"Speaking + branding + award entry",cost:"Delegate pass; sponsorship on request",costLvl:3,comp:["Khazna", "Equinix", "Digital Realty", "AirTrunk", "Gulf Data Hub"],awards:"Datacloud Awards (center3 won Best Data Centre in MEA in 2025 and 2026)",hist:"Award winner 2025 and 2026; CCO panel speaker in 2026.",why:"The premier global event for data centre investment, where center3 will defend its title as Best Data Centre in the Middle East and Africa.",r:[9, 8, 9, 8, 7, 9, 4],src:"https://baxtel.com/events/datacloud-global-congress-2027"},
 
-{id:"rcdc",n:"Riyadh Cloud & Datacenter Convention 2027",org:"W.Media",s:"2027-09-21",e:"2027-09-21",est:false,city:"Riyadh",ctry:"KSA",venue:"To be announced",geo:"KSA",
- spec:["dc","ai"],aud:["ent","gov","hyper"],att:800,attL:"~800 (est.)",exh:"Sponsors",
- url:"https://clouddatacenter.events/events/riyadh-cloud-datacenter-convention-2027/",contact:"clouddatacenter.events/contact",isNew:"New on the 2027 calendar (edition number not stated)",
- part:"Speaking + branding",cost:"Low to medium",costLvl:1,
- comp:["DataVolt","Mobily","Gulf Data Hub","Ezditek"],awards:"W.Media Cloud & Datacenter Awards (regional)",
- hist:"No previous participation.",why:"A focused Saudi audience of data centre and cloud leaders, centred on sovereign cloud, power and AI.",
- r:[6,6,6,8,9,7,8],src:"https://clouddatacenter.events/events/riyadh-cloud-datacenter-convention-2027/"},
+{id:"dcdapac",n:"DCD>Connect APAC 2027",org:"DatacenterDynamics (DCD)",s:"2027-06-09",e:"2027-06-10",est:false,city:"Bali",ctry:"Indonesia",venue:"InterContinental Bali Resort, Jimbaran",geo:"Asia",spec:["dc", "invest"],aud:["hyper", "inv", "ent"],att:1500,attL:"~1,500 (est.)",exh:"Sponsors and exhibitors",url:"https://www.datacenterdynamics.com/en/dcdconnect-live/apac/2027/",contact:"via event website",isNew:"",part:"Attend; co-located Investment Forum",cost:"Delegate pass; sponsorship on request",costLvl:2,comp:["Equinix", "STT GDC", "Princeton Digital Group", "NTT"],awards:"",hist:"No previous participation.",why:"The main data centre leadership event for Asia-Pacific, with a co-located investment forum. Strong for meeting Asian operators and investors.",r:[7, 6, 5, 6, 7, 7, 6],src:"https://www.datacenterdynamics.com/en/dcdconnect-live/apac/2027/venue/"},
 
-{id:"snw",n:"Submarine Networks World 2027",org:"Terrapinn",s:"2027-09-01",e:"2027-09-30",est:true,city:"Singapore",ctry:"Singapore",venue:"Marina Bay Sands",geo:"Global",
- spec:["subsea"],aud:["carrier","hyper","content"],att:1500,attL:"~1,500 (est.)",exh:"Exhibition",
- url:"https://www.terrapinn.com/conference/submarine-networks-world/",contact:"jessica.foong@terrapinn.com",isNew:"",
- part:"Speaking + attending",cost:"Medium",costLvl:2,
- comp:["Telecom Egypt","Sparkle","Ooredoo","Mobily"],awards:"",
- hist:"No center3 presence found.",why:"Asia's leading subsea event, building on center3's three consecutive subsea awards and opening new Asian corridors.",
- r:[8,7,6,7,7,7,6],src:"https://www.eventseye.com/fairs/f-submarine-networks-world-22139-0.html"},
+{id:"mwcs",n:"MWC Shanghai 2027",org:"GSMA",s:"2027-06-23",e:"2027-06-25",est:false,city:"Shanghai",ctry:"China",venue:"Shanghai New International Expo Centre",geo:"Asia",spec:["telecom", "ai"],aud:["carrier", "ent"],att:40000,attL:"~40,000 (est.)",exh:"Large exhibition",url:"https://www.mwcshanghai.com/",contact:"Contact form on event website",isNew:"",part:"Monitor only",cost:"High relative to fit",costLvl:3,comp:["China Mobile", "China Telecom", "China Unicom"],awards:"",hist:"No previous participation.",why:"Focused on the Asian carrier ecosystem. A lower priority unless a specific China corridor opportunity arises.",r:[4, 4, 5, 3, 3, 4, 4],src:"https://www.shifair.com/informationDetails/381688.html"},
 
-{id:"aie",n:"Ai Everything Abu Dhabi 2027",org:"KAOUN International",s:"2027-10-01",e:"2027-10-31",est:true,city:"Abu Dhabi",ctry:"UAE",venue:"ADNEC Centre Abu Dhabi",geo:"GCC",
- spec:["ai","dc"],aud:["gov","ent","inv","hyper"],att:30000,attL:"Large (est.)",exh:"Large exhibition (Halls 1–4 in 2026)",
- url:"https://www.adnec.ae/en/eventlisting/ai-everything-abu-dhabi",contact:"Contact form on event website",isNew:"",
- part:"Attending; speaking if offered",cost:"Medium",costLvl:2,
- comp:["G42 / Khazna","Moro Hub","e&","du"],awards:"",
- hist:"No center3 presence found.",why:"Engages the UAE's sovereign AI ecosystem, where center3's main regional competitors are active.",
- r:[6,6,7,6,8,8,5],src:"https://www.adnec.ae/en/eventlisting/ai-everything-abu-dhabi"},
+{id:"dcissea",n:"Data Center Investment Summit Southeast Asia 2027",org:"W.Media",s:"2027-06-23",e:"2027-06-23",est:false,city:"Singapore",ctry:"Singapore",venue:"Marina Bay Sands",geo:"Asia",spec:["invest", "dc"],aud:["inv", "gov", "ent"],att:400,attL:"Not published",exh:"Sponsors",url:"https://w.media/dcis/data-center-investment-summit-southeast-asia-2027",contact:"via event website",isNew:"",part:"Attend",cost:"Delegate pass",costLvl:1,comp:["Princeton Digital Group", "STT GDC", "Equinix"],awards:"",hist:"No previous participation.",why:"A focused, low-cost meeting point for data centre investors, developers and regulators in Southeast Asia. Run by the organiser of the Riyadh Cloud & Datacenter Convention.",r:[5, 5, 4, 5, 6, 5, 8],src:"https://w.media/dcis/data-center-investment-summit-southeast-asia-2027"},
 
-{id:"cape",n:"Capacity Europe 2027 + Global Connectivity Awards",org:"Capacity Media (techoraco)",s:"2027-10-18",e:"2027-10-21",est:false,city:"London",ctry:"UK",venue:"InterContinental London – The O2",geo:"Global",
- spec:["telecom","subsea","dc","ix"],aud:["carrier","hyper","content","inv"],att:4000,attL:"4,000+ from 90+ countries",exh:"200+ sponsors and exhibitors",
- url:"https://www.capacityeurope.com/",contact:"marketing@capacityglobal.com · +44 20 7779 7227",isNew:"",
- part:"Sponsorship + speaking + award entries",cost:"High: 2026 Diamond tier included Mobily and Sparkle",costLvl:3,
- comp:["Mobily","Sparkle","Telecom Egypt","Vodafone","EXA Infrastructure","Colt"],awards:"Global Connectivity Awards (center3 won subsea awards 2023, 2024, 2025)",
- hist:"Every year 2023–2026: three subsea awards and reported Diamond sponsor in 2026.",why:"Europe's leading wholesale event and center3's principal awards platform.",
- r:[10,9,9,7,8,10,4],src:"https://www.capacityeurope.com/"},
+{id:"raise",n:"RAISE Summit 2027",org:"RAISE Summit",s:"2027-07-06",e:"2027-07-08",est:false,city:"Paris",ctry:"France",venue:"Palais des Congrès",geo:"Global",spec:["neocloud", "ai"],aud:["hyper", "ent", "inv"],att:7000,attL:"Several thousand (est.)",exh:"AI infrastructure exhibitors",url:"https://www.raisesummit.com",contact:"via event website",isNew:"Recent launch",part:"Attend; explore speaking",cost:"Delegate pass; sponsorship on request",costLvl:2,comp:["Nebius", "CoreWeave", "Scaleway", "HUMAIN"],awards:"",hist:"No previous participation.",why:"Europe's AI infrastructure summit, with strong neocloud participation. A good platform for center3's sovereign AI hosting story.",r:[7, 6, 6, 6, 7, 6, 6],src:"https://www.raisesummit.com"},
 
-{id:"trls",n:"Telecom Review Leaders' Summit 2027",org:"Telecom Review",s:"2027-10-01",e:"2027-12-31",est:true,city:"Dubai",ctry:"UAE",venue:"To be announced",geo:"GCC",
- spec:["telecom"],aud:["carrier","gov"],att:600,attL:"~600 (est.)",exh:"Summit format",
- url:"https://telecomreview.com/summit/",contact:"info@telecomreview.com",isNew:"",
- part:"Speaking + award entries",cost:"Low",costLvl:1,
- comp:["e&","du","Ooredoo","Zain","Mobily"],awards:"Telecom Review Excellence Awards (center3 won two in 2024)",
- hist:"Two awards in 2024; nominee in 2025.",why:"A regional stage for telecom leaders, with an awards programme in which center3 has previously been recognised.",
- r:[6,5,7,7,8,8,7],src:"https://telecomreview.com/summit/previous-editions/dubai-2025/"},
+{id:"afpif",n:"AfPIF 2027 (Africa Peering & Interconnection Forum)",org:"Internet Society / AfPIF",s:"2027-08-01",e:"2027-08-31",est:true,city:"Host city to be announced",ctry:"Africa",venue:"To be announced",geo:"Africa",spec:["ix"],aud:["content", "carrier"],att:400,attL:"~400 (est.)",exh:"Sponsor tables",url:"https://www.afpif.org/",contact:"Contact form on event website",isNew:"",part:"Attending + sponsorship (peering team)",cost:"Low",costLvl:1,comp:["Teraco", "Africa Data Centres", "NAPAfrica", "IXPN"],awards:"",hist:"No previous participation.",why:"Brings together Africa's peering community, supporting CMC Networks and center3's Africa corridor.",r:[7, 5, 4, 7, 8, 5, 8],src:"https://indico.afpif.org/event/8/overview"},
 
-{id:"ocp",n:"OCP Global Summit 2027",org:"Open Compute Project Foundation",s:"2027-10-01",e:"2027-10-31",est:true,city:"San Jose",ctry:"USA",venue:"San Jose McEnery Convention Center (usual venue)",geo:"Global",
- spec:["ai","dc"],aud:["hyper","ent"],att:7000,attL:"~7,000 (est.)",exh:"Large exhibition",
- url:"https://www.opencompute.org/summit/global-summit",contact:"events@opencompute.org · sponsorship@opencompute.org",isNew:"",
- part:"Attending (engineering)",cost:"Medium",costLvl:2,
- comp:["Equinix","Digital Realty"],awards:"",
- hist:"No previous participation.",why:"Sets engineering standards for hyperscale and AI infrastructure. Most relevant for design and engineering teams rather than sales.",
- r:[5,4,4,4,4,5,5],src:"https://www.opencompute.org/events/upcoming-event"},
+{id:"aiinfra",n:"AI Infra Summit 2027",org:"Kisaco Research",s:"2027-08-30",e:"2027-09-02",est:false,city:"San Jose",ctry:"USA",venue:"San Jose McEnery Convention Center",geo:"Global",spec:["neocloud", "ai"],aud:["hyper", "ent", "inv"],att:12000,attL:"~12,000 (2026 edition)",exh:"350 exhibitors (2026)",url:"https://ai-infra-summit.com",contact:"via event website",isNew:"",part:"Attend",cost:"Delegate pass; exhibition on request",costLvl:2,comp:["CoreWeave", "Lambda", "Crusoe", "Equinix"],awards:"",hist:"No previous participation.",why:"The largest dedicated AI infrastructure event, bringing together GPU cloud providers and the hardware ecosystem. Useful for meeting neocloud buyers.",r:[7, 6, 5, 5, 7, 6, 5],src:"https://baxtel.com/events/ai-infra-summit-2027"},
 
-{id:"fii",n:"FII 2027 (Future Investment Initiative)",org:"FII Institute",s:"2027-10-01",e:"2027-10-31",est:true,city:"Riyadh",ctry:"KSA",venue:"King Abdulaziz International Conference Center (usual venue)",geo:"KSA",
- spec:["invest","ai"],aud:["inv","gov","ent"],att:7000,attL:"~7,000 (est.)",exh:"Invitation-led",
- url:"https://fii-institute.org/",contact:"Contact form on event website",isNew:"",
- part:"Attending (executive leadership); speaking if invited",cost:"High: invitation or partner packages",costLvl:3,
- comp:["HUMAIN","DataVolt","PIF portfolio companies"],awards:"",
- hist:"No center3 presence found.",why:"Provides visibility with sovereign and global investors for center3's expansion and AI data centre plans.",
- r:[6,8,9,6,10,6,4],src:"https://mena.entrepreneur.com/business-news/future-investment-initiative-institute-announces-10th-edition-set-for-riyadh-in-october"},
+{id:"snw",n:"Submarine Networks World 2027",org:"Terrapinn",s:"2027-09-01",e:"2027-09-30",est:true,city:"Singapore",ctry:"Singapore",venue:"Marina Bay Sands",geo:"Asia",spec:["subsea"],aud:["carrier", "hyper", "content"],att:1500,attL:"~1,500 (est.)",exh:"Exhibition",url:"https://www.terrapinn.com/conference/submarine-networks-world/",contact:"jessica.foong@terrapinn.com",isNew:"",part:"Speaking + attending",cost:"Medium",costLvl:2,comp:["Telecom Egypt", "Sparkle", "Ooredoo", "Mobily"],awards:"",hist:"No center3 presence found.",why:"Asia's leading subsea event, building on center3's three consecutive subsea awards and opening new Asian corridors.",r:[8, 7, 6, 7, 7, 7, 6],src:"https://www.eventseye.com/fairs/f-submarine-networks-world-22139-0.html"},
 
-{id:"dcdm",n:"DCD>Connect MENA 2027",org:"DatacenterDynamics (DCD)",s:"2027-10-25",e:"2027-10-26",est:true,city:"Dubai",ctry:"UAE",venue:"To be announced",geo:"GCC",
- spec:["dc","ai"],aud:["hyper","ent","inv"],att:1500,attL:"~1,500 (est.)",exh:"Sponsors and exhibitors",
- url:"https://www.datacenterdynamics.com/en/dcd-downloads/connect-mena-sponsorship-brochure/",contact:"Contact form on event website",isNew:"Recent launch: DCD expanded Connect to the Middle East in 2025",
- part:"Speaking + branding",cost:"Medium",costLvl:2,
- comp:["Khazna","Equinix","Gulf Data Hub","Moro Hub","DataVolt"],awards:"DCD Global Awards (December, London)",
- hist:"No center3 presence found.",why:"A focused regional audience of data centre buyers and investors, with strong participation from key competitors.",
- r:[7,7,7,8,9,9,6],src:"https://www.vdura.com/?p=16660"},
+{id:"itwa",n:"ITW Africa x Datacloud Africa 2027",org:"Capacity Media / Datacloud (techoraco)",s:"2027-09-06",e:"2027-09-09",est:false,city:"Nairobi",ctry:"Kenya",venue:"Radisson Blu Hotel Nairobi Upper Hill",geo:"Africa",spec:["telecom", "dc", "subsea"],aud:["carrier", "hyper", "content", "inv"],att:1800,attL:"1,800+ from 80+ countries",exh:"Sponsors and exhibitors",url:"https://www.itwglobalevent.com/itw-series",contact:"marketing@capacityglobal.com · +44 20 7779 7227",isNew:"",part:"Speaking + branding (with CMC Networks)",cost:"Medium: delegate pass and partner package on request",costLvl:2,comp:["Teraco", "Africa Data Centres", "Liquid Intelligent Technologies", "Telecom Egypt", "WIOCC"],awards:"",hist:"No center3 presence found. CMC Networks (subsidiary) won African Connectivity Provider of the Year in 2026.",why:"Africa's main wholesale and data centre gathering, building on CMC Networks' established footprint across the continent.",r:[8, 8, 7, 8, 9, 7, 7],src:"https://baxtel.com/events/datacloud-africa-2027"},
 
-{id:"adipec",n:"ADIPEC 2027",org:"ADNOC, organised by dmg events",s:"2027-11-01",e:"2027-11-04",est:true,city:"Abu Dhabi",ctry:"UAE",venue:"ADNEC Centre Abu Dhabi",geo:"GCC",
- spec:["invest"],aud:["ent","gov","inv"],att:180000,attL:"Very large (est.)",exh:"Very large exhibition",
- url:"https://www.adipec.com/",contact:"adipec@dmgeventsme.com · +971 2 444 4909",isNew:"",
- part:"Monitor; attending for the energy-for-data-centres track",cost:"Medium (attending only)",costLvl:2,
- comp:["Khazna","Masdar"],awards:"ADIPEC Awards",
- hist:"No previous participation.",why:"Connects center3 with energy and power partners for AI data centres, offering indirect commercial value.",
- r:[3,5,5,4,7,3,4],src:"https://www.eventseye.com/fairs/f-adipec-22-0.html"},
+{id:"gain",n:"Global AI Summit (GAIN) 2027",org:"SDAIA",s:"2027-09-07",e:"2027-09-09",est:false,city:"Riyadh",ctry:"KSA",venue:"To be announced",geo:"KSA",spec:["ai"],aud:["gov", "hyper", "ent"],att:20000,attL:"Large (est.)",exh:"Exhibition",url:"https://globalaisummit.org/",contact:"Contact form on event website",isNew:"",part:"Speaking + branding",cost:"Medium: partner packages on request",costLvl:2,comp:["HUMAIN", "DataVolt", "Microsoft", "Google Cloud"],awards:"",hist:"No center3 presence found.",why:"Central to the Kingdom's national AI agenda and closely aligned with the HUMAIN and center3 AI data centre joint venture.",r:[7, 7, 9, 7, 10, 7, 7],src:"https://menastartupdigest.com/?p=47387"},
 
-{id:"cwksa",n:"Connected World KSA 2027",org:"Terrapinn Middle East",s:"2027-11-01",e:"2027-11-30",est:true,city:"Riyadh",ctry:"KSA",venue:"Riyadh Front Exhibition & Conference Center (2026 venue)",geo:"KSA",
- spec:["telecom","ai"],aud:["carrier","ent","gov"],att:3000,attL:"~3,000 (est.)",exh:"Exhibition",
- url:"https://www.terrapinn.com/conference/connected-world-ksa/",contact:"saoirse.fallon@terrapinn.com",isNew:"",
- part:"Speaking (keynote)",cost:"Low",costLvl:1,
- comp:["Mobily","Zain KSA","Salam"],awards:"",
- hist:"CCO and a presales manager listed on an earlier agenda.",why:"A local telecom and connectivity platform with keynote opportunities.",
- r:[6,6,6,8,9,7,7],src:"https://www.showsbee.com/fairs/66502-Connected-World-KSA-2026.html"},
+{id:"dcdl",n:"DCD>Connect London 2027",org:"DatacenterDynamics (DCD)",s:"2027-09-14",e:"2027-09-15",est:false,city:"London",ctry:"UK",venue:"Olympia London",geo:"Global",spec:["dc", "invest"],aud:["hyper", "ent", "inv"],att:5000,attL:"5,000+ senior professionals",exh:"200 exhibitors · 280+ speakers",url:"https://www.datacenterdynamics.com/en/dcdconnect-live/london/2027/",contact:"Contact form on event website",isNew:"",part:"Attending; speaking if offered",cost:"Medium",costLvl:2,comp:["Equinix", "Digital Realty", "Khazna", "Global Switch"],awards:"DCD Global Awards (December, London)",hist:"No previous participation.",why:"Reaches a senior European audience of data centre operators and investors.",r:[6, 6, 6, 6, 4, 6, 5],src:"https://baxtel.com/events/dcd-connect-london-2027"},
 
-{id:"mwcd",n:"MWC Doha 2027",org:"GSMA",s:"2027-11-01",e:"2027-11-30",est:true,city:"Doha",ctry:"Qatar",venue:"Doha Exhibition and Convention Center",geo:"GCC",
- spec:["telecom","ai"],aud:["carrier","gov","ent"],att:10000,attL:"Medium (est.)",exh:"Exhibition",
- url:"",contact:"Contact form on event website",isNew:"Recent launch: first edition Nov 2025",
- part:"Attending (with stc Group)",cost:"Medium",costLvl:2,
- comp:["Ooredoo","e&","du","Zain"],awards:"",
- hist:"No previous participation.",why:"A new GSMA event in the Gulf, worth monitoring as it grows.",
- r:[5,5,6,5,7,7,6],src:"https://www.shifair.com/informationDetails/381688.html"},
+{id:"yotta",n:"Yotta 2027",org:"DatacenterDynamics (DCD)",s:"2027-09-20",e:"2027-09-22",est:false,city:"Las Vegas",ctry:"USA",venue:"The Venetian Resort",geo:"Global",spec:["neocloud", "dc", "ai"],aud:["hyper", "inv", "ent"],att:8000,attL:"8,000+ (projected)",exh:"400 partner organisations (projected)",url:"",contact:"via DCD",isNew:"Recent launch",part:"Attend; explore speaking",cost:"Delegate pass; sponsorship on request",costLvl:3,comp:["CoreWeave", "Crusoe", "Equinix", "Digital Realty"],awards:"",hist:"No previous participation.",why:"DCD's large-scale AI infrastructure event, covering compute, power and capital. Strong neocloud and hyperscale presence; higher cost.",r:[7, 7, 6, 6, 7, 7, 4],src:"https://baxtel.com/events/yotta-2027"},
 
-{id:"dcwme",n:"Data Center World Middle East 2027",org:"Data Center World (Informa)",s:"2027-11-01",e:"2027-11-30",est:true,city:"Abu Dhabi",ctry:"UAE",venue:"Dusit Thani Abu Dhabi (2026 venue)",geo:"GCC",
- spec:["dc","ai"],aud:["hyper","ent","gov"],att:1500,attL:"~1,500 (est.)",exh:"Sponsors and exhibitors",
- url:"https://www.datacenterworldmiddleeast.com/",contact:"Contact form on event website",isNew:"",
- part:"Speaking (keynote panel)",cost:"Low to medium",costLvl:1,
- comp:["Khazna","Moro Hub","Gulf Data Hub","Equinix"],awards:"",
- hist:"2026: keynote panel by Luthfur Khan confirmed; a second panel was cancelled.",why:"Reaches a regional data centre audience, building on center3's established speaking relationship with the event.",
- r:[6,6,6,8,8,8,7],src:"https://www.datacenterworldmiddleeast.com/speakers/hussein-alnajrani/"},
+{id:"rcdc",n:"Riyadh Cloud & Datacenter Convention 2027",org:"W.Media",s:"2027-09-21",e:"2027-09-21",est:false,city:"Riyadh",ctry:"KSA",venue:"To be announced",geo:"KSA",spec:["dc", "ai"],aud:["ent", "gov", "hyper"],att:800,attL:"~800 (est.)",exh:"Sponsors",url:"https://clouddatacenter.events/events/riyadh-cloud-datacenter-convention-2027/",contact:"clouddatacenter.events/contact",isNew:"New on the 2027 calendar (edition number not stated)",part:"Speaking + branding",cost:"Low to medium",costLvl:1,comp:["DataVolt", "Mobily", "Gulf Data Hub", "Ezditek"],awards:"W.Media Cloud & Datacenter Awards (regional)",hist:"No previous participation.",why:"A focused Saudi audience of data centre and cloud leaders, centred on sovereign cloud, power and AI.",r:[6, 6, 6, 8, 9, 7, 8],src:"https://clouddatacenter.events/events/riyadh-cloud-datacenter-convention-2027/"},
 
-{id:"gccm",n:"Middle East GCCM & SIS Summit 2027",org:"Summit organiser (see internal tracker)",s:"2027-11-01",e:"2027-11-30",est:true,city:"Gulf (2026: Muscat)",ctry:"GCC",venue:"To be announced",geo:"GCC",
- spec:["telecom","subsea","ai"],aud:["carrier","gov"],att:400,attL:"~400 (est.)",exh:"Summit format",
- url:"",contact:"Through internal events team",isNew:"",
- part:"Speaking (panel)",cost:"Low: complimentary slots offered in 2026",costLvl:1,
- comp:["Omantel","Ooredoo","e&","Zain"],awards:"",
- hist:"2026: two complimentary panel slots offered, pending management direction.",why:"A cost-effective panel opportunity to engage Gulf carriers and regulators.",
- r:[5,5,5,8,8,6,8],src:"Internal tracker (Q4_Events_PowerBI_v7.xlsx)"},
+{id:"aie",n:"Ai Everything Abu Dhabi 2027",org:"KAOUN International",s:"2027-10-01",e:"2027-10-31",est:true,city:"Abu Dhabi",ctry:"UAE",venue:"ADNEC Centre Abu Dhabi",geo:"GCC",spec:["ai", "dc"],aud:["gov", "ent", "inv", "hyper"],att:30000,attL:"Large (est.)",exh:"Large exhibition (Halls 1–4 in 2026)",url:"https://www.adnec.ae/en/eventlisting/ai-everything-abu-dhabi",contact:"Contact form on event website",isNew:"",part:"Attending; speaking if offered",cost:"Medium",costLvl:2,comp:["G42 / Khazna", "Moro Hub", "e&", "du"],awards:"",hist:"No center3 presence found.",why:"Engages the UAE's sovereign AI ecosystem, where center3's main regional competitors are active.",r:[6, 6, 7, 6, 8, 8, 5],src:"https://www.adnec.ae/en/eventlisting/ai-everything-abu-dhabi"},
 
-{id:"menog",n:"MENOG 27",org:"MENOG with RIPE NCC",s:"2027-11-01",e:"2027-11-30",est:true,city:"Host city to be announced",ctry:"MENA",venue:"To be announced",geo:"MENA",
- spec:["ix"],aud:["carrier","content"],att:300,attL:"~300 (est.)",exh:"Sponsor tables",
- url:"https://www.menog.org/",contact:"Contact form on event website",isNew:"",
- part:"Speaking + sponsorship (peering and IX team)",cost:"Low",costLvl:1,
- comp:["UAE-IX (Datamena)","DE-CIX","Gulf IX"],awards:"",
- hist:"No center3 presence found.",why:"The region's network operator community, supporting peering growth at center3's internet exchanges.",
- r:[6,4,4,7,8,5,9],src:"https://menog26.menog.org/"},
+{id:"trls",n:"Telecom Review Leaders' Summit 2027",org:"Telecom Review",s:"2027-10-01",e:"2027-12-31",est:true,city:"Dubai",ctry:"UAE",venue:"To be announced",geo:"GCC",spec:["telecom"],aud:["carrier", "gov"],att:600,attL:"~600 (est.)",exh:"Summit format",url:"https://telecomreview.com/summit/",contact:"info@telecomreview.com",isNew:"",part:"Speaking + award entries",cost:"Low",costLvl:1,comp:["e&", "du", "Ooredoo", "Zain", "Mobily"],awards:"Telecom Review Excellence Awards (center3 won two in 2024)",hist:"Two awards in 2024; nominee in 2025.",why:"A regional stage for telecom leaders, with an awards programme in which center3 has previously been recognised.",r:[6, 5, 7, 7, 8, 8, 7],src:"https://telecomreview.com/summit/previous-editions/dubai-2025/"},
 
-{id:"atf",n:"Africa Tech Festival (AfricaCom) 2027",org:"Informa (KAOUN International)",s:"2027-11-16",e:"2027-11-18",est:false,city:"Cape Town",ctry:"South Africa",venue:"Cape Town International Convention Centre (CTICC)",geo:"Africa",
- spec:["telecom","dc"],aud:["carrier","ent","gov","inv"],att:15000,attL:"15,000+ (2026 edition)",exh:"Large exhibition",
- url:"https://africatechfestival.com/",contact:"Contact form on event website",isNew:"",
- part:"Booth or meeting space with CMC Networks + speaking",cost:"Medium",costLvl:2,
- comp:["Liquid Intelligent Technologies","Teraco","Africa Data Centres","Telecom Egypt","WIOCC"],awards:"AfricaCom Awards",
- hist:"No center3 presence found.",why:"Africa's largest telecom event and the strongest platform for CMC Networks and the Africa corridor.",
- r:[7,7,7,7,9,7,5],src:"https://startupmaphub.com/events/africa-tech-festival-africacom-africatech-2027"},
+{id:"ocp",n:"OCP Global Summit 2027",org:"Open Compute Project Foundation",s:"2027-10-01",e:"2027-10-31",est:true,city:"San Jose",ctry:"USA",venue:"San Jose McEnery Convention Center (usual venue)",geo:"Global",spec:["ai", "dc", "neocloud"],aud:["hyper", "ent"],att:7000,attL:"~7,000 (est.)",exh:"Large exhibition",url:"https://www.opencompute.org/summit/global-summit",contact:"events@opencompute.org · sponsorship@opencompute.org",isNew:"",part:"Attending (engineering)",cost:"Medium",costLvl:2,comp:["Equinix", "Digital Realty"],awards:"",hist:"No previous participation.",why:"Sets engineering standards for hyperscale and AI infrastructure. Most relevant for design and engineering teams rather than sales.",r:[5, 4, 4, 4, 4, 5, 5],src:"https://www.opencompute.org/events/upcoming-event"},
 
-{id:"gitex",n:"GITEX Global 2027",org:"KAOUN International",s:"2027-12-06",e:"2027-12-10",est:true,city:"Dubai",ctry:"UAE",venue:"Expo City Dubai",geo:"GCC",
- spec:["ai","telecom","dc"],aud:["gov","ent","hyper","inv"],att:200000,attL:"~200,000 (est.)",exh:"Very large exhibition",
- url:"https://www.gitex.com/",contact:"GitexSales@dwtc.com · gitexpartnerships@dwtc.com",isNew:"",
- part:"Booth within the stc Group pavilion + speaking",cost:"High",costLvl:3,
- comp:["e&","du","Khazna","Moro Hub","Microsoft","Oracle"],awards:"",
- hist:"No center3 presence found; stc exhibits.",why:"The Gulf's largest technology event, where center3's presence alongside UAE competitors would strengthen its regional visibility.",
- r:[6,7,9,5,8,9,3],src:"https://www.vdura.com/?p=16682"},
+{id:"fii",n:"FII 2027 (Future Investment Initiative)",org:"FII Institute",s:"2027-10-01",e:"2027-10-31",est:true,city:"Riyadh",ctry:"KSA",venue:"King Abdulaziz International Conference Center (usual venue)",geo:"KSA",spec:["invest", "ai"],aud:["inv", "gov", "ent"],att:7000,attL:"~7,000 (est.)",exh:"Invitation-led",url:"https://fii-institute.org/",contact:"Contact form on event website",isNew:"",part:"Attending (executive leadership); speaking if invited",cost:"High: invitation or partner packages",costLvl:3,comp:["HUMAIN", "DataVolt", "PIF portfolio companies"],awards:"",hist:"No center3 presence found.",why:"Provides visibility with sovereign and global investors for center3's expansion and AI data centre plans.",r:[6, 8, 9, 6, 10, 6, 4],src:"https://mena.entrepreneur.com/business-news/future-investment-initiative-institute-announces-10th-edition-set-for-riyadh-in-october"},
 
-{id:"itwasia",n:"ITW Asia x Datacloud Asia 2027",org:"Capacity Media / Datacloud (techoraco)",s:"2027-12-01",e:"2027-12-31",est:true,city:"Asia (city to be announced)",ctry:"APAC",venue:"To be announced",geo:"Global",
- spec:["telecom","dc","subsea"],aud:["carrier","hyper","content"],att:1500,attL:"~1,500 (est.)",exh:"Sponsors",
- url:"https://www.itwglobalevent.com/itw-series",contact:"marketing@capacityglobal.com · +44 20 7779 7227",isNew:"New series: first ITW Asia held 2–3 Dec 2026",
- part:"Attending",cost:"Medium",costLvl:2,
- comp:["Singtel","PCCW Global","Telecom Egypt"],awards:"",
- hist:"No previous participation.",why:"A new APAC wholesale gathering, best monitored over its first editions before committing investment.",
- r:[7,6,5,6,6,5,6],src:"https://www.itwglobalevent.com/agenda/itw-series-calendar"}
+{id:"dcwa",n:"Data Centre World Asia 2027 (Tech Week Singapore)",org:"CloserStill Media",s:"2027-10-13",e:"2027-10-14",est:false,city:"Singapore",ctry:"Singapore",venue:"Sands Expo and Convention Centre, Marina Bay Sands",geo:"Asia",spec:["dc", "neocloud", "ai"],aud:["hyper", "ent", "carrier"],att:26000,attL:"26,000+ data centre professionals (2026)",exh:"584 solution providers (2026)",url:"https://www.singaporetechnologyweek.com/data-centre-world",contact:"via event website",isNew:"",part:"Attend; explore speaking",cost:"Free visitor pass; exhibition on request",costLvl:1,comp:["STT GDC", "Equinix", "NTT", "Princeton Digital Group"],awards:"",hist:"No previous participation.",why:"Asia's largest data centre exhibition, co-located with Cloud & AI Infrastructure Asia. Very large audience at low cost to attend.",r:[7, 6, 6, 6, 7, 7, 7],src:"https://baxtel.com/events/data-centre-world-asia-2027"},
+
+{id:"cape",n:"Capacity Europe 2027 + Global Connectivity Awards",org:"Capacity Media (techoraco)",s:"2027-10-18",e:"2027-10-21",est:false,city:"London",ctry:"UK",venue:"InterContinental London – The O2",geo:"Global",spec:["telecom", "subsea", "dc", "ix"],aud:["carrier", "hyper", "content", "inv"],att:4000,attL:"4,000+ from 90+ countries",exh:"200+ sponsors and exhibitors",url:"https://www.capacityeurope.com/",contact:"marketing@capacityglobal.com · +44 20 7779 7227",isNew:"",part:"Sponsorship + speaking + award entries",cost:"High: 2026 Diamond tier included Mobily and Sparkle",costLvl:3,comp:["Mobily", "Sparkle", "Telecom Egypt", "Vodafone", "EXA Infrastructure", "Colt"],awards:"Global Connectivity Awards (center3 won subsea awards 2023, 2024, 2025)",hist:"Every year 2023–2026: three subsea awards and reported Diamond sponsor in 2026.",why:"Europe's leading wholesale event and center3's principal awards platform.",r:[10, 9, 9, 7, 8, 10, 4],src:"https://www.capacityeurope.com/"},
+
+{id:"dcdm",n:"DCD>Connect MENA 2027",org:"DatacenterDynamics (DCD)",s:"2027-10-25",e:"2027-10-26",est:true,city:"Dubai",ctry:"UAE",venue:"To be announced",geo:"GCC",spec:["dc", "ai"],aud:["hyper", "ent", "inv"],att:1500,attL:"~1,500 (est.)",exh:"Sponsors and exhibitors",url:"https://www.datacenterdynamics.com/en/dcd-downloads/connect-mena-sponsorship-brochure/",contact:"Contact form on event website",isNew:"Recent launch: DCD expanded Connect to the Middle East in 2025",part:"Speaking + branding",cost:"Medium",costLvl:2,comp:["Khazna", "Equinix", "Gulf Data Hub", "Moro Hub", "DataVolt"],awards:"DCD Global Awards (December, London)",hist:"No center3 presence found.",why:"A focused regional audience of data centre buyers and investors, with strong participation from key competitors.",r:[7, 7, 7, 8, 9, 9, 6],src:"https://www.vdura.com/?p=16660"},
+
+{id:"adipec",n:"ADIPEC 2027",org:"ADNOC, organised by dmg events",s:"2027-11-01",e:"2027-11-04",est:true,city:"Abu Dhabi",ctry:"UAE",venue:"ADNEC Centre Abu Dhabi",geo:"GCC",spec:["invest"],aud:["ent", "gov", "inv"],att:180000,attL:"Very large (est.)",exh:"Very large exhibition",url:"https://www.adipec.com/",contact:"adipec@dmgeventsme.com · +971 2 444 4909",isNew:"",part:"Monitor; attending for the energy-for-data-centres track",cost:"Medium (attending only)",costLvl:2,comp:["Khazna", "Masdar"],awards:"ADIPEC Awards",hist:"No previous participation.",why:"Connects center3 with energy and power partners for AI data centres, offering indirect commercial value.",r:[3, 5, 5, 4, 7, 3, 4],src:"https://www.eventseye.com/fairs/f-adipec-22-0.html"},
+
+{id:"cwksa",n:"Connected World KSA 2027",org:"Terrapinn Middle East",s:"2027-11-01",e:"2027-11-30",est:true,city:"Riyadh",ctry:"KSA",venue:"Riyadh Front Exhibition & Conference Center (2026 venue)",geo:"KSA",spec:["telecom", "ai"],aud:["carrier", "ent", "gov"],att:3000,attL:"~3,000 (est.)",exh:"Exhibition",url:"https://www.terrapinn.com/conference/connected-world-ksa/",contact:"saoirse.fallon@terrapinn.com",isNew:"",part:"Speaking (keynote)",cost:"Low",costLvl:1,comp:["Mobily", "Zain KSA", "Salam"],awards:"",hist:"CCO and a presales manager listed on an earlier agenda.",why:"A local telecom and connectivity platform with keynote opportunities.",r:[6, 6, 6, 8, 9, 7, 7],src:"https://www.showsbee.com/fairs/66502-Connected-World-KSA-2026.html"},
+
+{id:"mwcd",n:"MWC Doha 2027",org:"GSMA",s:"2027-11-01",e:"2027-11-30",est:true,city:"Doha",ctry:"Qatar",venue:"Doha Exhibition and Convention Center",geo:"GCC",spec:["telecom", "ai"],aud:["carrier", "gov", "ent"],att:10000,attL:"Medium (est.)",exh:"Exhibition",url:"",contact:"Contact form on event website",isNew:"Recent launch: first edition Nov 2025",part:"Attending (with stc Group)",cost:"Medium",costLvl:2,comp:["Ooredoo", "e&", "du", "Zain"],awards:"",hist:"No previous participation.",why:"A new GSMA event in the Gulf, worth monitoring as it grows.",r:[5, 5, 6, 5, 7, 7, 6],src:"https://www.shifair.com/informationDetails/381688.html"},
+
+{id:"dcwme",n:"Data Center World Middle East 2027",org:"Data Center World (Informa)",s:"2027-11-01",e:"2027-11-30",est:true,city:"Abu Dhabi",ctry:"UAE",venue:"Dusit Thani Abu Dhabi (2026 venue)",geo:"GCC",spec:["dc", "ai"],aud:["hyper", "ent", "gov"],att:1500,attL:"~1,500 (est.)",exh:"Sponsors and exhibitors",url:"https://www.datacenterworldmiddleeast.com/",contact:"Contact form on event website",isNew:"",part:"Speaking (keynote panel)",cost:"Low to medium",costLvl:1,comp:["Khazna", "Moro Hub", "Gulf Data Hub", "Equinix"],awards:"",hist:"2026: keynote panel by Luthfur Khan confirmed; a second panel was cancelled.",why:"Reaches a regional data centre audience, building on center3's established speaking relationship with the event.",r:[6, 6, 6, 8, 8, 8, 7],src:"https://www.datacenterworldmiddleeast.com/speakers/hussein-alnajrani/"},
+
+{id:"gccm",n:"Middle East GCCM & SIS Summit 2027",org:"Summit organiser (see internal tracker)",s:"2027-11-01",e:"2027-11-30",est:true,city:"Gulf (2026: Muscat)",ctry:"GCC",venue:"To be announced",geo:"GCC",spec:["telecom", "subsea", "ai"],aud:["carrier", "gov"],att:400,attL:"~400 (est.)",exh:"Summit format",url:"",contact:"Through internal events team",isNew:"",part:"Speaking (panel)",cost:"Low: complimentary slots offered in 2026",costLvl:1,comp:["Omantel", "Ooredoo", "e&", "Zain"],awards:"",hist:"2026: two complimentary panel slots offered, pending management direction.",why:"A cost-effective panel opportunity to engage Gulf carriers and regulators.",r:[5, 5, 5, 8, 8, 6, 8],src:"Internal tracker (Q4_Events_PowerBI_v7.xlsx)"},
+
+{id:"menog",n:"MENOG 27",org:"MENOG with RIPE NCC",s:"2027-11-01",e:"2027-11-30",est:true,city:"Host city to be announced",ctry:"MENA",venue:"To be announced",geo:"MENA",spec:["ix"],aud:["carrier", "content"],att:300,attL:"~300 (est.)",exh:"Sponsor tables",url:"https://www.menog.org/",contact:"Contact form on event website",isNew:"",part:"Speaking + sponsorship (peering and IX team)",cost:"Low",costLvl:1,comp:["UAE-IX (Datamena)", "DE-CIX", "Gulf IX"],awards:"",hist:"No center3 presence found.",why:"The region's network operator community, supporting peering growth at center3's internet exchanges.",r:[6, 4, 4, 7, 8, 5, 9],src:"https://menog26.menog.org/"},
+
+{id:"atf",n:"Africa Tech Festival (AfricaCom) 2027",org:"Informa (KAOUN International)",s:"2027-11-16",e:"2027-11-18",est:false,city:"Cape Town",ctry:"South Africa",venue:"Cape Town International Convention Centre (CTICC)",geo:"Africa",spec:["telecom", "dc"],aud:["carrier", "ent", "gov", "inv"],att:15000,attL:"15,000+ (2026 edition)",exh:"Large exhibition",url:"https://africatechfestival.com/",contact:"Contact form on event website",isNew:"",part:"Booth or meeting space with CMC Networks + speaking",cost:"Medium",costLvl:2,comp:["Liquid Intelligent Technologies", "Teraco", "Africa Data Centres", "Telecom Egypt", "WIOCC"],awards:"AfricaCom Awards",hist:"No center3 presence found.",why:"Africa's largest telecom event and the strongest platform for CMC Networks and the Africa corridor.",r:[7, 7, 7, 7, 9, 7, 5],src:"https://startupmaphub.com/events/africa-tech-festival-africacom-africatech-2027"},
+
+{id:"itwasia",n:"ITW Asia x Datacloud Asia 2027",org:"Capacity Media / Datacloud (techoraco)",s:"2027-12-01",e:"2027-12-31",est:true,city:"Asia (city to be announced)",ctry:"APAC",venue:"To be announced",geo:"Asia",spec:["telecom", "dc", "subsea"],aud:["carrier", "hyper", "content"],att:1500,attL:"~1,500 (est.)",exh:"Sponsors",url:"https://www.itwglobalevent.com/itw-series",contact:"marketing@capacityglobal.com · +44 20 7779 7227",isNew:"New series: first ITW Asia held 2–3 Dec 2026",part:"Attending",cost:"Medium",costLvl:2,comp:["Singtel", "PCCW Global", "Telecom Egypt"],awards:"",hist:"No previous participation.",why:"A new APAC wholesale gathering, best monitored over its first editions before committing investment.",r:[7, 6, 5, 6, 6, 5, 6],src:"https://www.itwglobalevent.com/agenda/itw-series-calendar"},
+
+{id:"gitex",n:"GITEX Global 2027",org:"KAOUN International",s:"2027-12-06",e:"2027-12-10",est:true,city:"Dubai",ctry:"UAE",venue:"Expo City Dubai",geo:"GCC",spec:["ai", "telecom", "dc"],aud:["gov", "ent", "hyper", "inv"],att:200000,attL:"~200,000 (est.)",exh:"Very large exhibition",url:"https://www.gitex.com/",contact:"GitexSales@dwtc.com · gitexpartnerships@dwtc.com",isNew:"",part:"Booth within the stc Group pavilion + speaking",cost:"High",costLvl:3,comp:["e&", "du", "Khazna", "Moro Hub", "Microsoft", "Oracle"],awards:"",hist:"No center3 presence found; stc exhibits.",why:"The Gulf's largest technology event, where center3's presence alongside UAE competitors would strengthen its regional visibility.",r:[6, 7, 9, 5, 8, 9, 3],src:"https://www.vdura.com/?p=16682"}
 ];
 
 const W=[["Audience fit with center3 buyers",25],["Business and deal potential",20],["Brand visibility and media",15],["Speaking and thought leadership",15],["Strategic market fit",10],["Competitor presence",10],["Cost efficiency",5]];
-const SPEC={dc:"Data centres",subsea:"Subsea & connectivity",ix:"IX & peering",ai:"Cloud & AI infrastructure",telecom:"Telecom & wholesale",invest:"Investment & energy"};
+const SPEC={dc:"Data centres",subsea:"Subsea & connectivity",ix:"IX & peering",ai:"Cloud & AI infrastructure",neocloud:"Neocloud & GPU cloud",telecom:"Telecom & wholesale",invest:"Investment & energy"};
 const AUD={hyper:"Hyperscalers",carrier:"Carriers",content:"Content providers",ent:"Enterprise",gov:"Government & regulators",inv:"Investors"};
-const GEO={KSA:"Local · KSA",GCC:"Regional · GCC",MENA:"Regional · MENA",Africa:"Regional · Africa",Global:"Global"};
+const GEO={KSA:"Local · KSA",GCC:"Regional · GCC",MENA:"Regional · MENA",Africa:"Regional · Africa",Asia:"Asia-Pacific",Global:"Global"};
 const SCALE=[["s","Under 1,000",0,999],["m","1,000–5,000",1000,5000],["l","5,001–20,000",5001,20000],["xl","Over 20,000",20001,1e9]];
 const TIERS={must:{label:"Must attend",cls:"t-must"},rec:{label:"Recommended",cls:"t-rec"},mon:{label:"Watchlist",cls:"t-mon"}};
 const MONTHS=["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
@@ -905,7 +713,7 @@ EVENTS.forEach(e=>{
   e.dl=e.est?(e.s.slice(8)==="01"&&(B-A)>20*864e5?`${FULLM[e.m]} 2027 (est.)`:`${A.getDate()}–${B.getDate()} ${MONTHS[e.m]} 2027 (est.)`)
      :e.s===e.e?`${A.getDate()} ${MONTHS[e.m]} 2027`:A.getMonth()===B.getMonth()?`${A.getDate()}–${B.getDate()} ${MONTHS[e.m]} 2027`:`${A.getDate()} ${MONTHS[e.m]} – ${B.getDate()} ${MONTHS[B.getMonth()]} 2027`;
   e.short=e.est?(e.dl.includes("–")?e.dl.replace(" 2027 (est.)",""):"est."):e.dl.replace(" 2027","");
-  e.region=e.geo==="KSA"?"local":e.geo==="Global"?"global":"regional";
+  e.region=e.geo==="KSA"?"local":(e.geo==="Global"||e.geo==="Asia")?"global":"regional";
 });
 /* Events outside 2027 (current-year participations) appear only under In Preparation */
 const PREV=[];for(let i=EVENTS.length-1;i>=0;i--){const e=EVENTS[i];if(e.s<"2027"){const A=d(e.s),B=d(e.e);e.dl=e.s===e.e?`${A.getDate()} ${MONTHS[A.getMonth()]} ${A.getFullYear()}`:`${A.getDate()}–${B.getDate()} ${MONTHS[A.getMonth()]} ${A.getFullYear()}`;e.short=e.dl;PREV.unshift(e);EVENTS.splice(i,1)}}
@@ -965,7 +773,7 @@ const info=document.getElementById("htlInfo");
 function htlInfo(e){
   const T=TIERS[e.tier];
   info.innerHTML=`<div style="min-width:0">
-    <div class="ctop"><span class="tag sp">${esc(SPEC[e.spec[0]])}</span>${e.status?`<span class="tag pend" title="${esc(e.status)} (as of ${esc(e.statusDate)})">In preparation</span>`:""}${e.isNew?`<span class="tag new">New</span>`:""}${e.est?`<span class="tag est">Est. date</span>`:""}<span class="geo">${esc(GEO[e.geo])}</span></div>
+    <div class="ctop"><span class="tag sp">${esc(SPEC[e.spec[0]])}</span>${e.status?`<span class="tag pend" title="${esc(e.status)} (as of ${esc(e.statusDate)})">In preparation</span>`:""}${e.isNew?`<span class="tag new">New</span>`:""}${e.est?`<span class="tag est">Est. date</span>`:""}${e.geo==="Asia"?"":`<span class="geo">${esc(GEO[e.geo])}</span>`}</div>
     <h3 style="margin-top:8px">${e.url?`<a href="${esc(e.url)}" target="_blank" rel="noopener" style="text-decoration:none">${esc(e.n)} <span style="color:var(--accent)">↗</span></a>`:esc(e.n)}</h3>
     <div class="sub"><b style="font-weight:600">Organiser:</b> ${esc(e.org)} · <b style="font-weight:600">Contact:</b> ${contactHTML(e)}</div>
     <div class="facts"><span><b>Date:</b> ${esc(e.dl)}</span><span><b>Where:</b> ${esc(e.city)}${e.ctry&&!e.city.includes(e.ctry)?", "+esc(e.ctry):""}</span><span><b>Scale:</b> ${esc(e.attL)}</span></div>
@@ -1002,6 +810,7 @@ const ADVICE={
 };
 document.getElementById("legend").insertAdjacentHTML("afterbegin",`<button class="chip prep-chip" data-apply='{"tier":"prep"}' aria-label="Show events in preparation"><i class="dot" style="color:var(--warn)"></i><b>In preparation</b><span class="cn">${ALLEV().filter(e=>e.status).length}</span><span class="arr" aria-hidden="true">→</span></button>`);
 document.getElementById("legend").insertAdjacentHTML("beforeend",`<button class="chip ov-chip" data-apply='{"tier":"ov"}' aria-label="Show overlapping events"><span class="ov-ic" aria-hidden="true"><i></i><i></i></span><b>Overlapping events</b><span class="cn">${clashMonths.length}</span><span class="arr" aria-hidden="true">→</span></button>`);
+document.getElementById("legend").insertAdjacentHTML("beforeend",[["asia","Asian markets",EVENTS.filter(e=>e.geo==="Asia").length,'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg>'],["neocloud","Neocloud providers",EVENTS.filter(e=>e.spec.includes("neocloud")).length,'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 18h10a4 4 0 0 0 .5-7.97A6 6 0 0 0 6 9.5 4.25 4.25 0 0 0 7 18z"/></svg>']].map(([v,l,n,ic])=>`<button class="chip seg-chip" data-apply='{"tier":"${v}"}' aria-label="Show ${l.toLowerCase()} events"><span class="seg-ic">${ic}</span><b>${l}</b><span class="cn">${n}</span><span class="arr" aria-hidden="true">→</span></button>`).join(""));
 document.getElementById("clashes").innerHTML=clashMonths.length?clashMonths.map(c=>{
   const hardIds=new Set(c.hard.flat().map(e=>e.id));
   return `<article class="clash">
@@ -1031,10 +840,10 @@ function goTo(el){if(!el)return;const nav=document.querySelector(".site-nav"),ba
   const off=(y-navH-barH>=barTop?navH+barH:navH)+14;
   scrollTo({top:Math.max(0,y-off),behavior:matchMedia("(prefers-reduced-motion: reduce)").matches?"auto":"smooth"})}
 document.addEventListener("click",ev=>{const a=ev.target.closest('a[href^="#"]');if(!a||a.getAttribute("href")==="#speaking")return;const t=document.getElementById(a.getAttribute("href").slice(1));if(!t)return;ev.preventDefault();
-  if(a.getAttribute("href")==="#events"&&(state.tier!=="all"||state.flag!=="all"||state.text)){Object.assign(state,{tier:"all",region:"all",spec:"all",aud:"all",scale:"all",flag:"all",text:""});document.getElementById("q").value="";drawFilters();render()}
+  if(a.getAttribute("href")==="#events"&&(state.tier!=="all"||state.seg!=="all"||state.flag!=="all"||state.text)){Object.assign(state,{tier:"all",seg:"all",region:"all",spec:"all",aud:"all",scale:"all",flag:"all",text:""});document.getElementById("q").value="";drawFilters();render()}
   goTo(a.getAttribute("href")==="#top"?document.body:(a.getAttribute("href")==="#events"?(t.querySelector(".group-head")||t):t))});
 function spScroll(el){goTo(el||document.getElementById("speaking"))}
-function toSpeaking(){Object.assign(state,{tier:"prep",region:"all",spec:"all",aud:"all",scale:"all",flag:"all",text:""});const q=document.getElementById("q");if(q)q.value="";drawFilters();render();setTimeout(()=>spScroll(),30)}
+function toSpeaking(){Object.assign(state,{tier:"prep",seg:"all",region:"all",spec:"all",aud:"all",scale:"all",flag:"all",text:""});const q=document.getElementById("q");if(q)q.value="";drawFilters();render();setTimeout(()=>spScroll(),30)}
 const SPST=["Confirmed","Offered","Rescheduled"];let spF="active";
 const spBlock=()=>`<div class="sp-sub" id="speaking"><div class="sp-head"><div><span class="sp-eyebrow">In Preparation ›</span><h3>Speaking Opportunities</h3><p>Speaking slots offered to center3, with the session, speaker and next preparation step.</p></div><span class="badge-count" style="background:var(--surface)">${SPEAK.filter(x=>x.st!=="Cancelled").length} active session${SPEAK.filter(x=>x.st!=="Cancelled").length===1?"":"s"}</span></div><div class="sp-sum" id="spSum" role="group" aria-label="Filter sessions by status"></div><div class="sp-list" id="spList"></div></div>`;
 function drawSpeak(){
@@ -1052,17 +861,17 @@ document.addEventListener("click",ev=>{const b=ev.target.closest("[data-spf]");i
 document.addEventListener("click",ev=>{const a=ev.target.closest('a[href="#speaking"]');if(!a)return;ev.preventDefault();toSpeaking()},true);
 /* Filters */
 const tf=document.getElementById("toggleF");
-const state={tier:"all",region:"all",spec:"all",aud:"all",scale:"all",flag:"all",text:"",sort:"score"};
+const state={tier:"all",seg:"all",region:"all",spec:"all",aud:"all",scale:"all",flag:"all",text:"",sort:"score"};
 try{const s=JSON.parse(localStorage.getItem("c3hub27")||"{}");Object.assign(state,s,{text:""})}catch(e){}
 const GROUPS=[
- ["region","Geography",[["all","All"],["local","Local · KSA"],["regional","Regional"],["GCC","GCC"],["MENA","MENA"],["Africa","Africa"],["global","Global"]]],
+ ["region","Geography",[["all","All"],["local","Local · KSA"],["regional","Regional"],["GCC","GCC"],["MENA","MENA"],["Africa","Africa"],["Asia","Asia-Pacific"],["global","Global"]]],
  ["spec","Specialty",[["all","All"],...Object.entries(SPEC)]],
  ["aud","Audience",[["all","All"],...Object.entries(AUD)]],
  ["scale","Scale",[["all","All"],...SCALE.map(s=>[s[0],s[1]+" attendees"])]],
  ["flag","Status",[["all","All"],["prep","In preparation"],["new","New or recent launch"],["confirmed","Dates confirmed"],["est","Dates estimated"]]]
 ];
 function drawFilters(){
-  document.getElementById("tierTabs").innerHTML=[["all","All Events"],["prep","In preparation"],["must","Must attend"],["rec","Recommended"],["ov","Overlapping"],["mon","Watchlist"]].map(([v,l])=>`<button class="tab" data-k="tier" data-v="${v}" aria-pressed="${state.tier===v}">${l}</button>`).join("");
+  document.getElementById("tierTabs").innerHTML=[["all","All Events"],["prep","In preparation"],["must","Must attend"],["rec","Recommended"],["ov","Overlapping"],["mon","Watchlist"],["asia","Asian markets"],["neocloud","Neocloud"]].map(([v,l])=>`<button class="tab" data-k="tier" data-v="${v}" aria-pressed="${state.tier===v}">${l}</button>`).join("");
   const active=GROUPS.some(([k])=>state[k]!=="all");
   const n=GROUPS.filter(([k])=>state[k]!=="all").length;document.getElementById("toggleLbl").textContent=n?`Filters (${n})`:"Filters";tf.classList.toggle("on",!!n);
   document.getElementById("fgroups").innerHTML=GROUPS.map(([k,label,opts])=>`<div class="fg" role="group" aria-label="${label}"><span>${label}</span>${opts.map(([v,l])=>`<button class="pill" data-k="${k}" data-v="${v}" aria-pressed="${state[k]===v}">${esc(l)}</button>`).join("")}</div>`).join("")+
@@ -1128,7 +937,9 @@ document.getElementById("sort").addEventListener("change",e=>{state.sort=e.targe
 tf.addEventListener("click",()=>{const g=document.getElementById("fgroups");const open=g.dataset.open!=="true";g.dataset.open=open;tf.setAttribute("aria-expanded",open)});
 
 function match(e){
-  if(state.tier==="ov"){if(!OVIDS.has(e.id))return false}else if(state.tier==="prep"){if(!e.status)return false}else if(state.tier!=="all"&&e.tier!==state.tier)return false;
+  if(state.tier==="ov"){if(!OVIDS.has(e.id))return false}else if(state.tier==="prep"){if(!e.status)return false}else if(state.tier==="asia"){if(e.geo!=="Asia")return false}else if(state.tier==="neocloud"){if(!e.spec.includes("neocloud"))return false}else if(state.tier!=="all"&&e.tier!==state.tier)return false;
+  if(state.seg==="asia"&&e.geo!=="Asia")return false;
+  if(state.seg==="neocloud"&&!e.spec.includes("neocloud"))return false;
   if(state.region!=="all"&&!(e.region===state.region||e.geo===state.region))return false;
   if(state.spec!=="all"&&!e.spec.includes(state.spec))return false;
   if(state.aud!=="all"&&!e.aud.includes(state.aud))return false;
@@ -1147,7 +958,7 @@ function card(e){
   return `<article class="card" id="ev-${e.id}">
   <div class="stripe ${T.cls}"></div>
   <div class="cb">
-    <div class="ctop"><span class="tag sp">${esc(SPEC[e.spec[0]])}</span>${e.status?`<span class="tag pend" title="${esc(e.status)} (as of ${esc(e.statusDate)})">In preparation</span>`:""}${e.isNew?`<span class="tag new">New</span>`:""}${e.est?`<span class="tag est">Est. date</span>`:""}<span class="geo">${esc(GEO[e.geo])}</span><span class="tier ${T.cls}">${T.label}</span></div>
+    <div class="ctop"><span class="tag sp">${esc(SPEC[e.spec[0]])}</span>${e.status?`<span class="tag pend" title="${esc(e.status)} (as of ${esc(e.statusDate)})">In preparation</span>`:""}${e.isNew?`<span class="tag new">New</span>`:""}${e.est?`<span class="tag est">Est. date</span>`:""}${e.geo==="Asia"?"":`<span class="geo">${esc(GEO[e.geo])}</span>`}<span class="tier ${T.cls}">${T.label}</span></div>
     <h3>${name}</h3>
     <div class="orgl"><span class="ol">Organiser:</span> ${esc(e.org)}<br><span class="ol">Contact:</span> ${contactHTML(e)}</div>
     <div class="meta"><span>${icon.cal}${esc(e.dl)}</span><span>${icon.pin}${esc(e.city)}${e.ctry&&!e.city.includes(e.ctry)?", "+esc(e.ctry):""}</span><span>${icon.ppl}${esc(e.attL)}</span></div>
@@ -1156,12 +967,12 @@ function card(e){
     <div class="chips">${e.aud.map(a=>`<span class="mini">${esc(AUD[a])}</span>`).join("")}</div>
     <div class="scoreline"><span class="lab">center3 score</span><span class="v ${T.cls}">${e.score}/100 — ${T.label}</span></div>
     <div class="big-track ${T.cls}"><i style="width:${e.score}%"></i></div>
+    <div class="sbd-h"><span class="lab">How the score is built</span><small>points earned / maximum</small></div>
+    <div class="sbd ${T.cls}">${W.map(([l,w],i)=>{const pt=e.r[i]/10*w;return `<span class="l">${l}</span><span class="m"><i style="width:${e.r[i]*10}%"></i></span><b>${pt%1?pt.toFixed(1):pt}<small> / ${w}</small></b>`}).join("")}</div>
     <div class="lab">Key competitors usually present</div>
     <div class="chips">${e.comp.map(c=>`<span class="mini">${esc(c)}</span>`).join("")}</div>
     <button class="more" aria-expanded="false" aria-controls="det-${e.id}"><span class="car">▾</span><span class="ml">Full Details</span></button>
     <div class="details" id="det-${e.id}" hidden>
-      <button class="bd-toggle" aria-expanded="false" aria-controls="bd-${e.id}"><span>Score breakdown</span><span class="car" aria-hidden="true">▾</span></button>
-      <div class="bd-wrap" id="bd-${e.id}" hidden><div class="bd">${W.map(([l,w],i)=>`<div class="bdrow"><span>${l} <span class="note">(of ${w})</span></span><b>${(e.r[i]/10*w).toFixed(e.r[i]*w%10?1:0)}</b><span class="t2"><i style="width:${e.r[i]*10}%"></i></span></div>`).join("")}</div></div>
       <dl class="kv">
         <dt>Dates</dt><dd>${esc(e.dl)}${e.est?" — not yet published by the organiser":""}</dd>
         <dt>Venue</dt><dd>${esc(e.venue)}, ${esc(e.city)}</dd>
@@ -1193,6 +1004,8 @@ function render(){
     <div class="prep-list">${prepL.map(e=>`<button class="prep-row" data-evmodal="${e.id}"><span class="pd"><b>${d(e.s).getDate()}</b><small>${MONTHS[e.m].toUpperCase()}</small></span><span class="pt"><b>${esc(e.n)}</b><small>${esc(e.city)} · ${esc(e.org)}</small></span><span class="ps">${e.track?`<span class="trk" style="position:static">${esc(e.track)}</span>`:""}<span class="tag pend">${esc(e.status.split(";")[0])}</span><small>Updated ${esc(e.statusDate)}</small></span><span class="go" aria-hidden="true">›</span></button>`).join("")}</div>${spBlock()}</section>`:"";
   if(state.tier==="ov"){const ms=[...new Set(list.map(e=>e.m))].sort((a,b)=>a-b);
     g.innerHTML=`<section style="color:var(--warn)"><div class="group-head"><div><h2>Overlapping Events</h2><p>Must attend and Recommended events that share a month with other key events. Grouped by month.</p></div><span class="badge-count" style="background:var(--surface)">${list.length} event${list.length>1?"s":""}</span></div>${ms.map(m=>`<h3 class="ov-mh">${FULLM[m]} 2027</h3><div class="grid" style="margin-bottom:28px">${list.filter(e=>e.m===m).sort((a,b)=>d(a.s)-d(b.s)).map(card).join("")}</div>`).join("")}</section>`;g.parentElement.hidden=false;g2.innerHTML="";g2.parentElement.hidden=true;return}
+  if(state.tier==="asia"||state.tier==="neocloud"){const S={asia:["Asian Markets","Events held in Asia-Pacific (Singapore, Hong Kong, Shanghai, Bali and more) where center3 can meet Asian carriers, cloud providers and investors."],neocloud:["Neocloud Providers","Events where AI cloud companies meet. Neoclouds rent out GPU computing power for AI (for example CoreWeave, Nebius, Lambda) and need data centre capacity, which makes them potential center3 customers."]}[state.tier];
+    g.innerHTML=`<section style="color:var(--rec)"><div class="group-head"><div><h2>${S[0]}</h2><p>${S[1]}</p></div><span class="badge-count" style="background:var(--surface)">${list.length} event${list.length>1?"s":""}</span></div><div class="grid">${list.map(card).join("")}</div></section>`;g.parentElement.hidden=false;g2.innerHTML="";g2.parentElement.hidden=true;return}
   if(state.tier==="prep"){g.innerHTML=`<section style="color:var(--warn)"><div class="group-head"><div><h2>In Preparation</h2><p>Events and speaking slots center3 is already preparing for. Status is from the internal events tracker.</p></div><span class="badge-count" style="background:var(--surface)">${list.length} event${list.length>1?"s":""}</span></div><div class="grid">${list.map(card).join("")}</div>${spBlock()}</section>`;g.parentElement.hidden=false;g2.innerHTML="";g2.parentElement.hidden=true;drawSpeak();return}
   g.innerHTML=prep+grp("must")+grp("rec");g.parentElement.hidden=!g.innerHTML;drawSpeak();
   g2.innerHTML=grp("mon");g2.parentElement.hidden=!g2.innerHTML;
@@ -1207,13 +1020,13 @@ document.addEventListener("click",ev=>{
 document.addEventListener("click",ev=>{
   const b=ev.target.closest("[data-go]");if(!b)return;
   let c=document.getElementById("ev-"+b.dataset.go);
-  if(!c){Object.assign(state,{tier:"all",region:"all",spec:"all",aud:"all",scale:"all",flag:"all",text:""});document.getElementById("q").value="";drawFilters();render();c=document.getElementById("ev-"+b.dataset.go)}
+  if(!c){Object.assign(state,{tier:"all",seg:"all",region:"all",spec:"all",aud:"all",scale:"all",flag:"all",text:""});document.getElementById("q").value="";drawFilters();render();c=document.getElementById("ev-"+b.dataset.go);requestAnimationFrame(()=>requestAnimationFrame(()=>{goTo(c);c.classList.add("flash");setTimeout(()=>c.classList.remove("flash"),1600)}));return}
   goTo(c);
   c.classList.add("flash");setTimeout(()=>c.classList.remove("flash"),1600);
 });
 document.addEventListener("click",ev=>{
   const b=ev.target.closest("[data-apply]");if(!b)return;
-  Object.assign(state,{tier:"all",region:"all",spec:"all",aud:"all",scale:"all",flag:"all",text:""},JSON.parse(b.dataset.apply));
+  Object.assign(state,{tier:"all",seg:"all",region:"all",spec:"all",aud:"all",scale:"all",flag:"all",text:""},JSON.parse(b.dataset.apply));
   document.getElementById("q").value="";save();drawFilters();render();
   const tgt=(JSON.parse(b.dataset.apply).tier==="mon")?document.getElementById("watchlist"):document.getElementById("events");
   goTo(tgt.querySelector(".group-head")||tgt);
@@ -1242,12 +1055,14 @@ const evModal=document.getElementById("evModal");
 function openEv(id){
   const e=ALLEV().find(x=>x.id===id),T=TIERS[e.tier];
   lastFocus=document.activeElement;
-  document.getElementById("evTags").innerHTML=`<span class="tag sp">${esc(SPEC[e.spec[0]])}</span>${e.status?`<span class="tag pend" title="${esc(e.status)} (as of ${esc(e.statusDate)})">In preparation</span>`:""}${e.isNew?`<span class="tag new">New</span>`:""}${e.est?`<span class="tag est">Est. date</span>`:""}<span class="geo">${esc(GEO[e.geo])}</span>`;
+  document.getElementById("evTags").innerHTML=`<span class="tag sp">${esc(SPEC[e.spec[0]])}</span>${e.status?`<span class="tag pend" title="${esc(e.status)} (as of ${esc(e.statusDate)})">In preparation</span>`:""}${e.isNew?`<span class="tag new">New</span>`:""}${e.est?`<span class="tag est">Est. date</span>`:""}${e.geo==="Asia"?"":`<span class="geo">${esc(GEO[e.geo])}</span>`}`;
   document.getElementById("evTitle").innerHTML=e.url?`<a href="${esc(e.url)}" target="_blank" rel="noopener" style="text-decoration:none">${esc(e.n)} <span style="color:var(--accent)">↗</span></a>`:esc(e.n);
   document.getElementById("evOrg").innerHTML=`<b style="font-weight:600">Organiser:</b> ${esc(e.org)}<br><b style="font-weight:600">Contact:</b> ${contactHTML(e)}`;
   document.getElementById("evBody").innerHTML=`
     <div class="scoreline"><span class="tier ${T.cls}" style="margin:0">${T.label}</span><span class="v ${T.cls}" style="font-family:var(--display);font-size:28px;font-weight:800">${e.score}<span class="note" style="font-size:14px">/100</span></span></div>
     <div class="big-track ${T.cls}"><i style="width:${e.score}%"></i></div>
+    <div class="sbd-h"><span class="lab">How the score is built</span><small>points earned / maximum</small></div>
+    <div class="sbd ${T.cls}">${W.map(([l,w],i)=>{const pt=e.r[i]/10*w;return `<span class="l">${l}</span><span class="m"><i style="width:${e.r[i]*10}%"></i></span><b>${pt%1?pt.toFixed(1):pt}<small> / ${w}</small></b>`}).join("")}</div>
     <p class="why">${esc(e.why)}</p>
     <dl class="kv">
       <dt>Dates</dt><dd>${esc(e.dl)}${e.est?" — not yet published by the organiser":""}</dd>
@@ -1293,10 +1108,12 @@ drawFilters();render();
   const lg=document.getElementById("legend");
   lg.insertAdjacentHTML("beforeend",`<div class="chip hs"><label><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><input id="hq" type="search" placeholder="Search anything…" autocomplete="off" aria-label="Search the page" role="combobox" aria-expanded="false" aria-controls="hsugg"></label><div class="sugg" id="hsugg" role="listbox" hidden></div></div>`);
   const inp=document.getElementById("hq"),box=document.getElementById("hsugg");let items=[],act=-1;
-  const reset=()=>{Object.assign(state,{tier:"all",region:"all",spec:"all",aud:"all",scale:"all",flag:"all",text:""});const q=document.getElementById("q");if(q)q.value="";drawFilters();render()};
+  const reset=()=>{Object.assign(state,{tier:"all",seg:"all",region:"all",spec:"all",aud:"all",scale:"all",flag:"all",text:""});const q=document.getElementById("q");if(q)q.value="";drawFilters();render()};
   const SECS=[
    ["In preparation","Events center3 is preparing for",()=>apply({tier:"prep"}),"preparation prep preparing status"],
    ["Speaking opportunities","Sessions, speakers and next steps",()=>toSpeaking(),"speaking speaker speakers keynote panel session sessions slot"],
+   ["Asian markets","Events targeting Asia-Pacific markets",()=>apply({tier:"asia"}),"asia asian apac asia-pacific singapore hong kong"],
+   ["Neocloud providers","Events for GPU cloud and neocloud providers",()=>apply({tier:"neocloud"}),"neocloud neo cloud gpu cloud ai infrastructure"],
    ["Must attend","Events scored 75 or higher",()=>apply({tier:"must"}),"must attend priority top"],
    ["Recommended","Events scored 60 to 74",()=>apply({tier:"rec"}),"recommended"],
    ["Watchlist","Events scored below 60",()=>apply({tier:"mon"}),"watchlist monitor"],
@@ -1307,7 +1124,7 @@ drawFilters();render();
   ];
   function apply(f){const b=document.createElement("button");b.dataset.apply=JSON.stringify(f);b.hidden=true;document.body.appendChild(b);b.click();b.remove()}
   const goEv=id=>{const b=document.createElement("span");b.dataset.go=id;document.body.appendChild(b);b.click();b.remove()};
-  const goSp=x=>{Object.assign(state,{tier:"prep",region:"all",spec:"all",aud:"all",scale:"all",flag:"all",text:""});drawFilters();render();spF=x.st==="Cancelled"?"Cancelled":"active";drawSpeak();const i=SPEAK.filter(s=>spF==="active"?s.st!=="Cancelled":s.st===spF).sort((a,b)=>a.date.localeCompare(b.date)).indexOf(x);const r=document.querySelectorAll("#spList .sp-row")[i];if(r){setTimeout(()=>spScroll(r),30);r.classList.remove("flash");void r.offsetWidth;r.classList.add("flash")}};
+  const goSp=x=>{Object.assign(state,{tier:"prep",seg:"all",region:"all",spec:"all",aud:"all",scale:"all",flag:"all",text:""});drawFilters();render();spF=x.st==="Cancelled"?"Cancelled":"active";drawSpeak();const i=SPEAK.filter(s=>spF==="active"?s.st!=="Cancelled":s.st===spF).sort((a,b)=>a.date.localeCompare(b.date)).indexOf(x);const r=document.querySelectorAll("#spList .sp-row")[i];if(r){setTimeout(()=>spScroll(r),30);r.classList.remove("flash");void r.offsetWidth;r.classList.add("flash")}};
   function build(){
     const q=inp.value.trim();items=[];act=-1;if(!q){box.hidden=true;inp.setAttribute("aria-expanded","false");return}
     const t=toks(q),has=h=>t.every(k=>h.includes(k));let html="";
@@ -1338,6 +1155,8 @@ drawFilters();render();
   box.addEventListener("mousedown",ev=>{const s=ev.target.closest(".sg[data-i]");if(s){ev.preventDefault();run(+s.dataset.i)}});
   document.addEventListener("click",ev=>{if(!ev.target.closest(".hs"))box.hidden=true});
 })();
+
+render();
 </script>
 
 </body>
