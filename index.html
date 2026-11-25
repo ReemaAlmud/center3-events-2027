@@ -40,7 +40,7 @@
 *{box-sizing:border-box}
 body{background:var(--bg);color:var(--fg);font-family:var(--body);font-size:15px;line-height:1.55;-webkit-font-smoothing:antialiased}
 body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--bg)}
-.wrap{max-width:1600px;margin:0 auto;padding-left:max(clamp(16px,4vw,72px),env(safe-area-inset-left,0px));padding-right:max(clamp(16px,4vw,72px),env(safe-area-inset-right,0px))}
+.wrap{max-width:none;margin:0;padding-left:max(clamp(16px,2.6vw,44px),env(safe-area-inset-left,0px));padding-right:max(clamp(16px,2.6vw,44px),env(safe-area-inset-right,0px))}
 html{scroll-behavior:smooth}
 section[id],main[id]{scroll-margin-top:72px}
 main#events,main#watchlist{scroll-margin-top:136px}
@@ -240,6 +240,8 @@ button.chip:hover{border-color:var(--accent)}
 .bar .wrap{padding-block:12px;display:flex;flex-direction:column;gap:10px}
 .row1{display:flex;flex-wrap:wrap;gap:10px 12px;align-items:center}
 .tabs{display:flex;gap:4px;background:var(--bg-soft);border:1px solid var(--line);padding:4px;border-radius:10px;overflow-x:auto;max-width:100%}
+.tabs{flex:0 1 auto;min-width:0}
+html,body{overflow-x:clip}
 .tab{border:0;background:none;padding:7px 12px;border-radius:7px;font-weight:700;color:var(--muted);white-space:nowrap}
 .tab[aria-pressed="true"]{background:var(--accent);color:#fff}
 .row1 > *{height:42px}
@@ -270,7 +272,7 @@ button.chip:hover{border-color:var(--accent)}
 .count b{color:var(--accent);font-variant-numeric:tabular-nums}
 .toggle-f{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--line-strong);background:var(--surface);padding:0 14px;border-radius:10px;font-weight:600}
 .toggle-f svg{width:16px;height:16px}
-@media (max-width:1340px){.tabs{flex:1 1 100%;min-width:0}.search{flex:1 1 260px;max-width:none}.bar-right{margin-left:0}}
+@media (max-width:1600px){.tabs{flex:1 1 100%;min-width:0}.search{flex:1 1 260px;max-width:none}.bar-right{margin-left:0}}
 @media (max-width:860px){.search{flex:1 1 100%;max-width:none}.bar-right{margin-left:0}}
 .fgroups{display:flex;flex-direction:column;gap:8px}
 .fgroups[data-open="false"]{display:none}
@@ -392,7 +394,7 @@ dl.kv dd{margin:0;min-width:0;overflow-wrap:anywhere}
 dl.kv a{color:var(--rec)}
 .empty-state{text-align:center;padding:48px 16px;color:var(--muted);border:1px dashed var(--line-strong);border-radius:12px;background:var(--surface)}
 footer{color:var(--faint);font-size:13px}
-footer .foot-main{color:var(--muted);font-size:14.5px;line-height:1.65;max-width:110ch}
+footer .foot-main{color:var(--muted);font-size:14.5px;line-height:1.65;max-width:none}
 footer .foot-main strong{color:var(--brand)}
 footer .foot-sub{color:var(--faint);font-size:12.5px;margin-top:6px}
 footer .wrap{padding-block:24px 36px;border-top:1px solid var(--line);display:flex;flex-direction:column;gap:6px}
@@ -600,7 +602,6 @@ span.sp-ev{cursor:default}span.sp-ev:hover{color:var(--muted);text-decoration:no
 </section>
 <footer><div class="wrap">
   <div class="foot-main"><strong>Suggested Events for center3</strong> brings together the events that matter most to center3's growth: where hyperscalers, carriers, content providers, investors and government decision-makers meet across data centres, subsea and connectivity, interconnection, cloud and AI infrastructure. Each event is selected and scored for how well it helps center3 win customers, build partnerships and strengthen its position as the digital infrastructure hub linking the Kingdom, the Gulf, Africa and the world.</div>
-  <div class="foot-sub">Prepared by the center3 Events team · Last updated 25 November 2026</div>
 </div></footer>
 
 <script>
